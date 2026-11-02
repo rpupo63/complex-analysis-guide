@@ -5,7 +5,7 @@ title: Schwarz on the half-plane
 placement: n14
 order: 2
 ---
-Let $f:\mathbb H\to\mathbb H$ be holomorphic with $f(i)=i$. Let $C(z)=\frac{z-i}{z+i}$ and $g:=C\circ f\circ C^{-1}$. (i) Show $g$ maps $D(0,1)$ into $D(0,1)$, $g(0)=0$, and deduce $|g'(0)|\le1$. (ii) Show $g'(0)=f'(i)$. (iii) Conclude $|f'(i)|\le1$, and check equality for $f(z)=-1/z$.
+Let $\mathbb H:=\{z:\operatorname{Im}z\gt0\}$ and let $f:\mathbb H\to\mathbb H$ be holomorphic with $f(i)=i$. Let $C(z)=\frac{z-i}{z+i}$, a conformal map of $\mathbb H$ onto $D(0,1)$, and $g:=C\circ f\circ C^{-1}$. (i) Show $g$ maps $D(0,1)$ into $D(0,1)$, $g(0)=0$, and deduce $|g'(0)|\le1$. (ii) Show $g'(0)=f'(i)$. (iii) Conclude $|f'(i)|\le1$, and check equality for $f(z)=-1/z$.
 <details class="sol"><summary>Hint</summary>
 (ii) Chain rule, with $(C^{-1})'(0)=1/C'(i)$ (@thm:inverse).
 </details>

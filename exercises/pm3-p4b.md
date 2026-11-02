@@ -5,7 +5,7 @@ title: moving the zero to the centre
 placement: n14
 order: 3
 ---
-Let $f:D(0,1)\to D(0,1)$ be holomorphic with $f(\frac12)=0$. Let $\varphi(z):=\frac{\frac12-z}{1-\frac12z}$ and $g:=f\circ\varphi$. (i) Show $g$ maps $D(0,1)$ into $D(0,1)$ and $g(0)=0$. (ii) Show $f(0)=g(\frac12)$, and conclude $|f(0)|\le\frac12$. (iii) Find an $f$ with $f(\frac12)=0$ and $|f(0)|=\frac12$.
+Let $f:D(0,1)\to D(0,1)$ be holomorphic with $f(\frac12)=0$. Let $\varphi(z):=\frac{\frac12-z}{1-\frac12z}$, an automorphism of $D(0,1)$, and $g:=f\circ\varphi$. (i) Show $g$ maps $D(0,1)$ into $D(0,1)$ and $g(0)=0$. (ii) Show $f(0)=g(\frac12)$, and conclude $|f(0)|\le\frac12$. (iii) Find an $f$ with $f(\frac12)=0$ and $|f(0)|=\frac12$.
 <details class="sol"><summary>Hint</summary>
 $\varphi=\varphi_{1/2}$ of @lem:is-an-automorphism-of-with: it swaps $0$ and $\frac12$.
 </details>

@@ -22,7 +22,7 @@ Let $\Omega$ be a finite union of grid squares in the strip $0\lt x\lt L$, and $
 </details>
 <details class="sol"><summary>Solution</summary>
 <ol>
-<li>(This is the extension used in the proof of @thm:poincares-inequality.) <em>Continuous:</em> inside $\Omega$ and outside $\overline\Omega$ there is nothing to check; at a point of $\partial\Omega$, $v=0$ there, $v\to0$ from inside by continuity, and $v=0$ outside. <em>Piecewise $C^1$:</em> the grid squares cover the plane; on each square of $\Omega$, $v$ is $C^1$ by assumption, and on every other square it is $0$.</li>
+<li>(This is the extension used in the proof of @thm:poincares-inequality.) <em>Continuous:</em> inside $\Omega$ and outside $\overline\Omega$ there is nothing to check; at a point of $\partial\Omega$, $v=0$ there, $v\to0$ from inside by continuity, and $v=0$ outside. <em>Piecewise $C^1$:</em> the finitely many pieces on which $v$ is $C^1$ inside $\Omega$, together with the complement of $\overline\Omega$ (where the extension is $0$), are finitely many pieces covering the plane, and on each of them the extension is $C^1$.</li>
 <li>This is @thm:poincares-inequality. Fix $y$. As $\Omega$ lies in $0\lt x\lt L$, $v(0,y)=0$, and by the [fundamental theorem of calculus](apx:A9) for piecewise $C^1$ functions, $v(x,y)=\int_0^x\partial_xv(s,y)\,ds$. By Cauchy–Schwarz, for $0\lt x\lt L$,
 \[ |v(x,y)|^2\le x\int_0^x|\partial_xv(s,y)|^2ds\le L\int_0^L|\partial_xv(s,y)|^2ds. \]
 Integrate over $x\in(0,L)$: $\int_0^L|v(x,y)|^2dx\le L^2\int_0^L|\partial_xv(s,y)|^2ds$. Integrate over $y$ ([Fubini](apx:A13)) and use $|\partial_xv|\le|\nabla v|$: $\norm{v}^2\le L^2\norm{\partial_xv}^2\le L^2\norm{\nabla v}^2$.</li>

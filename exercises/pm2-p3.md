@@ -5,7 +5,7 @@ title: counting solutions with Rouché
 placement: m10
 order: 5
 ---
-Let $n\ge1$ and $|a|\gt e$. Show that $e^z=az^n$ has exactly $n$ solutions in $D(0,1)$, counted with multiplicity.
+Let $n\ge1$ be an integer and $a\in\mathbb C$ with $|a|\gt e$. Show that $e^z=az^n$ has exactly $n$ solutions in $D(0,1)$, counted with multiplicity.
 <details class="sol"><summary>Hint</summary>
 Which of $az^n$ and $e^z$ is bigger on $|z|=1$?
 </details>

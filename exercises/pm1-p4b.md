@@ -5,7 +5,7 @@ title: a double zero at the origin
 placement: n14
 order: 1
 ---
-Let $f:D(0,1)\to D(0,1)$ be holomorphic with $f(0)=f'(0)=0$. Let $g(z):=f(z)/z$ for $z\ne0$, $g(0):=0$. (i) Show $g$ is holomorphic on $D(0,1)$. (ii) Show $g$ maps $D(0,1)$ into $D(0,1)$. (iii) Apply the Schwarz lemma to $g$ to conclude $|f(z)|\le|z|^2$.
+Let $f:D(0,1)\to D(0,1)$ be holomorphic with $f(0)=f'(0)=0$. Let $g(z):=f(z)/z$ for $z\ne0$, $g(0):=0$. (i) Show $g$ is holomorphic on $D(0,1)$. (ii) Show $g$ maps $D(0,1)$ into $D(0,1)$. (iii) Apply the Schwarz lemma to $g$ to conclude $|f(z)|\le|z|^2$ for all $z\in D(0,1)$.
 <details class="sol"><summary>Hint</summary>
 (i) @lem:removable-singularities. (ii) The Schwarz lemma for $f$ gives $|g|\le1$; rule out $|g|=1$ at an interior point using $g(0)=0$ and @rem:maximum-modulus-again.
 </details>

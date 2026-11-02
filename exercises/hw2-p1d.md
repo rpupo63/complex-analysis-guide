@@ -5,7 +5,7 @@ title: zeros of partial sums of the exponential
 placement: m10
 order: 4
 ---
-Let $s_N(z):=\sum_{n=0}^N\frac{z^n}{n!}$. (d) Show that for every $R\gt0$ there is $N_0$ such that $s_N$ has no zeros in $\overline{D(0,R)}$ for $N\ge N_0$. (e) (Optional) Plot the zeros of $s_N(Nz)$ for $N=20,50,100$; they approach the Szegő curve $|z\,e^{1-z}|=1$, $|z|\le1$. Root-finding needs high precision (about 30 digits for $N=100$, e.g. <code>mpmath</code>).
+Let $s_N(z):=\sum_{n=0}^N\frac{z^n}{n!}$. (d) Show that for every $R\gt0$ there is $N_0$ such that $s_N$ has no zeros in $D(0,R)$ for $N\ge N_0$. (e) (Optional) Plot the zeros of $s_N(Nz)$ for $N=20,50,100$; they approach the Szegő curve $|z\,e^{1-z}|=1$, $|z|\le1$. Warning: the roots of $s_N$ are very sensitive to rounding. Double precision (e.g. <code>numpy.roots</code>) already gives spurious zeros for $N=50$; use about 30 significant digits for $N=100$ (e.g. <code>mpmath</code>). The convergence to the curve is slowest near $z=1$.
 <details class="sol"><summary>Hint</summary>
 (d) $s_N\to e^z$ uniformly on compact sets, and $e^z$ has no zeros. You don't need Rouché: compare $|s_N|$ with $|e^z|$ directly. (e) Use <code>mpmath.polyroots</code> with <code>mp.dps = 30</code>.
 </details>

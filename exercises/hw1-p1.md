@@ -5,7 +5,7 @@ title: a holomorphic flow
 placement: x16
 order: 1
 ---
-Consider the complex potential $F(z)=\frac{z^3}3$, with velocity field $V=\overline{F'(z)}$ (@prop:so-is-the-flow-associated).
+Consider the complex potential $F(z)=\frac{z^3}3$, with velocity field $V=\overline{F'(z)}$ (@prop:so-is-the-flow-associated). (The sheet writes $V=F'(z)$, meaning the vector $(a,-b)$ when $F'=a+ib$, as its hint says.)
 <ol>
 <li>Write $V=(u,v)$ explicitly in terms of $x$ and $y$.</li>
 <li>Verify directly that $V$ is divergence-free and curl-free.</li>

@@ -322,6 +322,14 @@ entries:
     h: I
     d: The major-arc integral ∫<span class="ss"><sup>1</sup><sub>−1</sub></span> √(1 − is) e<sup>−μ(s² + is³)/(1 + s²)</sup>(1 + O(t)) ds; it equals √(π/μ)(1 + o(1)).
     target: prop:the-major-arc
+  chg:
+    h: a<sub>n</sub>
+    d: The number of ways to make change for n dollars with 1, 5, 10 and 20 dollar bills.
+    target: def:change-counts
+  Cchg:
+    h: C(z)
+    d: The change generating function 1/((1 − z)(1 − z<sup>5</sup>)(1 − z<sup>10</sup>)(1 − z<sup>20</sup>)) = Σ a<sub>n</sub> z<sup>n</sup>, for |z| < 1.
+    target: def:change-counts
   Gld:
     h: G(z)
     d: (z − a) f′(z)/f(z). It tends to m at a zero of order m, and to −m at a pole of order m.

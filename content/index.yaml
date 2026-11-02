@@ -297,6 +297,19 @@ groups:
       - lem:the-exponent-on-the-major-arc
       - prop:the-major-arc
       - prop:the-minor-arc
+  - - defined
+    - Change counts $a_n$ for $1, 5, 10, 20$ dollar bills
+    - - def:change-counts
+  - - derived
+    - Making change by residues; pole orders; $a_n=n^3/6000+O(n^2)$
+    - - lem:the-change-generating-function
+      - prop:change-by-residues
+      - lem:the-pole-orders
+      - thm:growth-of-change-counts
+      - eg:making-change-numbers
+  - - cited
+    - Pólya–Carlson theorem
+    - - thm:polya-carlson
 - title: Lecture 7
   rows:
   - - defined
