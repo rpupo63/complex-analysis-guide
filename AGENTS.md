@@ -1,6 +1,6 @@
 # AGENTS.md: Complex Analysis Companion
 
-This repo is the source for a one-page HTML textbook of a 13-lecture complex analysis course. `python build.py` turns the source into `build/guide.html`, a self-contained page (inline CSS, JS and SVG; only the fonts and MathJax 3.2.2 load from a CDN).
+This repo (`Complex/guide/`) is the source for a one-page HTML textbook of a 13-lecture complex analysis course. `python build.py` turns the source into `build/guide.html`, a self-contained page (inline CSS, JS and SVG; only the fonts and MathJax 3.2.2 load from a CDN).
 
 ## Rules
 
@@ -26,6 +26,38 @@ This repo is the source for a one-page HTML textbook of a 13-lecture complex ana
 | `figures/*.svg` | Inline SVG figures, included with `{{fig:NAME}}`. |
 | `theme/` | `page.html` skeleton, `style.css`, `mathjax-config.js`, `guide.js` (`__NOTE__` is replaced by the notation JSON). |
 | `tools/` | `extract.py` (the one-time migration) and `roundtrip.py` (compares the build with the reference). |
+
+## Course material (source of truth for content)
+
+This repo lives at `Complex/guide/`, inside a local clone of the course repo (`maksym-radziwill/Complex`, read-only: never commit there). The original material sits next to it, and the guide must agree with it:
+
+| Material | Path (from this repo) | Covered in the guide by |
+|---|---|---|
+| Lecture N slides | `../lectures/lectureNN.pdf` (PDF page = slide number) | `content/LNN/`; each section's `slide:` front matter names its slides |
+| Coin-change handout | `../lectures/coin_counting.pdf` | §6.20, `content/L06/20-worked-example-making-change.md` |
+| Homework 1 / Homework 2 | `../homeworks/hw.pdf`, `../homeworks/hw2.pdf` | `exercises/hw1-*.md`, `exercises/hw2-*.md` |
+| Practice midterms 1–3 | `../practice-tests/practice-midterm-K.pdf` | `exercises/pmK-*.md` |
+| FreeFEM files | `../FreeFEM/` | `exercises/hw1-optional-freefem-bonus.md` |
+
+Read PDFs with `pdftotext -layout FILE -`; look at the page image when formulas come out garbled. The build never reads them.
+
+## Resolving a reference in a question
+
+Beto may name things in any of these ways. Resolve each to a file before answering, and answer from the guide's source and, when accuracy matters, the PDF.
+
+| He says | Means | Find it with |
+|---|---|---|
+| "Theorem 6.11.3", "Prop 3.6.4", "Exercise 11.10.4" | numbered item lecture.section.k | `grep -B2 -A6 '"number": "6.11.3"' build/items.json` (gives label, file, section) |
+| `thm:the-stamp-formula` | item label (stable even if numbers shift) | `grep -A8 '"label": "thm:the-stamp-formula"' build/items.json` |
+| "§6.11", "section 6.11" | section 11 of Lecture 6 | `content/L06/11-*.md` (file prefix = section number) |
+| `f11`, `s20`, `x16` | section id (historical, irregular) | `grep -l '^id: f11$' content/*/*.md` |
+| "Lecture 6", "L6" | the whole lecture | `content/L06/` (`lecture.md` has the overview) |
+| "L6 slide 12" | a slide of the original lecture | the section whose `slide:` range contains 12: `grep -H '^slide:' content/L06/*.md`; the slide itself is page 12 of `../lectures/lecture06.pdf` |
+| "HW2 problem 1(b)", "PM3 4(a)" | a homework or practice-midterm problem | `exercises/hw2-p1b.md`, `exercises/pm3-p4a.md` (`source:` front matter gives the exact sheet problem) |
+| "A.12", "appendix C.4" | appendix entry | `appendix/A12-*.md` |
+| a symbol, e.g. "$V^g_\eps$ in L3" | notation entry | `notation.yaml` (key is the `ntn-KEY` used in TeX; `target:` is the defining item) |
+
+Numbers are assigned by the build, so after an edit rebuild (`python build.py`) before trusting `build/items.json`. If a number does not resolve, say so instead of guessing; it may come from an older version of the page.
 
 ## Source format
 
