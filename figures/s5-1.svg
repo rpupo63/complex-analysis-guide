@@ -1,0 +1,11 @@
+<svg viewBox="0 0 260 130" width="300" role="img" aria-label="Graph of the tent function: zero outside [-1,1], rising linearly to height 1 at t=0.">
+  <line x1="15" y1="100" x2="245" y2="100" stroke="currentColor" stroke-width="1"/>
+  <line x1="130" y1="112" x2="130" y2="12" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+  <polyline points="15,100 60,100 130,24 200,100 245,100" fill="none" stroke="var(--accent)" stroke-width="2.5"/>
+  <text x="60" y="118" text-anchor="middle" font-size="13" fill="currentColor">−1</text>
+  <text x="200" y="118" text-anchor="middle" font-size="13" fill="currentColor">1</text>
+  <text x="130" y="124" text-anchor="middle" font-size="13" fill="currentColor">0</text>
+  <text x="140" y="22" font-size="13" fill="currentColor">1</text>
+  <text x="240" y="92" text-anchor="end" font-size="13" font-style="italic" fill="currentColor">t</text>
+  <text x="180" y="50" font-size="14" font-style="italic" fill="var(--accent)">Λ</text>
+</svg>

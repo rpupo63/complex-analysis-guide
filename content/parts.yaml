@@ -1,0 +1,48 @@
+- id: P1
+  numeral: I
+  title: Harmonic functions and the Dirichlet problem
+  lectures:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  intro: '<p>Given a region $\Omega$ and continuous values $g$ on its boundary, is there exactly one function that is harmonic in $\Omega$ and equals $g$ on $\class{ntn-dOm}{\partial\Omega}$? Lectures 1 and 2 introduce holomorphic and harmonic functions through fluid flow and electrostatics, and prove uniqueness. Lectures 3 to 5 prove existence for regions made of squares in three steps: a weak solution from finite elements, its smoothness from the mean value property, and its boundary values from a barrier.</p>'
+  question: Given continuous values $g$ on the boundary of a region, is there exactly one harmonic function with those boundary values?
+  answer: 'Yes, for regions made of grid squares: uniqueness by energy or the maximum principle; existence by finite elements, Weyl''s lemma and a barrier (@thm:the-dirichlet-problem-on-a-union).'
+- id: P2
+  numeral: II
+  title: Cauchy's theory
+  lectures:
+  - 6
+  - 7
+  intro: <p>One complex derivative, with continuous real and imaginary parts, forces a function to be a power series. Lecture 6 derives this from Cauchy's theorem and integral formula, then turns residues into a tool for counting, as far as the Hardy–Ramanujan formula for partitions. Lecture 7 counts zeros and poles with the argument principle.</p>
+  question: What does one complex derivative buy?
+  answer: 'Everything: Cauchy''s formula, power series, derivatives of all orders, isolated zeros, residues, and counting zeros by an integral ([Theorems #](@thm:cauchys-integral-formula), [#](@thm:power-series), [#](@thm:residue-theorem), [#](@thm:argument-principle)).'
+- id: P3
+  numeral: III
+  title: Contour integrals and Fourier analysis
+  lectures:
+  - 8
+  intro: <p>Real integrals and Fourier transforms are evaluated by closing the line of integration in the complex plane. The same contour moves show that the width of the strip where $f$ is holomorphic governs the decay of $\hat f$, and that band-limited signals are determined by their samples.</p>
+  question: What do contour integrals say about real integrals and Fourier transforms?
+  answer: 'They compute them, and they match holomorphy of $f$ with decay of $\hat f$: Paley–Wiener and the sampling theorem ([Theorems #](@thm:strips-and-decay), [#](@thm:paley-wiener-a-simple-form), [#](@thm:whittaker-kotelnikov-shannon)).'
+- id: P4
+  numeral: IV
+  title: Entire functions
+  lectures:
+  - 9
+  - 10
+  - 11
+  intro: '<p>A polynomial is determined by its zeros up to a constant factor. Lectures 9 and 10 extend this to entire functions: Jensen''s formula bounds the number of zeros by the growth, and infinite products rebuild a function from its zeros, the sine first. Lecture 11 continues functions beyond where they are first defined, constructs the Gamma function on the whole plane, and closes with Rouché''s theorem.</p>'
+  question: How are an entire function's zeros related to its growth, and does a function factor over its zeros?
+  answer: 'Jensen''s formula bounds zeros by growth; Weierstrass and Hadamard products rebuild the function; examples: the sine and $1/\Gamma$ ([Theorems #](@thm:jensens-formula), [#](@thm:euler), [#](@thm:weierstrass), [#](@thm:weierstrass-product-for-1-gamma)).'
+- id: P5
+  numeral: V
+  title: Conformal maps
+  lectures:
+  - 12
+  - 13
+  intro: '<p>A holomorphic bijection between two regions carries harmonic functions on one to harmonic functions on the other, so a Dirichlet problem on a complicated region can be moved to the disk. Lecture 12 develops the tools: harmonic conjugates, the open mapping and inverse theorems, angle preservation, examples, the automorphisms of the disk and the Schwarz lemma. Lecture 13 runs the logic the other way: it builds the conformal map onto the disk out of the solution of a Dirichlet problem, so Part I''s existence theorem becomes the Riemann mapping theorem for regions made of squares.</p>'
+  question: Which regions can be mapped onto the disk by a holomorphic bijection, and what is such a map good for?
+  answer: It transports harmonic functions, so Dirichlet problems move to the disk. The disk's self-maps are known exactly (@thm:automorphisms-of-the-disk), and regions made of squares have a Riemann map, built from Part I's solution of the Dirichlet problem (@thm:riemann-mapping-theorem).

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "description": "Local MathJax for check.py render checks",
+  "dependencies": {
+    "mathjax": "3.2.2"
+  }
+}

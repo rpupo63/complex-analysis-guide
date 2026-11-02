@@ -1,0 +1,470 @@
+# Index of the main text. Each row: [status, description (HTML+TeX), [item labels]].
+intro: '<p>Every item is numbered lecture.section.item: @thm:a-ii-is-positive-definite is the third item of @sec:s10, in Lecture 3.</p>'
+groups:
+- title: Lecture 1
+  rows:
+  - - assumed
+    - Holomorphic functions have $C^2$ parts
+    - - asm:from-now-on-holomorphic-functions
+  - - cited
+    - Identity theorem; isolated zeros; Poincaré lemma
+    - - thm:identity-theorem
+      - cor:isolated-zeros
+      - fact:poincare-lemma-on-a-disk
+  - - defined
+    - Holomorphic; analytic; $f\leftrightarrow(u,v)$; div and curl
+    - - def:holomorphic
+      - def:complex-analytic
+      - def:complex-functions-as-maps-of-the
+      - def:divergence-and-curl
+  - - defined
+    - Complex potential and velocity; streamline
+    - - def:complex-potential-and-complex-velocity
+      - def:streamline
+  - - derived
+    - Cauchy–Riemann theorem; flows version; incompressible and irrotational
+    - - thm:cauchy-riemann
+      - prop:cauchy-riemann-in-the-language-of
+      - prop:incompressible-and-irrotational
+  - - derived
+    - Velocity potential and stream function; derivatives holomorphic
+    - - prop:velocity-potential-stream-function-primitive
+      - prop:let-be-holomorphic-with-then
+  - - derived
+    - Streamlines are level sets of $\operatorname{Im}f$; flux $=\operatorname{Im}f(B)-\operatorname{Im}f(A)$
+    - - prop:psi-is-conserved-along-streamlines
+      - prop:the-flux-across-is-it
+  - - derived
+    - 'Examples: uniform, corner, source, cylinder; $1/z$ singular, no global primitive'
+    - - eg:f-z-1
+      - eg:f-z-z
+      - eg:f-z-1-z
+      - prop:1-z-has-a-genuine-singularity
+      - prop:no-global-primitive-on-mathbb-c
+      - eg:f-z-z-1-z
+      - prop:where-is-the-fluid-fast
+- title: Lecture 2
+  rows:
+  - - assumed
+    - 'Laws of electrostatics: $\operatorname{div}E=\rho$, $\operatorname{curl}E=0$'
+    - - hyp:the-laws-of-electrostatics
+  - - cited
+    - Holomorphic ⇔ div- and curl-free ⇔ Cauchy–Riemann (Lecture 1)
+    - - thm:three-descriptions-from-lecture-1
+  - - defined
+    - Holomorphic; electric field; field $E_0$ of a unit charge; $\operatorname{div}E_0=\delta_0$
+    - - def:holomorphic-l2
+      - def:electric-field
+      - def:the-field-of-a-unit-charge
+      - def:meaning-of-operatorname-div-e-0
+  - - defined
+    - Contour integral; residue; harmonic, Laplacian
+    - - def:contour-integral
+      - def:the-residue
+      - def:harmonic
+  - - derived
+    - Charge-free fields are holomorphic; $1/(z-a)$ is holomorphic
+    - - prop:no-charge-means-holomorphic
+      - eg:a-charge-just-outside
+  - - derived
+    - Flux of a point charge; Gauss's theorem
+    - - thm:the-claim
+      - thm:gausss-theorem
+  - - derived
+    - Contour integral = circulation + $i\cdot$flux; Cauchy; residue theorem
+    - - prop:contour-integral-circulation-i-cdot-flux
+      - cor:cauchys-theorem
+      - cor:the-residue-theorem-point-charge-form
+  - - derived
+    - $1/z^2$ has zero charge; dipole; integral sees the residue
+    - - prop:1-z-2-has-zero-charge
+      - prop:a-dipole
+      - prop:the-contour-integral-sees-only-the
+  - - derived
+    - $u,v$ harmonic; uniqueness by energy
+    - - prop:if-satisfy-the-cauchy-riemann
+      - thm:uniqueness
+- title: Lecture 3
+  rows:
+  - - assumed
+    - Bounded open $\Omega$, continuous $g$
+    - - set:the-slide-leaves-this-implicit
+  - - assumed
+    - $\Omega$ is a union of grid squares
+    - - hyp:fix-and-grid-lines-with
+  - - assumed
+    - Coarsest-grid squares; $g$ linear on coarse boundary edges
+    - - hyp:for-now
+  - - defined
+    - Dirichlet problem; energy form $a$; weak form
+    - - def:dirichlet-problem
+      - def:energy-form
+      - def:weak-form-of-the-dirichlet-problem
+  - - defined
+    - Nodes, $\class{ntn-Lam}{\Lambda}$, $\class{ntn-phi}{\varphi_{ij}}$, $\class{ntn-Veps}{V_\eps}$, bilinear
+    - - def:nodes
+      - def:tent-and-hat-functions
+      - def:the-set-of-functions-restricted
+      - def:bilinear
+  - - defined
+    - Interior/boundary nodes, $\class{ntn-Vg}{V^g_\eps}$, $\class{ntn-Vz}{V^0_\eps}$
+    - - def:interior-and-boundary-nodes
+      - def:by-lemma-3-6-2
+  - - defined
+    - Discrete problem, matrix $A$, blocks, $\class{ntn-Ue}{U_\eps}$
+    - - def:discrete-problem
+      - def:the-matrix-a
+      - def:split-the-coefficient-vector-by
+      - def:the-discrete-solution
+  - - defined
+    - Energy $E$; $\class{ntn-epsn}{\eps_n}$, $m_n$; $L^2$ norm; width; weak derivative
+    - - def:energy
+      - def:for-write-and-the-minimum
+      - def:for-a-scalar-or-vector
+      - def:width
+      - def:weak-derivative
+  - - derived
+    - $a$ symmetric bilinear; smooth harmonic ⇒ weak solution
+    - - prop:properties-of-a
+      - prop:the-slides-computation
+  - - derived
+    - Coefficients are nodal values; $\class{ntn-Veps}{V_\eps}$ = continuous squarewise-bilinear functions
+    - - cor:the-coefficients-are-the-nodal-values
+      - prop:the-slides-description-of-v-eps
+  - - derived
+    - $\class{ntn-Vg}{V^g_\eps}$ affine; $\class{ntn-Vz}{V^0_\eps}$ vanishes on $\class{ntn-dOm}{\partial\Omega}$ and has dimension $n$
+    - - prop:v-g-eps-is-affine-not
+      - prop:the-space-v-0-eps
+  - - derived
+    - $\class{ntn-AII}{A_{II}}\class{ntn-cI}{c_I}=-\class{ntn-AIB}{A_{IB}}\class{ntn-gB}{g_B}$; $\class{ntn-AII}{A_{II}}$ positive definite
+    - - prop:the-equations-of-prop-3
+      - thm:a-ii-is-positive-definite
+  - - derived
+    - Element integrals; eight-neighbour average
+    - - lem:integrating-over-one-square
+      - cor:each-interior-value-is-the-average
+  - - derived
+    - Discrete maximum principle; weighted-average weights
+    - - thm:discrete-maximum-principle
+      - prop:a-weighted-average-of-the-boundary
+  - - derived
+    - $\class{ntn-Ue}{U_\eps}$ minimizes energy; $m_n\downarrow m$
+    - - lem:among-all-is-the-unique
+      - prop:so-decreases-to-a-limit
+  - - derived
+    - Gradients Cauchy; Poincaré; limits $u,p,q$
+    - - prop:for-consequently-is-a-cauchy
+      - thm:poincares-inequality
+      - prop:three-limits
+  - - derived
+    - $u$ satisfies the weak form
+    - - thm:smooth-test-functions
+      - thm:existence-of-a-weak-solution
+- title: Lecture 4
+  rows:
+  - - defined
+    - Circles $C_t$, disks $D_t$, averages $M(t)$; mean value property
+    - - def:circles-disks-circle-averages
+      - def:the-mean-value-property
+  - - defined
+    - Weight $\chi$, $\chi_\delta$; $\Omega_\delta$ and convolution
+    - - def:the-averaging-weight-chi
+      - def:rescaled-weight
+      - def:the-shrunken-domain-and-convolution
+  - - defined
+    - Test function; $u_\delta$; the function $v$
+    - - def:test-function-lecture-4
+      - def:defined-on-def-4-5
+      - def:the-function-v
+  - - cited
+    - 'Smoothing: $u*\chi_\delta\to u$ in $L^2(K)$'
+    - - fact:smoothing
+  - - derived
+    - Mean value property; its converse
+    - - thm:mean-value-property
+      - thm:converse-of-the-mean-value-property
+  - - derived
+    - Strong maximum principle; maximum principle; stability and uniqueness
+    - - thm:strong-maximum-principle
+      - cor:maximum-principle
+      - cor:stability
+  - - derived
+    - Averaging lemma; order of smoothings
+    - - lem:averaging
+      - lem:the-order-of-two-smoothings-does
+  - - derived
+    - Weyl's lemma and its proof; applies to our $u$
+    - - thm:weyls-lemma
+      - prop:the-limit-from-lecture-3
+      - thm:proof-of-weyls-lemma
+      - cor:the-lecture-3-limit-is-a
+  - - derived
+    - Uniform limits of harmonic functions
+    - - cor:uniform-limits
+- title: Lecture 5
+  rows:
+  - - assumed
+    - $g$ linear on coarse boundary edges (after the reduction)
+    - - set:from-now-on-is-linear
+  - - defined
+    - $g_k$; goal of step 4; boundary-layer example
+    - - def:linearising-at-level-k
+      - def:the-goal-step-4
+      - eg:a-boundary-layer
+  - - defined
+    - $z_n$, $z$; positive part; barrier $w_d$; squeezing functions $v_\pm$
+    - - def:the-functions-z-n-and-z
+      - def:positive-part
+      - def:the-barrier
+      - def:the-squeezing-functions
+  - - derived
+    - 'Dirichlet problem on a union of squares: existence and uniqueness'
+    - - thm:the-dirichlet-problem-on-a-union
+  - - derived
+    - Reduction to piecewise linear data
+    - - lem:uniformly-a-17-on
+      - prop:the-reduction
+  - - derived
+    - $L^2$ limits can lose boundary values
+    - - prop:what-the-example-does
+  - - derived
+    - Comparison lemma and its proof
+    - - lem:comparison
+      - prop:properties-of-f
+      - prop:step-1-z-n-lives-inside
+      - prop:step-2-its-energy-tends-to
+      - prop:step-3-z-n-to-z
+      - prop:step-4-almost-everywhere-to-everywhere
+  - - derived
+    - Barrier properties; boundary values
+    - - lem:an-empty-coarse-square-at-p
+      - lem:properties-of-the-barrier
+      - lem:boundary-comparison
+      - thm:step-4-boundary-values
+- title: Lecture 6
+  rows:
+  - - defined
+    - Holomorphic near $K$; order of a zero; pole; residue
+    - - conv:holomorphic-near-k
+      - def:order-of-a-zero
+      - def:pole-of-order-m
+      - def:residue
+  - - defined
+    - Stamp counts $c(n)$; partitions $p(n)$; the radius $t$ and $\mu$
+    - - def:stamp-counts
+      - def:partitions
+      - def:the-radius
+  - - cited
+    - Lemma A ($P$ near $z=1$)
+    - - lem:lemma-a
+  - - derived
+    - Cauchy's theorem; moving the circle; Cauchy's integral formula
+    - - thm:cauchys-theorem
+      - lem:moving-the-circle
+      - thm:cauchys-integral-formula
+  - - derived
+    - Power series; Taylor remainder; Cauchy's estimate; derivatives; smoothness
+    - - thm:power-series
+      - cor:taylor-remainder
+      - cor:cauchys-estimate
+      - thm:cauchys-formula-for-derivatives
+      - cor:holomorphic-functions-are-smooth
+  - - derived
+    - Isolated zeros; principal part; simple poles of $A/B$; residue theorem
+    - - thm:isolated-zeros
+      - prop:principal-part
+      - prop:simple-poles-of-a-quotient
+      - thm:residue-theorem
+  - - derived
+    - 'Stamps: generating function, residues, formula'
+    - - lem:the-generating-function
+      - prop:counting-by-residues
+      - lem:the-simple-poles
+      - lem:the-double-pole-at-1
+      - thm:the-stamp-formula
+  - - derived
+    - Euler's product; $\log P$; upper bound; $p(n)$ as an integral
+    - - prop:eulers-product
+      - lem:log-p-as-a-series
+      - lem:on-the-real-axis
+      - thm:upper-bound
+      - prop:p-n-as-an-integral
+  - - derived
+    - Lemma B; Hardy–Ramanujan; major and minor arcs
+    - - cor:lemma-a-exponentiated
+      - lem:lemma-b
+      - thm:hardy-and-ramanujan-1918
+      - lem:the-exponent-on-the-major-arc
+      - prop:the-major-arc
+      - prop:the-minor-arc
+- title: Lecture 7
+  rows:
+  - - defined
+    - Zero and pole of order $m$
+    - - def:zero-of-order-m
+      - def:pole-of-order-m-l7
+  - - derived
+    - Logarithmic derivative; argument principle; rational functions
+    - - lem:logarithmic-derivative
+      - thm:argument-principle
+      - eg:rational-functions
+- title: Lecture 8
+  rows:
+  - - defined
+    - Fourier transform; sinc; time- and band-limited
+    - - def:fourier-transform
+      - def:sinc
+      - def:a-function-on-is-time
+  - - cited
+    - Fourier inversion; Poisson summation (proved in [E.16](apx:E16))
+    - - fact:fourier-inversion
+      - thm:poisson-summation
+  - - derived
+    - Other contours; $\int dx/(1+x^2)$; two transforms; the box
+    - - prop:other-contours
+      - prop:x
+      - prop:for
+      - prop:the-gaussian-is-its-own-transform
+      - lem:the-box
+  - - derived
+    - Strips and decay; Paley–Wiener; not both time- and band-limited
+    - - thm:strips-and-decay
+      - thm:paley-wiener-a-simple-form
+      - cor:if-is-continuous-and-time
+  - - derived
+    - Sampling theorem; sampling at rate $T$
+    - - thm:whittaker-kotelnikov-shannon
+      - cor:sampling-at-rate-t
+- title: Lecture 9
+  rows:
+  - - defined
+    - Order of an entire function
+    - - def:order
+  - - derived
+    - Removable singularities; factoring out zeros; $\log|g|$ harmonic
+    - - lem:removable-singularities
+      - prop:factorization-in-a-disk
+      - lem:if-is-holomorphic-and-zero
+  - - derived
+    - Mean of $\log|Re^{i\theta}-a|$; Jensen's formula
+    - - lem:the-mean-of-a-logarithmic-potential
+      - thm:jensens-formula
+  - - derived
+    - Maximum modulus; counting zeros; check on $\sin\pi z$
+    - - lem:maximum-modulus
+      - cor:counting-zeros
+      - prop:both-sides-of-jensen-for-sin
+  - - derived
+    - $\pm1$ polynomials; zeros versus order
+    - - prop:let-with-all-and-at
+      - cor:zeros-hug-the-unit-circle
+      - thm:zeros-versus-order
+- title: Lecture 10
+  rows:
+  - - defined
+    - Weierstrass factors $E_p$
+    - - def:weierstrass-factors
+  - - cited
+    - Hadamard's theorem
+    - - thm:hadamard
+  - - derived
+    - Identity theorem; uniform limits; products; no zeros
+    - - thm:identity-theorem-l10
+      - thm:uniform-limits
+      - lem:products
+      - lem:no-zeros
+  - - derived
+    - Euler's sine product; convergence factors; Weierstrass product; factorization
+    - - thm:euler
+      - lem:convergence-factors
+      - thm:weierstrass
+      - cor:weierstrass-factorization
+- title: Lecture 11
+  rows:
+  - - defined
+    - Continuation; natural boundary; $W_n$ and $\Gamma_n$
+    - - def:continuation
+      - def:natural-boundary
+      - def:for-let-is-holomorphic-on
+  - - derived
+    - Gluing and uniqueness; a natural boundary
+    - - prop:gluing-and-uniqueness
+      - prop:the-unit-circle-is-a
+  - - derived
+    - Euler's integral; continuation of $\Gamma$; its poles
+    - - prop:the-gamma-function
+      - prop:the-continuation-of-gamma
+      - prop:poles-of-gamma
+  - - derived
+    - $1/\Gamma$ entire; Gauss's limit; reflection; $\Gamma(\frac12)$; vertical lines
+    - - thm:weierstrass-product-for-1-gamma
+      - cor:gausss-limit
+      - thm:eulers-reflection-formula
+      - cor:the-value-at-frac12-and-the
+      - cor:on-the-line-operatorname-re-z
+  - - derived
+    - Rouché's theorem
+    - - thm:rouche
+- title: Lecture 12
+  rows:
+  - - defined
+    - The plate problem; conformal map; automorphism, $\varphi_a$; simply connected
+    - - eg:the-plate
+      - def:conformal-map
+      - def:automorphism-varphi-a
+      - def:simply-connected
+  - - cited
+    - Riemann mapping theorem (general form)
+    - - thm:riemann-mapping-theorem-stated
+  - - derived
+    - $\frac1\pi\arg z$ on $\mathbb H$; harmonic conjugates on a disk; harmonic under holomorphic maps; transport; the Laplacian under $f$
+    - - prop:the-same-problem-on-the-half
+      - lem:harmonic-conjugate-on-a-disk
+      - thm:harmonic-composed-with-holomorphic
+      - cor:transporting-harmonic-functions
+      - prop:how-the-laplacian-transforms
+  - - derived
+    - Cayley map; the plate solved
+    - - prop:cayley-map
+      - prop:the-plate-solved
+  - - derived
+    - Local behaviour; open mapping; local injectivity; inverse theorem
+    - - thm:local-behaviour
+      - thm:open-mapping
+      - cor:local-injectivity
+      - thm:inverse
+  - - derived
+    - Angles; the strip; Joukowski map
+    - - prop:angles
+      - eg:the-strip
+      - prop:joukowski-map
+  - - derived
+    - $\varphi_a$ is an automorphism; Schwarz lemma; all automorphisms of the disk
+    - - lem:is-an-automorphism-of-with
+      - thm:schwarz-lemma
+      - thm:automorphisms-of-the-disk
+  - - derived
+    - Liouville; fundamental theorem of algebra; no conformal map $\mathbb C\to D(0,1)$; uniqueness of Riemann maps
+    - - thm:liouville
+      - cor:fundamental-theorem-of-algebra
+      - cor:there-is-no-conformal-map
+      - prop:uniqueness
+- title: Lecture 13
+  rows:
+  - - assumed
+    - A conformal map onto the disk is given
+    - - set:is-a-bounded-connected-open
+  - - derived
+    - What a Riemann map must look like; Riemann mapping theorem under (D), (C); the disk
+    - - prop:what-a-riemann-map-must-look
+      - thm:riemann-mapping-theorem
+      - eg:the-riemann-map-of-the-disk
+  - - derived
+    - Counting proposition; Blaschke products; existence of a zero
+    - - prop:counting
+      - eg:blaschke-products
+      - cor:a-non-constant-holomorphic-on
+  - - derived
+    - (C) is necessary; star-shaped sets satisfy (C)
+    - - prop:c-is-necessary
+      - lem:star-shaped-sets-satisfy-c

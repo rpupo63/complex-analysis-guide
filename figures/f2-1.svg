@@ -1,0 +1,13 @@
+<svg viewBox="0 0 220 200" width="240" role="img" aria-label="A large circle C containing two small disjoint circles C1 and C2; the shaded region A lies inside C and outside the small circles. Arrows: C anticlockwise, the small circles clockwise." style="max-width:100%;height:auto">
+<defs><marker id="arw" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,1 L8,5 L0,9" fill="none" stroke="currentColor" stroke-width="1.5"/></marker></defs>
+<circle cx="110" cy="100" r="85" fill="var(--def-bg)" stroke="currentColor" stroke-width="1.6"/>
+<circle cx="80" cy="80" r="20" fill="var(--paper)" stroke="currentColor" stroke-width="1.4"/>
+<circle cx="140" cy="125" r="24" fill="var(--paper)" stroke="currentColor" stroke-width="1.4"/>
+<path d="M 178 50 A 85 85 0 0 0 150 25" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#arw)"/>
+<path d="M 64 68 A 20 20 0 0 1 96 68" fill="none" stroke="currentColor" stroke-width="1.4" marker-end="url(#arw)"/>
+<path d="M 124 108 A 24 24 0 0 1 158 110" fill="none" stroke="currentColor" stroke-width="1.4" marker-end="url(#arw)"/>
+<text x="80" y="85" text-anchor="middle" font-size="13" font-style="italic" fill="currentColor">C<tspan font-size="9" dy="3">1</tspan></text>
+<text x="140" y="130" text-anchor="middle" font-size="13" font-style="italic" fill="currentColor">C<tspan font-size="9" dy="3">2</tspan></text>
+<text x="190" y="40" font-size="13" font-style="italic" fill="currentColor">C</text>
+<text x="70" y="150" font-size="14" font-style="italic" fill="currentColor">A</text>
+</svg>

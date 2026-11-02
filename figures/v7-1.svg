@@ -1,0 +1,7 @@
+<svg viewBox="0 0 260 190" width="280" role="img" aria-label="An L-shaped region Omega, with a blob inside it marked as the set where z_n is nonnegative, staying away from the boundary.">
+  <path d="M30 20 H140 V90 H230 V170 H30 Z" fill="var(--def-bg)" stroke="var(--accent)" stroke-width="2"/>
+  <path d="M70 70 C 95 45, 150 70, 160 105 C 170 140, 110 155, 80 140 C 55 128, 50 90, 70 70 Z" fill="var(--res-bg)" stroke="var(--res-ink)" stroke-width="2"/>
+  <text x="105" y="112" text-anchor="middle" font-size="13" fill="currentColor">z<tspan font-size="9" dy="3">n</tspan><tspan dy="-3"> ≥ 0</tspan></text>
+  <text x="44" y="40" font-size="14" font-style="italic" fill="currentColor">Ω</text>
+  <text x="196" y="84" font-size="13" fill="var(--accent)">∂Ω</text>
+</svg>

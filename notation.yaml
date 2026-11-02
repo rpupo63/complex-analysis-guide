@@ -1,0 +1,436 @@
+# Notation entries, in order of first definition. KEY is used in TeX as \class{ntn-KEY}{...}.
+# h: symbol as HTML; d: meaning; target: label of the defining item (or apx:ID).
+intro: <p>The symbols that the lectures define, in order of first definition. The same symbols are tinted inside formulas; hovering over one shows the entry below. A letter can mean different things in different lectures (for example $P$ in Lecture 6 and in Lecture 10), so each lecture's tooltips use its own meaning.</p>
+entries:
+  divc:
+    h: div, curl
+    d: div F = ∂<sub>x</sub> F<sub>1</sub> + ∂<sub>y</sub> F<sub>2</sub> (spreading out); curl F = ∂<sub>x</sub> F<sub>2</sub> − ∂<sub>y</sub> F<sub>1</sub> (swirling).
+    target: def:divergence-and-curl
+  vphi:
+    h: φ
+    d: 'Velocity potential: ∇φ = V. The real part of the complex potential f = φ + iψ.'
+    target: prop:velocity-potential-stream-function-primitive
+  spsi:
+    h: ψ
+    d: 'Stream function: ∇ψ is V turned by 90°. The imaginary part of f; constant along streamlines.'
+    target: prop:velocity-potential-stream-function-primitive
+  Vfl:
+    h: V
+    d: 'The velocity field of the flow: V = ∇φ, the complex conjugate of f′.'
+    target: def:complex-potential-and-complex-velocity
+  Ef:
+    h: E = (u, v)
+    d: 'The electric field: force per unit charge. A test charge q at (x, y) feels the force q E(x, y).'
+    target: def:electric-field
+  rhoc:
+    h: ρ (charge density)
+    d: The charge per unit area. div E = ρ is Gauss's law. (In Lecture 5, ρ is a radius instead.)
+    target: hyp:the-laws-of-electrostatics
+  Phi:
+    h: Φ
+    d: The electrostatic voltage (potential), with E = −∇Φ. Harmonic where there is no charge.
+    target: hyp:the-laws-of-electrostatics
+  E0:
+    h: E<sub>0</sub>
+    d: 'The field of a unit charge at 0: (1/2π)(x, y)/(x² + y²), pointing outward with strength 1/(2πr).'
+    target: def:the-field-of-a-unit-charge
+  f0:
+    h: f<sub>0</sub>
+    d: 'The complex form of E<sub>0</sub>: f<sub>0</sub> = u<sub>0</sub> − i v<sub>0</sub> = (1/2π)(1/z).'
+    target: def:the-field-of-a-unit-charge
+  dlt:
+    h: δ<sub>0</sub>, δ<sub>z<sub>j</sub></sub>
+    d: 'Dirac delta: a unit charge concentrated at one point. "div E<sub>0</sub> = δ<sub>0</sub>" means flux 1 through every curve around 0 and 0 through curves that do not enclose it.'
+    target: def:meaning-of-operatorname-div-e-0
+  a1:
+    h: a<sub>1</sub>
+    d: 'The residue: the coefficient of 1/(z − z<sub>0</sub>). The contour integral around z<sub>0</sub> is 2πi a<sub>1</sub>.'
+    target: def:the-residue
+  Delta:
+    h: Δ
+    d: 'The Laplacian: Δu = u<sub>xx</sub> + u<sub>yy</sub>.'
+    target: def:harmonic
+  a:
+    h: a(u, w)
+    d: The energy form a(u, w) = ∬<sub>Ω</sub> ∇u · ∇w dA. Symmetric and bilinear.
+    target: def:energy-form
+  phi:
+    h: φ<sub>ij</sub>
+    d: 'Hat function at node (x<sub>i</sub>, y<sub>j</sub>): the product of two tents. It is 1 at that node, 0 at every other node, and zero outside the 2ε × 2ε block around the node.'
+    target: def:tent-and-hat-functions
+  Lam:
+    h: Λ
+    d: The tent function Λ(t) = max(0, 1 − |t|).
+    target: def:tent-and-hat-functions
+  Veps:
+    h: V<sub>ε</sub>
+    d: All functions that are continuous on Ω̄ and bilinear on each grid square; the span of the hat functions φ<sub>ij</sub>.
+    target: def:the-set-of-functions-restricted
+  I:
+    h: I
+    d: 'The set of interior nodes: all four surrounding squares lie in Ω̄. Its size is n.'
+    target: def:interior-and-boundary-nodes
+  B:
+    h: B
+    d: 'The set of boundary nodes: nodes that are not interior. They lie on ∂Ω.'
+    target: def:interior-and-boundary-nodes
+  Vg:
+    h: V<span class="ss"><sup>g</sup><sub>ε</sub></span>
+    d: The functions in V<sub>ε</sub> equal to g at every boundary node. An affine set, not a linear space. The discrete solution is sought here.
+    target: def:by-lemma-3-6-2
+  Vz:
+    h: V<span class="ss"><sup>0</sup><sub>ε</sub></span>
+    d: The functions in V<sub>ε</sub> that vanish at every boundary node, hence on all of ∂Ω. A linear space spanned by the interior hats, of dimension n. These are the test functions.
+    target: def:by-lemma-3-6-2
+  Ug:
+    h: U<sub>g</sub>
+    d: The fixed function Σ over boundary nodes of g(x<sub>i</sub>, y<sub>j</sub>) φ<sub>ij</sub>. It lies in V<span class="ss"><sup>g</sup><sub>ε</sub></span>; every member of V<span class="ss"><sup>g</sup><sub>ε</sub></span> is U<sub>g</sub> plus something in V<span class="ss"><sup>0</sup><sub>ε</sub></span>.
+    target: prop:the-space-v-0-eps
+  A:
+    h: A
+    d: 'The matrix of the discrete problem: A<sub>kl,ij</sub> = a(φ<sub>ij</sub>, φ<sub>kl</sub>). Symmetric; nonzero only for neighbouring nodes.'
+    target: def:the-matrix-a
+  AII:
+    h: A<sub>II</sub>
+    d: The block of A with rows and columns at interior nodes. Positive definite, hence invertible.
+    target: def:split-the-coefficient-vector-by
+  AIB:
+    h: A<sub>IB</sub>
+    d: The block of A with rows at interior nodes and columns at boundary nodes. It multiplies the known data g<sub>B</sub>.
+    target: def:split-the-coefficient-vector-by
+  cI:
+    h: c<sub>I</sub>
+    d: The unknown coefficients, one per interior node. Each coefficient is the nodal value of U there.
+    target: def:split-the-coefficient-vector-by
+  cB:
+    h: c<sub>B</sub>
+    d: 'The coefficients at boundary nodes. They are known: c<sub>B</sub> = g<sub>B</sub>.'
+    target: def:split-the-coefficient-vector-by
+  gB:
+    h: g<sub>B</sub>
+    d: 'The boundary data as a vector: the values g(x<sub>q</sub>, y<sub>q</sub>) at the boundary nodes q.'
+    target: def:split-the-coefficient-vector-by
+  Ue:
+    h: U<sub>ε</sub>
+    d: 'The discrete solution: the unique U in V<span class="ss"><sup>g</sup><sub>ε</sub></span> with a(U, w) = 0 for every w in V<span class="ss"><sup>0</sup><sub>ε</sub></span>.'
+    target: def:the-discrete-solution
+  K:
+    h: K<sub>ab</sub>
+    d: 'The integral of ∇N<sub>a</sub> · ∇N<sub>b</sub> over one square: 2/3 on the diagonal, −1/6 for edge-adjacent corners, −1/3 for opposite corners.'
+    target: lem:integrating-over-one-square
+  Na:
+    h: N<sub>a</sub>
+    d: The four corner hats on one square, written in local coordinates s, t ∈ [0, 1].
+    target: lem:integrating-over-one-square
+  W:
+    h: W
+    d: 'W = −A<span class="ss"><sup>−1</sup><sub>II</sub></span> A<sub>IB</sub>: the weights with c<sub>I</sub> = W g<sub>B</sub>. Entries are ≥ 0 and each row sums to 1.'
+    target: prop:a-weighted-average-of-the-boundary
+  E:
+    h: E(V)
+    d: The energy E(V) = a(V, V) = ∬<sub>Ω</sub> |∇V|² dA.
+    target: def:energy
+  Un:
+    h: U<sub>n</sub>
+    d: 'Shorthand for U<sub>ε<sub>n</sub></sub>: the discrete solution on the level-n grid. U<sub>0</sub> is the solution on the coarsest grid.'
+    target: def:for-write-and-the-minimum
+  epsn:
+    h: ε<sub>n</sub>
+    d: 'Grid side after n halvings: ε<sub>n</sub> = 2<sup>−n</sup> ε<sub>0</sub>.'
+    target: def:for-write-and-the-minimum
+  mn:
+    h: m<sub>n</sub>
+    d: m<sub>n</sub> = E(U<sub>n</sub>), the minimum energy over V<span class="ss"><sup>g</sup><sub>ε<sub>n</sub></sub></span>.
+    target: def:for-write-and-the-minimum
+  m:
+    h: m
+    d: 'The limit of the decreasing minima: m = inf m<sub>n</sub> = lim m<sub>n</sub> ≥ 0.'
+    target: prop:so-decreases-to-a-limit
+  L2:
+    h: ‖F‖ = ‖F‖<sub>L²</sub>
+    d: 'The L² norm: ‖F‖² = ∬<sub>Ω</sub> |F|² dA. From §3.15 on, ‖F‖ with no subscript means this norm.'
+    target: def:for-a-scalar-or-vector
+  L:
+    h: L
+    d: 'The width of Ω: after a horizontal shift, Ω lies in the strip 0 < x < L.'
+    target: def:width
+  etaN:
+    h: η<sub>N</sub>
+    d: 'The nodal interpolant of η on the level-N grid: the function in V<sub>ε<sub>N</sub></sub> that agrees with η at every node.'
+    target: lem:the-slides-taylors-theorem-on-each
+  Ct:
+    h: C<sub>t</sub>
+    d: 'The circle of radius t about the centre z<sub>0</sub>: the points z<sub>0</sub> + t e<sup>iθ</sup>.'
+    target: def:circles-disks-circle-averages
+  Dt:
+    h: D<sub>t</sub>
+    d: The open disk of radius t about z<sub>0</sub>; its closure adds the circle C<sub>t</sub>.
+    target: def:circles-disks-circle-averages
+  Mt:
+    h: M(t)
+    d: 'The average of the function over the circle C<sub>t</sub>: (1/2π) ∫ h(z<sub>0</sub> + t e<sup>iθ</sup>) dθ.'
+    target: def:circles-disks-circle-averages
+  chi:
+    h: χ
+    d: 'The averaging weight: smooth, ≥ 0, radial, zero outside the unit disk, total integral 1.'
+    target: def:the-averaging-weight-chi
+  chid:
+    h: χ<sub>δ</sub>
+    d: 'χ rescaled to the disk of radius δ: χ<sub>δ</sub>(ζ) = δ<sup>−2</sup> χ(ζ/δ). Still total integral 1.'
+    target: def:rescaled-weight
+  Omd:
+    h: Ω<sub>δ</sub>
+    d: 'The points of Ω whose closed disk of radius δ lies in Ω: where averaging over δ-disks makes sense.'
+    target: def:the-shrunken-domain-and-convolution
+  conv:
+    h: v ∗ χ<sub>δ</sub>
+    d: 'Convolution: (v ∗ χ<sub>δ</sub>)(z) = ∬ v(ζ) χ<sub>δ</sub>(z − ζ) dA(ζ), a weighted average of v over the δ-disk about z.'
+    target: def:the-shrunken-domain-and-convolution
+  kt:
+    h: k(t)
+    d: 'The radial profile of χ<sub>δ</sub>: χ<sub>δ</sub>(ζ) = k(|ζ|), with ∫<span class="ss"><sup>δ</sup><sub>0</sub></span> k(t) 2πt dt = 1.'
+    target: lem:averaging
+  ud:
+    h: u<sub>δ</sub>
+    d: The smoothed function u ∗ χ<sub>δ</sub> on Ω<sub>δ</sub>. Smooth and harmonic; all of them agree, giving v.
+    target: def:defined-on-def-4-5
+  gk:
+    h: g<sub>k</sub>
+    d: 'The boundary data linearised at level k: equal to g at the level-k boundary nodes, linear on each level-k boundary edge.'
+    target: def:linearising-at-level-k
+  uk:
+    h: u<sub>k</sub>
+    d: The solution with boundary data g<sub>k</sub>, which exists by the linear-edge case.
+    target: prop:the-reduction
+  Uex:
+    h: U<sub>ε</sub> (Example [#](=eg:a-boundary-layer))
+    d: 'min(1, dist(z, ∂Ω)/ε): zero on the boundary, 1 beyond a layer of width ε. Not the discrete solution of Def. [#](=def:the-discrete-solution).'
+    target: eg:a-boundary-layer
+  vc:
+    h: v
+    d: 'The comparison function: continuous on Ω̄, harmonic in Ω, and compared with g on ∂Ω.'
+    target: lem:comparison
+  zn:
+    h: z<sub>n</sub>
+    d: 'U<sub>n</sub> − σ − v: the finite element function shifted and compared with v. At most −σ on ∂Ω.'
+    target: def:the-functions-z-n-and-z
+  zf:
+    h: z
+    d: The function u − σ − v. In §5.6–§5.9 the letter z names this function, not a point. Harmonic in Ω.
+    target: def:the-functions-z-n-and-z
+  sig:
+    h: σ
+    d: A small positive margin, so that z<sub>n</sub> ≤ −σ < 0 strictly on ∂Ω. Sent to 0 at the end.
+    target: def:the-functions-z-n-and-z
+  pos:
+    h: f⁺
+    d: 'Positive part: f⁺ = max(f, 0).'
+    target: def:positive-part
+  Kc:
+    h: K
+    d: 'The set {f ≥ 0}: compact and inside Ω. f⁺ vanishes outside it.'
+    target: prop:properties-of-f
+  Qp:
+    h: Q<sub>p</sub>
+    d: A square of side ε<sub>0</sub>/2 with a corner at p, inside the empty coarse square S.
+    target: lem:an-empty-coarse-square-at-p
+  Ssq:
+    h: S
+    d: A closed square of the coarsest grid containing p that is not a square of Ω. Its interior misses Ω̄.
+    target: lem:an-empty-coarse-square-at-p
+  wd:
+    h: w<sub>d</sub>
+    d: 'The barrier log(|z − y|/(d/2)): potential of a point charge at y, just outside Ω. ≥ 0 on Ω̄, equal to log 2 at p.'
+    target: def:the-barrier
+  yp:
+    h: y
+    d: 'Position of the point charge: on the diagonal of Q<sub>p</sub> at distance d from p, outside Ω̄.'
+    target: def:the-barrier
+  dd:
+    h: d
+    d: Distance from p to the charge y. d ≤ ρ/2, and d → 0 at the end.
+    target: def:the-barrier
+  rho:
+    h: ρ
+    d: Radius around p within which g is compared with g(p). ρ ≤ ε<sub>0</sub>/2, and ρ → 0 at the end.
+    target: def:the-squeezing-functions
+  osc:
+    h: osc<sub>ρ</sub>
+    d: 'The oscillation of g near p: max |g(q) − g(p)| over boundary points q within ρ of p.'
+    target: def:the-squeezing-functions
+  kk:
+    h: k
+    d: '2 max|g| / log(ρ/d): scales the barrier so that k w<sub>d</sub> ≥ 2 max|g| farther than ρ from p.'
+    target: def:the-squeezing-functions
+  vpm:
+    h: v_±
+    d: 'g(p) ± (osc<sub>ρ</sub> + k w<sub>d</sub>): harmonic functions that squeeze u at p.'
+    target: def:the-squeezing-functions
+  res:
+    h: Res<sub>ζ</sub> f
+    d: 'The residue of f at the pole ζ: the coefficient of 1/(z − ζ) in the principal part. It equals (1/2πi)∮ f dz over a small circle around ζ.'
+    target: def:residue
+  cn:
+    h: c(n)
+    d: The number of ways to pay n cents with a-cent and b-cent stamps (a, b coprime).
+    target: def:stamp-counts
+  Fst:
+    h: F(z)
+    d: The stamp generating function 1/((1 − z<sup>a</sup>)(1 − z<sup>b</sup>)) = Σ c(n) z<sup>n</sup> for |z| < 1.
+    target: def:stamp-counts
+  Gst:
+    h: G(z)
+    d: F(z) z<sup>−n−1</sup>, for a fixed n. Its residues at the roots of unity give −c(n).
+    target: def:stamp-counts
+  Qa:
+    h: Q<sub>a</sub>(z)
+    d: 1 + z + ⋯ + z<sup>a−1</sup>, so that 1 − z<sup>a</sup> = (1 − z) Q<sub>a</sub>(z) and Q<sub>a</sub>(1) = a.
+    target: lem:the-double-pole-at-1
+  pn:
+    h: p(n)
+    d: The number of partitions of n (sums of positive integers, order ignored); p(0) = 1.
+    target: def:partitions
+  Pz:
+    h: P(z)
+    d: The partition generating function Σ p(n) z<sup>n</sup> = Π<sub>k≥1</sub> 1/(1 − z<sup>k</sup>), for |z| < 1.
+    target: def:partitions
+  pK:
+    h: p<sub>K</sub>(n)
+    d: The number of partitions of n with all parts ≤ K. Equal to p(n) once K ≥ n.
+    target: prop:eulers-product
+  tau:
+    h: τ
+    d: t − iθ, so that e<sup>−τ</sup> = e<sup>−t</sup> e<sup>iθ</sup> runs once around the circle |z| = e<sup>−t</sup>.
+    target: prop:p-n-as-an-integral
+  cLB:
+    h: c
+    d: 'The constant of Lemma B: c = 1 − 1/λ ≈ 0.067.'
+    target: lem:lemma-b
+  lamB:
+    h: λ
+    d: √(1 + 4/(eπ²)) > 1, so that |1 − z| ≥ λ(1 − r) on the minor arc.
+    target: lem:lemma-b
+  tpar:
+    h: t
+    d: 'π/√(6n): the circle |z| = e<sup>−t</sup> is chosen so that the two terms of the upper bound balance. The major arc is |θ| ≤ t.'
+    target: def:the-radius
+  mu:
+    h: μ
+    d: nt = π²/(6t) = π√(n/6). The exponent at the peak is 2μ = π√(2n/3).
+    target: def:the-radius
+  Imaj:
+    h: I
+    d: The major-arc integral ∫<span class="ss"><sup>1</sup><sub>−1</sub></span> √(1 − is) e<sup>−μ(s² + is³)/(1 + s²)</sup>(1 + O(t)) ds; it equals √(π/μ)(1 + o(1)).
+    target: prop:the-major-arc
+  Gld:
+    h: G(z)
+    d: (z − a) f′(z)/f(z). It tends to m at a zero of order m, and to −m at a pole of order m.
+    target: lem:logarithmic-derivative
+  Ieps:
+    h: I(ε)
+    d: (1/2πi)∮<sub>|z−a|=ε</sub> f′/f dz, the average of G over the circle. It does not depend on ε.
+    target: lem:logarithmic-derivative
+  ZP:
+    h: Z, P
+    d: The numbers of zeros and of poles of f inside the circle, each counted as often as its order.
+    target: thm:argument-principle
+  SR:
+    h: S<sub>R</sub>
+    d: The semicircle of radius R in the upper half-plane that closes the segment [−R, R].
+    target: prop:x
+  hat:
+    h: f̂
+    d: 'The Fourier transform: f̂(ξ) = ∫ f(x) e<sup>−2πixξ</sup> dx.'
+    target: def:fourier-transform
+  sinc:
+    h: sinc
+    d: 'sinc ξ = sin(πξ)/(πξ), with sinc 0 = 1: the Fourier transform of the box 1<sub>[−1/2, 1/2]</sub>.'
+    target: def:sinc
+  n1:
+    h: ‖f‖₁
+    d: ∫ |f(x)| dx.
+    target: thm:paley-wiener-a-simple-form
+  nr:
+    h: n(r)
+    d: The number of zeros of f in |z| ≤ r, counted with multiplicity.
+    target: cor:counting-zeros
+  Mr:
+    h: M(r)
+    d: 'max<sub>|z|=r</sub> |f(z)|: the size of f on the circle of radius r.'
+    target: def:order
+  rhoo:
+    h: ρ
+    d: 'The order of the entire function: the infimum of the λ with M(r) ≤ e<sup>r<sup>λ</sup></sup> for all large r.'
+    target: def:order
+  Ar:
+    h: A(r)
+    d: 'max<sub>|z|=r</sub> log|F(z)|: the growth of a zero-free entire function F = e<sup>G</sup>.'
+    target: lem:no-zeros
+  Ps:
+    h: P(z)
+    d: Euler's product πz Π<sub>n≥1</sub>(1 − z²/n²), which equals sin πz.
+    target: thm:euler
+  PN:
+    h: P<sub>N</sub>(x)
+    d: 'πx Π<sub>n≤N</sub>(1 − x²/n²): a partial product of Euler''s product, a polynomial of degree 2N + 1.'
+    target: thm:euler
+  Ep:
+    h: E<sub>p</sub>(w)
+    d: 'Weierstrass factor: E<sub>0</sub>(w) = 1 − w, E<sub>p</sub>(w) = (1 − w) exp(w + w²/2 + ⋯ + w<sup>p</sup>/p). Entire, with one simple zero, at w = 1; |1 − E<sub>p</sub>(w)| ≤ 4|w|<sup>p+1</sup> for |w| ≤ 1/2.'
+    target: def:weierstrass-factors
+  Wz:
+    h: W(z)
+    d: The Weierstrass product Π<sub>k</sub> E<sub>k</sub>(z/a<sub>k</sub>), with zeros exactly at the a<sub>k</sub>.
+    target: thm:weierstrass
+  Dar:
+    h: D(a, r)
+    d: 'The open disk {z : |z − a| < r}.'
+    target: def:natural-boundary
+  Gn:
+    h: Γ<sub>n</sub>
+    d: Γ(z + n)/(z(z + 1)⋯(z + n − 1)), holomorphic on W<sub>n</sub>. They agree where both are defined and together continue Γ.
+    target: def:for-let-is-holomorphic-on
+  Wn:
+    h: W<sub>n</sub>
+    d: '{Re z > −n} with 0, −1, …, −n + 1 removed: the domain of Γ<sub>n</sub>.'
+    target: def:for-let-is-holomorphic-on
+  Wset:
+    h: W
+    d: 'ℂ ∖ {0, −1, −2, …}: the union of the W<sub>n</sub>, where Γ is holomorphic.'
+    target: prop:the-continuation-of-gamma
+  Rg:
+    h: R(z)
+    d: 'z e<sup>γz</sup> Π<sub>n≥1</sub>(1 + z/n) e<sup>−z/n</sup>: the entire function equal to 1/Γ on W.'
+    target: thm:weierstrass-product-for-1-gamma
+  gam:
+    h: γ
+    d: 'Euler''s constant: lim (Σ<sub>n≤N</sub> 1/n − log N) ≈ 0.5772.'
+    target: thm:weierstrass-product-for-1-gamma
+  aN:
+    h: a<sub>N</sub>
+    d: Σ<sub>n≤N</sub> 1/n − log N; it converges to γ.
+    target: thm:weierstrass-product-for-1-gamma
+  gN:
+    h: g<sub>N</sub>
+    d: ∫<span class="ss"><sup>N</sup><sub>0</sub></span> t<sup>x−1</sup>(1 − t/N)<sup>N</sup> dt = N<sup>x</sup> N!/(x(x + 1)⋯(x + N)); it tends to Γ(x).
+    target: cor:gausss-limit
+  ft:
+    h: f<sub>t</sub>
+    d: 'f + t(g − f): moves from f (t = 0) to g (t = 1) without vanishing on the circle C.'
+    target: thm:rouche
+  Nt:
+    h: N(t)
+    d: The number of zeros of f<sub>t</sub> in the disk, written as the argument-principle integral. Continuous in t and integer-valued, hence constant.
+    target: thm:rouche
+  dOm:
+    h: ∂Ω
+    d: 'The boundary of Ω: points every disc around which meets both Ω and its complement.'
+    target: apx:C2
+  dist:
+    h: dist(z, ∂Ω)
+    d: The distance from z to the nearest boundary point. 1-Lipschitz.
+    target: apx:C6
+  H1:
+    h: H¹, H¹₀
+    d: 'Sobolev spaces: L² functions with L² weak gradient; H¹₀ adds zero boundary values in the limit sense.'
+    target: apx:D6

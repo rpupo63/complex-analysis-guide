@@ -1,0 +1,15 @@
+A:
+  title: Calculus and analysis
+  intro: <p>Background the slides use without stating. Short results are proved here from standard first-year facts. Deeper standard theorems are cited, with a link to a full treatment.</p>
+B:
+  title: Linear algebra
+  intro: ''
+C:
+  title: Sets and topology
+  intro: ''
+D:
+  title: Function spaces
+  intro: ''
+E:
+  title: Context and previews
+  intro: '<p>Remarks that go beyond the slides: history, connections, outlines of omitted proofs, and a few complete proofs of results the slides cite.</p>'
