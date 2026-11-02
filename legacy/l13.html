@@ -1,0 +1,141 @@
+<div class="lecture" id="L13">
+  <span class="eyebrow">Part V · Conformal maps</span>
+  <h2>Lecture 13 · The Riemann mapping theorem</h2>
+  <!--OV:L13-->
+  <p>Slide 1 is the title slide.</p>
+</div>
+
+<!-- ============ L13 SLIDE 2 ============ -->
+<section id="o1">
+<header><span class="eyebrow">L13 · Slide 2</span><h2>13.1 Where a conformal map onto the disk comes from</h2></header>
+<p>The strategy is to work backwards. Suppose a Riemann map exists. What must it look like? The answer is built from the solution of a Dirichlet problem, which Part I knows how to solve.</p>
+
+<div class="env asm"><span class="tag a">Assumed</span><span class="hd">Setting 13.1.1.</span> $\Omega$ is a bounded connected open set and $z_0\in\Omega$. In this section, $f$ is a conformal map of $\Omega$ onto $D(0,1)$ with $f(z_0)=0$ and $f'(z_0)\gt0$.</div>
+
+<div class="env thm"><span class="tag r">Derived</span><span class="hd">Proposition 13.1.2 <span class="nm">(what a Riemann map must look like)</span>.</span> <span class="body">In Setting 13.1.1:<br>
+(a) $|f(z)|=|z-z_0|\,e^{-h(z)}$, where $h$ is the harmonic function on $\Omega$, continuous on $\overline\Omega$, with $h(z)=\log|z-z_0|$ on $\partial\Omega$.<br>
+(b) $f$ is unique.<br>
+(c) If $h=\operatorname{Re}H$ with $H$ holomorphic on $\Omega$, then $f(z)=c\,(z-z_0)\,e^{-H(z)}$ for a constant $c$ with $|c|=1$.</span></div>
+<div class="proof"><span class="hd">Proof.</span>
+<ol>
+<li><em>Divide out the zero.</em> $f$ is injective, so its only zero is $z_0$, and $f'(z_0)\ne0$ (Theorem 12.9.1). So $g(z):=f(z)/(z-z_0)$ is holomorphic on $\Omega\setminus\{z_0\}$, tends to $f'(z_0)$ at $z_0$, and extends holomorphically there (Lemma 9.1.1) with $g(z_0)=f'(z_0)\ne0$. It has no zeros on $\Omega$. So $\log|g|$ is harmonic on $\Omega$: on each disk inside $\Omega$ this is Lemma 9.3.1, and harmonicity is local.</li>
+<li><em>$|f|\to1$ at the boundary.</em> For $r\lt1$, $f^{-1}$ maps the closed disk $|w|\le r$ onto a compact set $K_r\subset\Omega$ ($f^{-1}$ is continuous, and continuous images of compact sets are compact). $K_r$ stays a positive distance from $\partial\Omega$ (<a class="x" href="#C5">C.5</a>), and outside $K_r$, $|f|\gt r$. So as $z\to\partial\Omega$, eventually $|f(z)|\gt r$; since $r\lt1$ is arbitrary and $|f|\lt1$, $|f(z)|\to1$.</li>
+<li><em>(a): a Dirichlet problem.</em> Let $h:=-\log|g|=\log|z-z_0|-\log|f|$ (the second form for $z\ne z_0$). It is harmonic on $\Omega$, and by step 2, $h(z)-\log|z-z_0|=-\log|f(z)|\to0$ as $z\to\partial\Omega$. So $h$, extended by $\log|z-z_0|$ on $\partial\Omega$, is continuous on $\overline\Omega$: it solves the Dirichlet problem with the continuous boundary data $\log|z-z_0|$ (continuous, as $z_0\notin\partial\Omega$). That solution is unique by Cor. 4.4.2. Rearranging $h=\log|z-z_0|-\log|f|$ gives $|f|=|z-z_0|e^{-h}$.</li>
+<li><em>(b): uniqueness.</em> Two such maps $f_1,f_2$ have the same modulus by (a). Then $f_1/f_2$ (with the singularity at $z_0$ removed: it tends to $f_1'(z_0)/f_2'(z_0)\gt0$) is holomorphic on $\Omega$ with modulus $1$. Its image lies on the unit circle, which contains no open set, so by the open mapping theorem (Theorem 12.7.1) it is constant; that constant is $f_1'(z_0)/f_2'(z_0)\gt0$ and has modulus $1$, so it is $1$.</li>
+<li><em>(c): the formula.</em> $\frac{f(z)}{(z-z_0)e^{-H(z)}}$ is holomorphic (removable at $z_0$ as in step 1) with modulus $\frac{|f|}{|z-z_0|e^{-h}}=1$, hence a constant $c$ with $|c|=1$, as in step 4. <span class="qed">∎</span></li>
+</ol></div>
+<p>So a Riemann map is determined by one Dirichlet problem: the one with boundary values $\log|z-z_0|$. Existence is the converse: solve that problem, find $H$, and define $f$ by the formula of (c).</p>
+</section>
+
+<!-- ============ L13 SLIDE 3 ============ -->
+<section id="o2">
+<header><span class="eyebrow">L13 · Slide 3</span><h2>13.2 The theorem</h2></header>
+
+<div class="env thm"><span class="tag r">Derived</span><span class="hd">Theorem 13.2.1 <span class="nm">(Riemann mapping theorem)</span>.</span> <span class="body">Let $\Omega$ be a bounded connected open set such that<br>
+<b>(D)</b> for every continuous $g$ on $\partial\Omega$ there is $u$ harmonic on $\Omega$ and continuous on $\overline\Omega$, with $u=g$ on $\partial\Omega$;<br>
+<b>(C)</b> every harmonic function on $\Omega$ is the real part of a holomorphic function on $\Omega$.<br>
+Then for every $z_0\in\Omega$ there is exactly one conformal map $f$ of $\Omega$ onto $D(0,1)$ with $f(z_0)=0$ and $f'(z_0)\gt0$: the <em>Riemann map</em> of $\Omega$ at $z_0$.</span></div>
+<p>Uniqueness is Prop. 13.1.2(b); existence is proved in §13.4. When do the conditions hold?</p>
+<ul>
+<li><b>(D)</b> holds when $\Omega$ is the interior of a finite union of closed grid squares: that is the existence theorem for the Dirichlet problem, Theorem 5.1.1, the main result of Part I.</li>
+<li><b>(C)</b> holds when $\Omega$ is <em>star-shaped</em> about some point $c$: the segment $[c,z]$ lies in $\Omega$ for every $z\in\Omega$ (Lemma 13.7.2). In general (C) holds exactly when $\Omega$ is simply connected (stated without proof).</li>
+</ul>
+<p>So the theorem applies to rectangles, and to L-shapes and plus-shapes made of grid squares: each is a union of squares, and star-shaped about a point of its "central" square.</p>
+<p>Here Part I pays off: Lectures 3–5 built the solution of the Dirichlet problem, and that solution is exactly what produces the conformal map.</p>
+</section>
+
+<!-- ============ L13 SLIDE 4 ============ -->
+<section id="o3">
+<header><span class="eyebrow">L13 · Slide 4</span><h2>13.3 Example: the disk</h2></header>
+
+<div class="env thm"><span class="tag r">Derived</span><span class="hd">Example 13.3.1 <span class="nm">(the Riemann map of the disk at $a$)</span>.</span> <span class="body">For $\Omega=D(0,1)$ and $z_0=a$, the Riemann map is $f(z)=\dfrac{z-a}{1-\bar az}=-\varphi_a(z)$.</span></div>
+<div class="proof"><span class="hd">Proof.</span> Follow Prop. 13.1.2.
+<ol>
+<li><em>The Dirichlet problem.</em> For $|z|=1$, $|z-a|=|1-\bar az|$ (step 2 of Lemma 12.13.2). So $h(z):=\log|1-\bar az|$ has the right boundary values. It is harmonic on the disk because $1-\bar az$ is holomorphic with no zeros on $|z|\lt1/|a|$ (Lemma 9.3.1), and continuous on the closed disk.</li>
+<li><em>The modulus.</em> $|f(z)|=|z-a|e^{-h(z)}=\Big|\dfrac{z-a}{1-\bar az}\Big|$.</li>
+<li><em>The map.</em> $\frac{z-a}{1-\bar az}=-\varphi_a(z)$ is an automorphism (Lemma 12.13.2) with this modulus and value $0$ at $a$, and its derivative at $a$ is $\frac1{1-|a|^2}\gt0$. By uniqueness it is the Riemann map. <span class="qed">∎</span></li>
+</ol></div>
+</section>
+
+<!-- ============ L13 SLIDE 5 ============ -->
+<section id="o4">
+<header><span class="eyebrow">L13 · Slide 5</span><h2>13.4 Existence: the construction</h2></header>
+<div class="proof"><span class="hd">Proof of existence in Theorem 13.2.1.</span> Fix $z_0\in\Omega$.
+<ol>
+<li><em>Solve a Dirichlet problem.</em> $\log|z-z_0|$ is continuous on $\partial\Omega$ (as $z_0\notin\partial\Omega$). By (D) there is $h$ harmonic on $\Omega$, continuous on $\overline\Omega$, with $h(z)=\log|z-z_0|$ on $\partial\Omega$.</li>
+<li><em>Complete it to a holomorphic function.</em> By (C), $h=\operatorname{Re}H$ with $H$ holomorphic on $\Omega$. Replacing $H$ by $H-i\operatorname{Im}H(z_0)$ (which does not change the real part) makes $H(z_0)=h(z_0)$ real.</li>
+<li><em>Define the map.</em>
+\[ f(z):=(z-z_0)\,e^{-H(z)}. \]</li>
+<li><em>Property 1: one simple zero, positive derivative.</em> $f$ is holomorphic on $\Omega$. As $e^{-H}$ never vanishes, its only zero is $z_0$, and it is simple, with $f'(z_0)=e^{-H(z_0)}=e^{-h(z_0)}\gt0$.</li>
+<li><em>Property 2: $|f|\to1$ at the boundary.</em> $\log|f(z)|=\log|z-z_0|-h(z)$. This function is continuous on $\overline\Omega$ minus a small disk about $z_0$ (a compact set) and equals $0$ on $\partial\Omega$. By uniform continuity (<a class="x" href="#A16">A.16</a>), it is within any given $\epsilon$ of $0$ at all points close enough to $\partial\Omega$. So $|f(z)|\to1$ as $z\to\partial\Omega$.</li>
+<li><em>Conclude.</em> By the counting proposition (Prop. 13.5.1), $f$ takes every value $w\in D(0,1)$ exactly $d$ times, where $d=1$ is its number of zeros (property 1), and takes no other values. So $f$ is a bijection of $\Omega$ onto $D(0,1)$: a conformal map, with $f(z_0)=0$, $f'(z_0)\gt0$. <span class="qed">∎</span></li>
+</ol></div>
+<p>Only two properties of $f$ were used: exactly one zero, and $|f|\to1$ at the boundary. Everything else (injectivity, surjectivity) comes from counting.</p>
+</section>
+
+<!-- ============ L13 SLIDE 6 ============ -->
+<section id="o5">
+<header><span class="eyebrow">L13 · Slide 6</span><h2>13.5 A counting proposition</h2></header>
+
+<div class="env thm"><span class="tag r">Derived</span><span class="hd">Proposition 13.5.1 <span class="nm">(counting)</span>.</span> <span class="body">Let $\Omega$ be a bounded connected open set, $f$ holomorphic and not constant on $\Omega$, with $|f(z)|\to1$ as $z\to\partial\Omega$. Then $f(\Omega)\subseteq D(0,1)$, and $f$ takes every $w\in D(0,1)$ exactly $d\ge1$ times, where $d$ is the number of zeros of $f$ (with multiplicity).</span></div>
+<div class="proof"><span class="hd">Proof.</span>
+<ol>
+<li><em>$|f|\lt1$.</em> Extend $|f|$ by $1$ on $\partial\Omega$: by hypothesis this is continuous on the compact set $\overline\Omega$, so it attains a maximum. If $|f(z_1)|\ge1$ for some $z_1\in\Omega$, the maximum is $\ge1$ and is attained at a point of $\Omega$ (at $z_1$ if it equals $1$; at an interior point anyway if it exceeds $1$, as boundary values are $1$). That contradicts Remark 12.7.2. So $|f|\lt1$ on $\Omega$.</li>
+<li><em>A compact set holding all small values.</em> Fix $\rho\lt1$ and let $K_\rho:=\{z\in\overline\Omega:|f(z)|\le\rho\}$ (with $|f|=1$ on $\partial\Omega$). It is closed and bounded, hence compact, and it misses $\partial\Omega$; so it lies in $\Omega$ at a positive distance $\eta$ from $\partial\Omega$ (C.5).</li>
+<li><em>A polygon around it.</em> Take a grid of side $\eps$ with $\eps\sqrt2\lt\eta$, and let $R$ be the union of the closed grid squares that meet $K_\rho$. Each such square lies within $\eps\sqrt2$ of $K_\rho$, so $R\subset\Omega$. Every point of $K_\rho$ lies in the interior of $R$ (all the closed squares containing it meet $K_\rho$). So on the boundary $\Gamma:=\partial R$, which is made of grid segments, $|f|\gt\rho$.</li>
+<li><em>Count by the argument principle.</em> For $|w|\lt\rho$, every solution of $f(z)=w$ in $\Omega$ has $|f(z)|\lt\rho$, so it lies in $K_\rho$, inside $R$; there are finitely many (isolated zeros in a compact set). The argument principle, proved as for circles but on the region $R$ (with Prop. 8.1.1 in place of Theorem 6.9.1), gives the number of solutions as
+\[ N(w)=\frac1{2\pi i}\oint_\Gamma\frac{f'(z)}{f(z)-w}\,dz. \]</li>
+<li><em>$N$ is constant.</em> On $\Gamma$, $|f-w|\ge\min_\Gamma|f|-\rho=:\mu\gt0$ for all $|w|\lt\rho$ ($\min_\Gamma|f|\gt\rho$, by compactness of $\Gamma$). So
+\[ |N(w)-N(w')|\le\frac{\operatorname{length}(\Gamma)}{2\pi}\max_\Gamma|f'|\cdot\frac{|w-w'|}{\mu^2}, \]
+using $\frac1{f-w}-\frac1{f-w'}=\frac{w-w'}{(f-w)(f-w')}$. $N$ is continuous and integer-valued on the connected disk $D(0,\rho)$, hence constant (<a class="x" href="#A24">A.24</a>, along segments from $0$): $N(w)=N(0)=d$.</li>
+<li><em>All values, and $d\ge1$.</em> Every $w\in D(0,1)$ lies in some $D(0,\rho)$, so it is taken exactly $d$ times. And $d\ge1$: $f(\Omega)$ is a nonempty subset of $D(0,1)$, so some $w$ is taken at least once. <span class="qed">∎</span></li>
+</ol></div>
+<p>The idea in one line: the number of solutions of $f=w$ cannot change as $w$ moves, because no solution can escape through the boundary, where $|f|$ is close to $1$.</p>
+</section>
+
+<!-- ============ L13 SLIDE 7 ============ -->
+<section id="o6">
+<header><span class="eyebrow">L13 · Slide 7</span><h2>13.6 Counting: examples</h2></header>
+
+<div class="env def"><span class="tag d">Defined</span><span class="hd">Example 13.6.1 <span class="nm">($z^d$ on the disk)</span>.</span> $z^d$ on $D(0,1)$ has $|z^d|\to1$ at the boundary and a zero of order $d$ at $0$. Each $w\ne0$ has $d$ distinct $d$-th roots, and $w=0$ is a zero of order $d$: every value is taken $d$ times, as Prop. 13.5.1 says.</div>
+
+<div class="env thm"><span class="tag r">Derived</span><span class="hd">Example 13.6.2 <span class="nm">(Blaschke products)</span>.</span> <span class="body">For $|a_1|,\dots,|a_d|\lt1$, the <em>Blaschke product</em>
+\[ B(z):=\prod_{k=1}^d\frac{z-a_k}{1-\bar a_kz} \]
+has $|B|=1$ on $|z|=1$ and zeros $a_1,\dots,a_d$. So $B(z)=w$ has exactly $d$ solutions in $D(0,1)$ for every $|w|\lt1$.</span></div>
+<div class="proof"><span class="hd">Proof.</span> Each factor is $-\varphi_{a_k}$, holomorphic near the closed disk with modulus $1$ on the circle (Lemma 12.13.2). So $B$ is continuous on the closed disk with $|B|=1$ on the circle, hence $|B(z)|\to1$ as $|z|\to1$. Apply Prop. 13.5.1. <span class="qed">∎</span></div>
+
+<div class="env thm"><span class="tag r">Derived</span><span class="hd">Corollary 13.6.3.</span> <span class="body">A non-constant holomorphic $f$ on a bounded connected open set $\Omega$, with $|f|\to1$ at $\partial\Omega$, has a zero.</span></div>
+<div class="proof"><span class="hd">Proof.</span> $d\ge1$ in Prop. 13.5.1. <span class="qed">∎</span></div>
+</section>
+
+<!-- ============ L13 SLIDE 8 ============ -->
+<section id="o7">
+<header><span class="eyebrow">L13 · Slide 8</span><h2>13.7 Condition (C)</h2></header>
+
+<div class="env thm"><span class="tag r">Derived</span><span class="hd">Proposition 13.7.1 <span class="nm">((C) is necessary)</span>.</span> <span class="body">If $\Omega$ has a conformal map $f$ onto $D(0,1)$, then (C) holds. The annulus $\{1\lt|z|\lt2\}$ fails (C), so it has no conformal map onto the disk.</span></div>
+<div class="proof"><span class="hd">Proof.</span> Let $u$ be harmonic on $\Omega$. Then $u\circ f^{-1}$ is harmonic on the disk (Theorem 12.3.1), so $u\circ f^{-1}=\operatorname{Re}F$ with $F$ holomorphic on the disk (Lemma 12.2.1), and $u=\operatorname{Re}(F\circ f)$.<br>
+On the annulus, $\log|z|$ is harmonic but not a real part: as in Remark 12.2.2, it would force $F'=\frac1z$, and then $\oint_{|z|=3/2}\frac{dz}z=\oint F'\,dz=0$, not $2\pi i$. <span class="qed">∎</span></div>
+
+<div class="env thm"><span class="tag r">Derived</span><span class="hd">Lemma 13.7.2 <span class="nm">(star-shaped sets satisfy (C))</span>.</span> <span class="body">If $\Omega$ is star-shaped about $c$ (the segment $[c,z]\subseteq\Omega$ for all $z\in\Omega$), then every harmonic $u$ on $\Omega$ is the real part of a holomorphic function.</span></div>
+<div class="proof"><span class="hd">Proof.</span>
+<ol>
+<li><em>A holomorphic candidate for $F'$.</em> Let $g:=u_x-iu_y$. Its real and imaginary parts $a=u_x$, $b=-u_y$ are $C^1$ and satisfy Cauchy–Riemann: $a_x=u_{xx}=-u_{yy}=b_y$ (harmonic), and $a_y=u_{xy}=u_{yx}=-b_x$ (<a class="x" href="#A2">mixed partials</a>). So $g$ is holomorphic.</li>
+<li><em>Integrate from the centre.</em> Let $F(z):=u(c)+\int_{[c,z]}g(\zeta)\,d\zeta$, along the segment (which lies in $\Omega$).</li>
+<li><em>Moving the endpoint.</em> Let $D(z,r)\subseteq\Omega$ and $|k|\lt r$. The closed triangle with vertices $c$, $z$, $z+k$ lies in $\Omega$: each of its points lies on a segment from $c$ to a point of $[z,z+k]\subseteq D(z,r)\subseteq\Omega$, and such segments lie in $\Omega$ by star-shapedness. Cauchy's theorem on the triangle (Prop. 8.1.1) gives $\int_{[c,z+k]}g=\int_{[c,z]}g+\int_{[z,z+k]}g$, so
+\[ F(z+k)-F(z)=\int_{[z,z+k]}g(\zeta)\,d\zeta=k\,g(z)+\int_{[z,z+k]}\big(g(\zeta)-g(z)\big)\,d\zeta=k\,g(z)+o(|k|), \]
+the last integral being at most $|k|\max_{[z,z+k]}|g-g(z)|$ (ML estimate), which is $o(|k|)$ by continuity of $g$.</li>
+<li><em>Compare gradients.</em> So $F$ is holomorphic with $F'=g=u_x-iu_y$. For any holomorphic $F=U+iV$, $F'=U_x+iV_x=U_x-iU_y$ (Cauchy–Riemann). So $U_x=u_x$ and $U_y=u_y$: $\nabla\operatorname{Re}F=\nabla u$. Then $\operatorname{Re}F-u$ has zero gradient on the connected set $\Omega$, so it is constant; at $c$ it is $\operatorname{Re}F(c)-u(c)=0$. So $u=\operatorname{Re}F$. <span class="qed">∎</span></li>
+</ol></div>
+<p>This is Lemma 12.2.1 with segments from $c$ in place of horizontal-then-vertical paths. The proof works whenever the integral of $g$ does not depend on the path, which is the real content of "simply connected": no holes for the integral to wind around.</p>
+</section>
+
+<!-- ============ L13 SLIDE 9 ============ -->
+<section id="o8">
+<header><span class="eyebrow">L13 · Slide 9</span><h2>13.8 Remarks</h2></header>
+
+<div class="env rem"><span class="hd">Remark 13.8.1 <span class="nm">(history)</span>.</span> Riemann (1851) argued this way, taking the solution of the Dirichlet problem from <a class="x" href="#E10">Dirichlet's principle</a>: minimize the energy. Weierstrass (1870) showed that such a minimum need not be attained; Hilbert (1900) rescued the principle. Our solution of the Dirichlet problem by minimizing energy over finite element spaces (Lecture 3), then passing to limits for piecewise linear and then for continuous data (Lectures 4–5), is such a rescue, for unions of squares.</div>
+
+<div class="env rem"><span class="hd">Remark 13.8.2 <span class="nm">(Green's function)</span>.</span> $G:=-\log|f|=h-\log|z-z_0|$ is harmonic on $\Omega\setminus\{z_0\}$ and zero on $\partial\Omega$, with a logarithmic singularity at $z_0$. In equilibrium heat flow it is, up to a constant factor, the temperature due to a point source at $z_0$ with the boundary held at $0$. In Lecture 2's language it is the potential of a point charge at $z_0$ (<a class="x" href="#E6">E.6</a>) inside a grounded conductor $\partial\Omega$. So the Riemann map is $|f|=e^{-G}$: the conformal map and the Green's function carry the same information.</div>
+
+<div class="env rem"><span class="hd">Remark 13.8.3 <span class="nm">(the general theorem)</span>.</span> The Riemann mapping theorem for every simply connected open $\Omega\ne\mathbb C$ (Theorem 12.17.2) is due to Osgood (1900). The standard modern proof (Koebe, Fejér–Riesz) avoids the Dirichlet problem: it maximizes $|f'(z_0)|$ over injective maps into the disk, using normal families.</div>
+</section>
