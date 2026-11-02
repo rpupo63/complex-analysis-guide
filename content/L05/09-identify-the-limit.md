@@ -36,6 +36,6 @@ For the mirror statement, suppose $\class{ntn-vc}{v}\le g$ on $\class{ntn-dOm}{\
 <tr><td>Boundary inequality $\class{ntn-Un}{U_n}=g\le \class{ntn-vc}{v}$</td><td>$\class{ntn-zn}{z_n}^{\class{ntn-pos}{+}}$ lives inside $\Omega$</td><td>@prop:step-1-z-n-lives-inside</td></tr>
 <tr><td>Gradient convergence $\nabla \class{ntn-Un}{U_n}\to\nabla u$</td><td>its energy vanishes</td><td>@prop:step-2-its-energy-tends-to</td></tr>
 <tr><td>$L^2$ convergence $\class{ntn-Un}{U_n}\to u$</td><td>its limit is $\class{ntn-zf}{z}^{\class{ntn-pos}{+}}$</td><td>@prop:step-3-z-n-to-z</td></tr>
-<tr><td>Harmonicity of $u$</td><td>no cross term</td><td>@prop:step-2-its-energy-tends-to, step 3</td></tr>
+<tr><td>Harmonicity of $u$</td><td>no cross term</td><td>@prop:step-2-its-energy-tends-to, item 3 of its proof</td></tr>
 </tbody></table></div>
 :::

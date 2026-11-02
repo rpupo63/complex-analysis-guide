@@ -7,7 +7,7 @@ title: The theorem
 ::: theorem {#thm:the-dirichlet-problem-on-a-union name="the Dirichlet problem on a union of squares"}
 Let $\Omega$ be a finite union of grid squares and $g$ continuous on $\class{ntn-dOm}{\partial\Omega}$. There is exactly one $u\in C^2(\Omega)\cap C(\overline\Omega)$ with $\class{ntn-Delta}{\Delta} u=0$ in $\Omega$ and $u=g$ on $\class{ntn-dOm}{\partial\Omega}$.
 :::
-<p>"Finite union of grid squares" is Grid hypothesis 4.1. Note what is <em>not</em> assumed: $g$ need not be linear on boundary edges. $C^2(\Omega)\cap C(\overline\Omega)$ is the class of [twice differentiable inside, continuous up to the boundary](apx:D1); this is the classical Dirichlet problem of @def:dirichlet-problem. The proof has four steps.</p>
+<p>"Finite union of grid squares" is [Hypothesis #](@hyp:for-now). Note what is <em>not</em> assumed: $g$ need not be linear on boundary edges. $C^2(\Omega)\cap C(\overline\Omega)$ is the class of [twice differentiable inside, continuous up to the boundary](apx:D1); this is the classical Dirichlet problem of @def:dirichlet-problem. The proof has four steps.</p>
 <div class="tbl"><table>
 <thead><tr><th>Step</th><th>Statement</th><th>Where</th></tr></thead>
 <tbody>

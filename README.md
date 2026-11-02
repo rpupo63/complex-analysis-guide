@@ -47,6 +47,8 @@ Intentional differences:
 3. **HTML comments and blank lines between blocks are regenerated uniformly.** For example, every section is preceded by `<!-- ============ L3 SLIDE 4 ============ -->`. They are not rendered.
 4. **The `NOTE` JSON keys are in first-definition order** (the order of `notation.yaml`). The entries themselves are identical.
 
-Known leftover: one item number is still written inside TeX `\text{…}`, in `content/L07/05-example-rational-functions.md` ("Theorem 6.3.1", "Theorem 6.1.2"). References inside TeX cannot be labels.
+After the migration, a slide-by-slide audit against `Complex/lectures/*.pdf` led to content fixes in L1, L3, L5, L7, L8, L9, L12 and L13 (see the git history). Since then `just roundtrip` reports those sections as changed. That is expected.
+
+`figures/gen_l01.py` generates the Lecture 1 figures added after the migration (x2-1, x2-2, x13-2, x16-1 to x16-4).
 
 `legacy/` holds the scripts that produced v17 (`process.py`, `ex_insert.py`, `exercises.py`, `figs3.py` for the Lecture 12 figures, `chk4.py`) and the original handoff notes. They are history and are not used by the build.

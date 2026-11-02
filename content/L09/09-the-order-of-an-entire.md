@@ -8,7 +8,7 @@ title: The order of an entire function
 ::: definition {#def:order name=order}
 For $f$ entire, let $\class{ntn-Mr}{M}(r):=\max_{|z|=r}|f(z)|$. If $\class{ntn-Mr}{M}(r)\le e^{r^\lambda}$ for all large $r$, for some $\lambda\gt0$, then $f$ has <em>finite order</em>; its <em>order</em> $\class{ntn-rhoo}{\rho}$ is the infimum of such $\lambda$.
 :::
-<p>The order measures growth on a doubly exponential scale: $\class{ntn-rhoo}{\rho}=\limsup_{r\to\infty}\frac{\log\log \class{ntn-Mr}{M}(r)}{\log r}$.</p>
+<p>The order measures growth on a doubly exponential scale: $\class{ntn-rhoo}{\rho}=\limsup_{r\to\infty}\frac{\log\log \class{ntn-Mr}{M}(r)}{\log r}$ for non-constant $f$ (then $\class{ntn-Mr}{M}(r)\to\infty$, so $\log\log \class{ntn-Mr}{M}(r)$ is defined for large $r$). A constant has order $0$.</p>
 <div class="tbl"><table>
 <thead><tr><th>$f$</th><th>Order</th><th>Why</th><th>Zeros</th></tr></thead>
 <tbody>

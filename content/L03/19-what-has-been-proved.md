@@ -22,6 +22,7 @@ An $L^2$ function can be changed on a zero-area set without changing it as an el
 :::
 
 <h3>Missing pieces</h3>
+<p>The slide announces both pieces for the next lecture, the second by the random walk. The course in fact does them in Lectures 4 and 5, and the second by a different method:</p>
 <ul>
 <li>$u$ is smooth and $\class{ntn-Delta}{\Delta} u=0$ pointwise: Weyl's lemma. <b>Done in Lecture 4</b>, @cor:the-lecture-3-limit-is-a.</li>
 <li>$u(x)\to g(p)$ as $x\to p\in\class{ntn-dOm}{\partial\Omega}$, pointwise. <b>Done in Lecture 5</b>, @thm:step-4-boundary-values, by energy and comparison rather than [the random walk](apx:E9).</li>

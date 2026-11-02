@@ -15,6 +15,7 @@ toc: Uniform and corner flow
 ::: proof {title=Check.}
 $f'=1$ means $\class{ntn-vphi}{\varphi}_x=1$, $\class{ntn-vphi}{\varphi}_y=0$. $\nabla\class{ntn-vphi}{\varphi}=\nabla x=(1,0)=V$. Travelling up the segment, $(dx,dy)=(0,ds)$, so $n=(1,0)$ and $V\cdot n=1$ along a segment of length $h$: flux $h$, matching @prop:the-flux-across-is-it.
 :::
+<figure><div class="fpanels"><div class="fpanel">{{fig:x13-2}}</div></div><figcaption>@eg:f-z-1: horizontal streamlines; every particle moves right at unit speed.</figcaption></figure>
 
 ::: example {#eg:f-z-z name="$f'(z)=z$" status=derived}
 
