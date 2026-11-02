@@ -12,5 +12,5 @@ roundtrip: build
 # One-time setup for the render checks.
 setup:
     python3 -m venv .venv
-    .venv/bin/pip install -r requirements.txt
+    .venv/bin/python -m pip install -r requirements.txt
     npm install

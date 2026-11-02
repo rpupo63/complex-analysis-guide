@@ -5,7 +5,7 @@
     python check.py --no-render  # structural checks only (no browser)
 
 Render checks (from legacy/chk4.py) need Playwright and a local MathJax:
-    .venv/bin/pip install playwright pyyaml && npm install
+    .venv/bin/python -m pip install playwright pyyaml && npm install
 They use the system Chromium (CHROMIUM env var, default /usr/bin/chromium) and
 serve MathJax from node_modules/, so they work without network access.
 """
@@ -50,7 +50,7 @@ def render(g):
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
-        check('render check (playwright installed)', False, 'run: .venv/bin/pip install playwright, or use --no-render')
+        check('render check (playwright installed)', False, 'run: .venv/bin/python -m pip install playwright, or use --no-render')
         return
     mj = ROOT / 'node_modules/mathjax/es5'
     if not (mj / 'tex-svg.js').exists():

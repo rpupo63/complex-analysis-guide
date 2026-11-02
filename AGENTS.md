@@ -1,6 +1,6 @@
 # AGENTS.md: Complex Analysis Companion
 
-This repo (`Complex/guide/`) is the source for a one-page HTML textbook of a 13-lecture complex analysis course. `python build.py` turns the source into `build/guide.html`, a self-contained page (inline CSS, JS and SVG; only the fonts and MathJax 3.2.2 load from a CDN).
+This repo (`Complex Analysis/guide/`) is the source for a one-page HTML textbook of a 13-lecture complex analysis course. `python build.py` turns the source into `build/guide.html`, a self-contained page (inline CSS, JS and SVG; only the fonts and MathJax 3.2.2 load from a CDN).
 
 ## Rules
 
@@ -29,15 +29,16 @@ This repo (`Complex/guide/`) is the source for a one-page HTML textbook of a 13-
 
 ## Course material (source of truth for content)
 
-This repo lives at `Complex/guide/`, inside a local clone of the course repo (`maksym-radziwill/Complex`, read-only: never commit there). The original material sits next to it, and the guide must agree with it:
+This repo lives at `Complex Analysis/guide/`. Next to it, `Complex Analysis/Complex/` is the teacher's repo (`maksym-radziwill/Complex`): a read-only clone that must stay identical to his remote. Never edit, add, commit or push anything there; only `git pull` to get new material. The guide must agree with this material:
 
 | Material | Path (from this repo) | Covered in the guide by |
 |---|---|---|
-| Lecture N slides | `../lectures/lectureNN.pdf` (PDF page = slide number) | `content/LNN/`; each section's `slide:` front matter names its slides |
-| Coin-change handout | `../lectures/coin_counting.pdf` | §6.20, `content/L06/20-worked-example-making-change.md` |
-| Homework 1 / Homework 2 | `../homeworks/hw.pdf`, `../homeworks/hw2.pdf` | `exercises/hw1-*.md`, `exercises/hw2-*.md` |
-| Practice midterms 1–3 | `../practice-tests/practice-midterm-K.pdf` | `exercises/pmK-*.md` |
-| FreeFEM files | `../FreeFEM/` | `exercises/hw1-optional-freefem-bonus.md` |
+| Lecture N slides | `../Complex/lectureNN.pdf` (PDF page = slide number) | `content/LNN/`; each section's `slide:` front matter names its slides |
+| Homework 1 / Homework 2 | `../Complex/hw.pdf`, `../Complex/hw2.pdf` | `exercises/hw1-*.md`, `exercises/hw2-*.md` |
+| Practice midterms 1–3 | `../Complex/practice-midterm-K.pdf` | `exercises/pmK-*.md` |
+| FreeFEM (teacher's files) | `../Complex/FreeFEM/` | `exercises/hw1-optional-freefem-bonus.md` |
+| Coin-change handout (not in the teacher's repo) | `../handouts/coin_counting.pdf` | §6.20, `content/L06/20-worked-example-making-change.md` |
+| Beto's own FreeFEM work | `../freefem-work/` | not part of the guide |
 
 Read PDFs with `pdftotext -layout FILE -`; look at the page image when formulas come out garbled. The build never reads them.
 
@@ -52,7 +53,7 @@ Beto may name things in any of these ways. Resolve each to a file before answeri
 | "§6.11", "section 6.11" | section 11 of Lecture 6 | `content/L06/11-*.md` (file prefix = section number) |
 | `f11`, `s20`, `x16` | section id (historical, irregular) | `grep -l '^id: f11$' content/*/*.md` |
 | "Lecture 6", "L6" | the whole lecture | `content/L06/` (`lecture.md` has the overview) |
-| "L6 slide 12" | a slide of the original lecture | the section whose `slide:` range contains 12: `grep -H '^slide:' content/L06/*.md`; the slide itself is page 12 of `../lectures/lecture06.pdf` |
+| "L6 slide 12" | a slide of the original lecture | the section whose `slide:` range contains 12: `grep -H '^slide:' content/L06/*.md`; the slide itself is page 12 of `../Complex/lecture06.pdf` |
 | "HW2 problem 1(b)", "PM3 4(a)" | a homework or practice-midterm problem | `exercises/hw2-p1b.md`, `exercises/pm3-p4a.md` (`source:` front matter gives the exact sheet problem) |
 | "A.12", "appendix C.4" | appendix entry | `appendix/A12-*.md` |
 | a symbol, e.g. "$V^g_\eps$ in L3" | notation entry | `notation.yaml` (key is the `ntn-KEY` used in TeX; `target:` is the defining item) |
