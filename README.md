@@ -1,6 +1,6 @@
 # Complex Analysis Companion
 
-The source for *Holomorphic Functions*, a one-page HTML textbook built from the slides of a 13-lecture complex analysis course (5 parts, 168 sections, 357 numbered items, 65 appendix entries). Read `AGENTS.md` for the source format and the house rules.
+The source for *Holomorphic Functions*, a one-page HTML textbook built from the slides of a complex analysis course (Lectures 1–13 and 15, 5 parts). Read `AGENTS.md` for the source format and the house rules.
 
 ## Build
 
@@ -30,7 +30,7 @@ just roundtrip          # compare with reference/guide.v17.html
 
 ## Publish
 
-The page is the claude.ai artifact `https://claude.ai/artifact/NxvWHwcmzyxE99T6Fa26uf`. Give `build/guide.html` to a Claude session with artifact access and ask it to publish to that URL.
+The page is on GitHub Pages: https://rpupo63.github.io/complex-analysis-guide/. Every push to `master` rebuilds and redeploys it (`.github/workflows/pages.yml`).
 
 ## Migration report (v17 → source tree)
 
