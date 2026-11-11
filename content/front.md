@@ -1,5 +1,5 @@
 <header>
-  <div class="eyebrow">A textbook companion · Lectures 1–13</div>
+  <div class="eyebrow">A textbook companion · Lectures 1–13 and 15</div>
   <h1>Holomorphic Functions</h1>
   <p class="lede">A textbook built from the slides of a thirteen-lecture course in complex analysis. Part I asks whether a harmonic function is determined by, and can be found from, its boundary values, and answers with finite elements. Part II develops Cauchy's integral theory. Part III uses it to compute integrals and Fourier transforms and to prove the sampling theorem. Part IV studies entire functions through their zeros, ending with the Gamma function. Part V studies conformal maps and closes the circle: the solution of Part I's Dirichlet problem produces the Riemann map.</p>
 <p>The main text follows the slides one by one, with every step justified. Background the slides take for granted is collected in a lettered appendix.</p>

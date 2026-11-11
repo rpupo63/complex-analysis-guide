@@ -355,7 +355,12 @@ class Guide:
         rows = []
         for p in self.parts:
             ls = p['lectures']
-            lec = 'Lecture %d' % ls[0] if len(ls) == 1 else 'Lectures %d–%d' % (ls[0], ls[-1])
+            if len(ls) == 1:
+                lec = 'Lecture %d' % ls[0]
+            elif ls == list(range(ls[0], ls[-1] + 1)):
+                lec = 'Lectures %d–%d' % (ls[0], ls[-1])
+            else:
+                lec = 'Lectures ' + ', '.join(map(str, ls))
             rows.append('<tr><td><a href="#%s">%s</a> · %s</td><td>%s</td><td>%s</td></tr>'
                         % (p['id'], p['numeral'], lec, p['question'], p['answer']))
         return '\n'.join(rows)
