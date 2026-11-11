@@ -1,6 +1,6 @@
 # Complex Analysis Companion
 
-The source for *Holomorphic Functions*, a one-page HTML textbook built from the slides of a complex analysis course (Lectures 1–13 and 15, 5 parts). Read `AGENTS.md` for the source format and the house rules.
+The source for *Holomorphic Functions*, a one-page HTML textbook built from the slides of a complex analysis course (Lectures 1–15, 5 parts; Lecture 14 is reconstructed, since no slides exist). Read `AGENTS.md` for the source format and the house rules.
 
 ## Build
 

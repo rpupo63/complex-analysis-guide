@@ -13,5 +13,5 @@ $G:=-\log|f|=h-\log|z-z_0|$ is harmonic on $\Omega\setminus\{z_0\}$ and zero on 
 :::
 
 ::: remark {#rem:the-general-theorem name="the general theorem"}
-The Riemann mapping theorem for every simply connected open $\Omega\ne\mathbb C$ (@thm:riemann-mapping-theorem-stated) is due to Osgood (1900). The standard modern proof (Koebe, Fejér–Riesz) avoids the Dirichlet problem: it maximizes $|f'(z_0)|$ over injective maps into the disk, using normal families.
+The Riemann mapping theorem for every simply connected open $\Omega\ne\mathbb C$ (@thm:riemann-mapping-theorem-stated) is due to Osgood (1900). Lecture 14 proves it by filling $\Omega$ with regions made of squares and taking a limit of their Riemann maps (@thm:riemann-mapping-theorem-general). The standard modern proof (Koebe, Fejér–Riesz) avoids the Dirichlet problem: it maximizes $|f'(z_0)|$ over injective maps into the disk, using normal families.
 :::

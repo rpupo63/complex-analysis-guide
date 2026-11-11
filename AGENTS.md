@@ -1,6 +1,6 @@
 # AGENTS.md: Complex Analysis Companion
 
-This repo (`Complex Analysis/guide/`) is the source for a one-page HTML textbook of a complex analysis course (Lectures 1–13 and 15; there is no Lecture 14 yet). `python build.py` turns the source into `build/guide.html` (TeX still in it; MathJax 3.2.2 typesets it in the browser). `node tools/prerender.mjs` then typesets every formula at build time into `build/index.html`, the published page: self-contained, with no MathJax script (only the fonts load from a CDN). `just build` runs both.
+This repo (`Complex Analysis/guide/`) is the source for a one-page HTML textbook of a complex analysis course (Lectures 1–15; Lecture 14 is reconstructed, not from slides). `python build.py` turns the source into `build/guide.html` (TeX still in it; MathJax 3.2.2 typesets it in the browser). `node tools/prerender.mjs` then typesets every formula at build time into `build/index.html`, the published page: self-contained, with no MathJax script (only the fonts load from a CDN). `just build` runs both.
 
 ## Rules
 
@@ -40,6 +40,7 @@ This repo lives at `Complex Analysis/guide/`. Next to it, `Complex Analysis/Comp
 | FreeFEM (teacher's files) | `../Complex/FreeFEM/` | `exercises/hw1-optional-freefem-bonus.md` |
 | Coin-change handout (not in the teacher's repo) | `../handouts/coin_counting.pdf` | §6.20, `content/L06/20-worked-example-making-change.md` |
 | Lecture 15 slides, "Reflection and polygons" (not in the teacher's repo; **unverified, may be wrong in places**) | `../handouts/lecture15.pdf` | `content/L15/`. Do not copy these slides blindly: check each claim. Where a slide is wrong, the guide corrects it in a remark named "correction to the slide" (`grep -l 'correction to the slide' content/L15/*.md`). If the teacher later adds `../Complex/lecture15.pdf`, compare it with this file and switch the source. |
+| Lecture 14 (no slides exist) | none | `content/L14/`, reconstructed: the general Riemann mapping theorem, which Lecture 15's slide 2 assumes. Section `slide:` fields say "Reconstructed". If real Lecture 14 slides appear, replace this lecture with them. |
 | Beto's own FreeFEM work | `../freefem-work/` | not part of the guide |
 
 Read PDFs with `pdftotext -layout FILE -`; look at the page image when formulas come out garbled. The build never reads them.

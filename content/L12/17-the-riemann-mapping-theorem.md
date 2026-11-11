@@ -11,7 +11,7 @@ An open set $U\subseteq\mathbb C$ is <em>simply connected</em> if it is [connect
 ::: theorem {#thm:riemann-mapping-theorem-stated name="Riemann mapping theorem; stated" status=cited}
 Let $U\ne\mathbb C$ be a nonempty, simply connected open set, and $z_0\in U$. There is exactly one conformal map $f$ of $U$ onto $D(0,1)$ with $f(z_0)=0$ and $f'(z_0)\gt0$.
 :::
-<p>Lecture 13 proves the existence for regions made of grid squares. Three comments from the slide:</p>
+<p>Lecture 13 proves the existence for regions made of grid squares, and Lecture 14 for all (@thm:riemann-mapping-theorem-general). Three comments from the slide:</p>
 <ul>
 <li><b>$U\ne\mathbb C$ is needed,</b> by @cor:there-is-no-conformal-map.</li>
 <li><b>Uniqueness</b> (proved here, @prop:uniqueness).</li>
