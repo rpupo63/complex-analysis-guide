@@ -49,6 +49,6 @@ Intentional differences:
 
 After the migration, a slide-by-slide audit against `../Complex/lecture*.pdf` led to content fixes in L1, L3, L5, L7, L8, L9, L12 and L13 (see the git history). Since then `just roundtrip` reports those sections as changed. That is expected.
 
-`figures/gen_l01.py` generates the Lecture 1 figures added after the migration (x2-1, x2-2, x13-2, x16-1 to x16-4).
+`figures/gen_l01.py` generates the Lecture 1 figures added after the migration (x2-1, x2-2, x13-2, x16-1 to x16-4). `figures/gen_slides.py` generates the slide figures added later: L9 slides 2 and 5 (j1-1, j4-1), L10 slide 2 (k1-1), and L15 slides 3, 4, 7, 16 and 19 (q2-1, q3-1, q6-1, q13-1, q15-1).
 
 `legacy/` holds the scripts that produced v17 (`process.py`, `ex_insert.py`, `exercises.py`, `figs3.py` for the Lecture 12 figures, `chk4.py`) and the original handoff notes. They are history and are not used by the build.

@@ -23,6 +23,7 @@ Check: $\zeta\gt0$ goes onto $\mathbb R$. For $\zeta=-s\lt0$, $F(\zeta)=-s+\log 
 
 <p><b>The fringing field</b> (Slide 19). The equipotentials $u=0,\pm\frac16,\dots,\pm\frac56$ and the field lines are the images of horizontal and vertical lines under $w=z+e^z$, $-\pi\lt\operatorname{Im}z\lt\pi$ (the lower half by reflection). The map is Maxwell's (1873). From $\frac{dw}{dz}=1+e^z$,
 \[ |E|=\frac1\pi\left|\frac{dz}{dw}\right|=\frac1{\pi|1+e^z|}. \]</p>
+<figure>{{fig:q15-1}}<figcaption>The plates (thick), equipotentials $u=0,\pm\frac16,\pm\frac13,\pm\frac23,\pm\frac56$ (blue), field lines (grey), and the Rogowski electrodes $u=\pm\frac12$ (brown): images of horizontal and vertical lines under $w=z+e^z$.</figcaption></figure>
 <ul>
 <li>Far between the plates ($\operatorname{Re}z\to-\infty$): $w\approx z$, a uniform field $\frac1\pi$, which is the potential difference $2$ over the distance $2\pi$.</li>
 <li>Far outside ($\operatorname{Re}z\to+\infty$): $|E|\to0$.</li>

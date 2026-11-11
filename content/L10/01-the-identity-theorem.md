@@ -9,6 +9,7 @@ title: The identity theorem
 ::: theorem {#thm:identity-theorem-l10 name="identity theorem"}
 Let $f,g$ be holomorphic on a [connected](apx:C4) open set $U$, and let $x_n\in U\setminus\{x\}$ with $x_n\to x\in U$. If $f(x_n)=g(x_n)$ for every $n$, then $f=g$ on $U$.
 :::
+<figure>{{fig:k1-1}}<figcaption>Step 1 kills $h$ on a disk about $x$, where the zeros $x_n$ accumulate; overlapping disks carry this along a chain to any $w\in U$.</figcaption></figure>
 <p>This contains @thm:identity-theorem (a nonempty open set contains such a sequence) and @cor:isolated-zeros (take $g=0$). Let $h:=f-g$; the hypothesis says $h(x_n)=0$.</p>
 
 ::: proof {title="Proof, Step 1."}

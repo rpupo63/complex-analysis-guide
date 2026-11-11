@@ -20,6 +20,7 @@ $\operatorname{sn}$ extends to $\mathbb C$, holomorphic except for poles, with
 <li><em>Periods.</em> Two reflections in parallel lines make a translation: in $\operatorname{Re}w=-K$ ($w\mapsto-2K-\bar w$) then in $\operatorname{Re}w=K$ ($w\mapsto2K-\bar w$) give $w\mapsto w+4K$; in $\operatorname{Im}w=0$ then in $\operatorname{Im}w=K'$ give $w\mapsto w+2iK'$. Each reflection conjugates the value, so two of them leave it unchanged. <span class="qed">∎</span></li>
 </ol>
 :::
+<figure>{{fig:q13-1}}<figcaption>The rectangle $R$ and its reflections. $\operatorname{sn}$ takes values in $\mathbb H$ on $R$ and on the corner rectangles, and in $-\mathbb H$ on the rectangles that share a side with $R$.</figcaption></figure>
 <p><b>Poles are unavoidable.</b> A doubly periodic entire function is bounded, since it takes all its values on one closed period rectangle, which is [compact](apx:C5). So by @thm:liouville it is constant.</p>
 
 ::: remark {#rem:correction-sn-top-side name="correction to the slide"}

@@ -9,6 +9,7 @@ A line charge at $a\in\mathbb H$ above the grounded conducting plane $\mathbb R$
 \[ u(z)=\log\frac1{|z-a|}-\log\frac1{|z-\bar a|}=\log\left|\frac{z-\bar a}{z-a}\right|. \]
 Then $u$ is harmonic on $\mathbb H\setminus\{a\}$ ($\bar a\notin\mathbb H$), it has the singularity of the charge at $a$, and it is $0$ on $\mathbb R$, because $|x-\bar a|=|x-a|$ for real $x$. The equipotentials $\{|z-\bar a|=c\,|z-a|\}$ are circles (circles of Apollonius), and their mirror images are the equipotentials of the image charge.
 :::
+<figure>{{fig:q2-1}}<figcaption>The charge at $a$ (blue) and its image at $\bar a$ (brown). The equipotentials of $u$ in $\mathbb H$ are circles around $a$; the dashed circles are their mirror images.</figcaption></figure>
 
 ::: example {#eg:a-charge-inside-a-grounded-circle name="a charge inside a grounded circle"}
 For $a\in D(0,1)$, the image charge sits at the mirror point $1/\bar a$ of $a$ in the unit circle:

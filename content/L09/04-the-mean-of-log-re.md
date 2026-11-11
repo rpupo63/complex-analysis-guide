@@ -8,6 +8,7 @@ title: The mean of $\log|Re^{i\theta}-a|$
 For $R\gt0$ and $|a|\ne R$,
 \[ \frac1{2\pi}\int_0^{2\pi}\log|Re^{i\theta}-a|\,d\theta=\log\max(R,|a|). \]
 :::
+<figure>{{fig:j4-1}}<figcaption>The two cases of the proof: $a$ inside the circle $|z|=R$ (mean $\log R$) and $a$ outside (mean $\log|a|$).</figcaption></figure>
 ::: proof
 By the mean value property for harmonic functions, @thm:mean-value-property.
 <ol>

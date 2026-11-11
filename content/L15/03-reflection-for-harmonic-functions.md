@@ -8,6 +8,7 @@ title: Reflection for harmonic functions
 $\Omega$ is open and symmetric about $\mathbb R$: $z\in\Omega\iff\bar z\in\Omega$. Write
 \[ \Omega^\pm:=\Omega\cap\{\pm\operatorname{Im}z\gt0\},\qquad I:=\Omega\cap\mathbb R. \]
 :::
+<figure>{{fig:q3-1}}<figcaption>A symmetric open set: $\Omega^+$ above, $\Omega^-$ below, and $I=\Omega\cap\mathbb R$.</figcaption></figure>
 
 ::: theorem {#thm:harmonic-reflection name="reflection principle, harmonic form: the method of images"}
 Let $v$ be harmonic on $\Omega^+$, continuous on $\Omega^+\cup I$, and $0$ on $I$. Define $V:=v$ on $\Omega^+\cup I$ and $V(z):=-v(\bar z)$ on $\Omega^-$. Then $V$ is harmonic on $\Omega$.

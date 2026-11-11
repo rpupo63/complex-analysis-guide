@@ -7,6 +7,7 @@ title: Removable singularities
 ::: lemma {#lem:removable-singularities name="removable singularities"}
 If $g$ is holomorphic on $0\lt|z-a|\lt r$ and bounded near $a$, then $g$ extends holomorphically to $|z-a|\lt r$.
 :::
+<figure>{{fig:j1-1}}<figcaption>The proof: Cauchy's theorem on the shaded region, the disk $|z-a|\lt r'$ minus small disks about $a$ and $w$, where $g(z)/(z-w)$ is holomorphic.</figcaption></figure>
 <p>Compare @thm:converse-of-the-mean-value-property and Lecture 4's moral: for harmonic and holomorphic functions, mild-looking hypotheses force full regularity. Here mere boundedness near $a$ rules out a singularity.</p>
 ::: proof
 Fix $w$ and $r'$ with $0\lt|w-a|\lt r'\lt r$. Let $B$ bound $|g|$ on some punctured disk $0\lt|z-a|\le\epsilon_0$.

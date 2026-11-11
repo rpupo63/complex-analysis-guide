@@ -7,6 +7,7 @@ title: Polygons
 ::: definition {#def:polygon name="polygon; interior angles"}
 A <em>polygon</em> $P$ is a bounded closed set whose boundary is a simple closed polygonal curve. Its vertices $w_1,\dots,w_n$ are listed counterclockwise, and its interior angles are $\alpha_1\pi,\dots,\alpha_n\pi$ with $0\lt\alpha_k\lt2$.
 :::
+<figure>{{fig:q6-1}}<figcaption>At the vertex $w_k$ the interior angle is $\alpha_k\pi$, and going around counterclockwise one turns left by $(1-\alpha_k)\pi$.</figcaption></figure>
 <p>Going around $\partial P$ counterclockwise, one turns left by $(1-\alpha_k)\pi$ at $w_k$, and by $2\pi$ in total:
 \[ \sum_{k=1}^n(1-\alpha_k)=2. \]
 This is the angle sum $\sum_k\alpha_k\pi=(n-2)\pi$. A turn is negative at a re-entrant corner ($\alpha_k\gt1$).</p>
