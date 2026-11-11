@@ -1,7 +1,8 @@
 {
   "private": true,
-  "description": "Local MathJax for check.py render checks",
+  "description": "MathJax: build-time rendering (tools/prerender.mjs) and the browser copy for check.py",
   "dependencies": {
-    "mathjax": "3.2.2"
+    "mathjax": "3.2.2",
+    "mathjax-full": "3.2.2"
   }
 }

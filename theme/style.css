@@ -40,6 +40,8 @@ p{margin:0.7em 0}
 .eyebrow{font-family:var(--f-label);font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
 .lede{font-size:1.15rem;color:var(--muted)}
 section{border-top:1px solid var(--rule);margin-top:3rem;padding-top:1.4rem;scroll-margin-top:1rem}
+/* Skip layout and paint of off-screen sections: the page holds ~10,000 typeset formulas. */
+section,.apx{content-visibility:auto;contain-intrinsic-size:auto 1500px}
 section > header{display:flex;flex-direction:column;gap:0.25rem;margin-bottom:0.6rem}
 .part{margin-top:4.5rem;border-top:3px double var(--rule);padding-top:1.6rem}
 .toc{columns:2 16rem;column-gap:2rem;padding:0;margin:1rem 0 0;list-style:none;font-size:0.98rem}

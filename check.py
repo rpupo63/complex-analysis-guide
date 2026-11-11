@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""Check build/guide.html. Exit status 1 on any failure.
+"""Check the build. Exit status 1 on any failure.
 
     python check.py              # structural + render checks
     python check.py --no-render  # structural checks only (no browser)
 
-Render checks (from legacy/chk4.py) need Playwright and a local MathJax:
+Structural checks read build/guide.html (TeX source still in it). Render checks
+(from legacy/chk4.py) load build/index.html, the prerendered page that is published
+(node tools/prerender.mjs), and need Playwright:
     .venv/bin/python -m pip install playwright pyyaml && npm install
-They use the system Chromium (CHROMIUM env var, default /usr/bin/chromium) and
-serve MathJax from node_modules/, so they work without network access.
+They use the system Chromium (CHROMIUM env var, default /usr/bin/chromium). If the
+page still loads MathJax in the browser, it is served from node_modules/, so the
+checks work without network access.
 """
 import os
 import re
@@ -17,6 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 PAGE = Path(next((a for a in sys.argv[1:] if not a.startswith('--')), ROOT / 'build/guide.html'))
+RENDERED = ROOT / 'build/index.html'
 fails = []
 
 
@@ -53,7 +57,8 @@ def render(g):
         check('render check (playwright installed)', False, 'run: .venv/bin/python -m pip install playwright, or use --no-render')
         return
     mj = ROOT / 'node_modules/mathjax/es5'
-    if not (mj / 'tex-svg.js').exists():
+    live_mathjax = 'tex-svg.js' in g
+    if live_mathjax and not (mj / 'tex-svg.js').exists():
         check('render check (local MathJax)', False, 'run: npm install')
         return
     with tempfile.TemporaryDirectory() as tmp:
@@ -77,17 +82,20 @@ def render(g):
                     r.fulfill(body='', content_type='text/css')
             pg.route('**/*', route)
             pg.goto(page_file.as_uri(), wait_until='domcontentloaded', timeout=120000)
-            pg.wait_for_function('() => window.MathJax && MathJax.startup && MathJax.startup.promise', timeout=120000)
-            pg.evaluate('() => MathJax.startup.promise')
+            if live_mathjax:
+                pg.wait_for_function('() => window.MathJax && MathJax.startup && MathJax.startup.promise', timeout=120000)
+                pg.evaluate('() => MathJax.startup.promise')
             n = pg.evaluate('() => document.querySelectorAll("mjx-container").length')
-            check('MathJax typeset the page (%d formulas)' % n, n > 1000)
+            check('MathJax typeset the page (%d formulas%s)' % (n, '' if live_mathjax else ', prerendered'), n > 1000)
             errs = pg.eval_on_selector_all(
-                '[data-mml-node="merror"]',
+                'g[data-mml-node="merror"], mjx-merror',
                 'e => e.map(x => (x.getAttribute("data-mjx-error") || x.textContent) + " | " + '
                 '(x.closest("section,div.apx,div.lecture") || {id: ""}).id)')
             check('0 MathJax errors', not errs, '; '.join(errs[:10]))
             check('no console errors', not console, '; '.join(console[:5]))
             pg.set_viewport_size({'width': 400, 'height': 800})
+            # content-visibility clips each section, which would hide an overflow; turn it off to measure.
+            pg.add_style_tag(content='section,.apx{content-visibility:visible !important}')
             pg.wait_for_timeout(1500)
             sw = pg.evaluate('document.documentElement.scrollWidth')
             wide = []
@@ -106,7 +114,8 @@ def main():
     g = PAGE.read_text()
     structural(g)
     if '--no-render' not in sys.argv:
-        render(g)
+        explicit = any(not a.startswith('--') for a in sys.argv[1:])
+        render(g if explicit or not RENDERED.exists() else RENDERED.read_text())
     print('\ncheck: %s' % ('PASS' if not fails else 'FAIL (%d)' % len(fails)))
     sys.exit(1 if fails else 0)
 

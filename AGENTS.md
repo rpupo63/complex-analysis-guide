@@ -1,10 +1,11 @@
 # AGENTS.md: Complex Analysis Companion
 
-This repo (`Complex Analysis/guide/`) is the source for a one-page HTML textbook of a complex analysis course (Lectures 1–13 and 15; there is no Lecture 14 yet). `python build.py` turns the source into `build/guide.html`, a self-contained page (inline CSS, JS and SVG; only the fonts and MathJax 3.2.2 load from a CDN).
+This repo (`Complex Analysis/guide/`) is the source for a one-page HTML textbook of a complex analysis course (Lectures 1–13 and 15; there is no Lecture 14 yet). `python build.py` turns the source into `build/guide.html` (TeX still in it; MathJax 3.2.2 typesets it in the browser). `node tools/prerender.mjs` then typesets every formula at build time into `build/index.html`, the published page: self-contained, with no MathJax script (only the fonts load from a CDN). `just build` runs both.
 
 ## Rules
 
 - **Do not edit `build/`.** It is generated. Change the source and rebuild.
+- **Keep the published page fast.** Do not add a script that typesets math in the browser, and keep `content-visibility` on `section,.apx` in `theme/style.css`. Loading the page with 10,000 formulas typeset in the browser took 12 s on a desktop and about 50 s on a phone-class CPU; prerendered with containment, it takes 1.3 s and 4.6 s. Jumps go through `go()` in `theme/guide.js`, which handles sections that are not laid out yet.
 - **Do not edit `reference/guide.v17.html`.** It is the frozen v17 page that the migration was checked against.
 - **Do not run `tools/extract.py` again.** It was a one-time migration. It overwrites `content/`, `exercises/`, `appendix/`, `notation.yaml`, `figures/` and `theme/`, so it would discard every edit made since. It refuses to run without `--force`.
 - **Do not write item numbers by hand** (for example "Theorem 6.3.1") anywhere in `content/`, `exercises/`, `appendix/` or the YAML files. Write a label instead (see "References"). Numbers inside TeX are not checked, but avoid them too.
@@ -25,7 +26,7 @@ This repo (`Complex Analysis/guide/`) is the source for a one-page HTML textbook
 | `notation.yaml` | Notation entries, in order of first definition. |
 | `figures/*.svg` | Inline SVG figures, included with `{{fig:NAME}}`. |
 | `theme/` | `page.html` skeleton, `style.css`, `mathjax-config.js`, `guide.js` (`__NOTE__` is replaced by the notation JSON). |
-| `tools/` | `extract.py` (the one-time migration) and `roundtrip.py` (compares the build with the reference). |
+| `tools/` | `prerender.mjs` (build-time MathJax, `build/guide.html` → `build/index.html`; reads `theme/mathjax-config.js`), `extract.py` (the one-time migration) and `roundtrip.py` (compares the build with the reference). |
 
 ## Course material (source of truth for content)
 
@@ -122,13 +123,14 @@ Let $f,g$ be holomorphic on a [connected](apx:C4) open set $U$ ...
 
 ```
 python build.py                  # build/guide.html + build/items.json; non-zero exit on any error
-.venv/bin/python check.py        # structure; MathJax errors (data-mml-node="merror"); 400 px overflow; dangling links
+node tools/prerender.mjs         # build/index.html: the same page with all math typeset (needs npm install)
+.venv/bin/python check.py        # structure (guide.html); MathJax errors, 400 px overflow, console errors (index.html)
 python tools/roundtrip.py        # compare with reference/guide.v17.html (expected to drift once content changes)
-just check                       # build + check.py (roundtrip is separate: just roundtrip)
+just check                       # build + prerender + check.py (roundtrip is separate: just roundtrip)
 ```
 
 `roundtrip.py` was the migration's acceptance gate. After the first intentional content change it will report differences. That is expected: read them, and check that they are the changes you meant.
 
 ## Publishing
 
-The guide is on GitHub Pages at https://rpupo63.github.io/complex-analysis-guide/ (the repo is public). `.github/workflows/pages.yml` runs `build.py` on every push to `master` and deploys `build/guide.html` as `index.html`. To publish, run `just check`, commit, and push. An older copy is the claude.ai artifact `https://claude.ai/artifact/NxvWHwcmzyxE99T6Fa26uf`; it updates only when a Claude session with artifact access republishes it.
+The guide is on GitHub Pages at https://rpupo63.github.io/complex-analysis-guide/ (the repo is public). `.github/workflows/pages.yml` runs `build.py` and `tools/prerender.mjs` on every push to `master` and deploys `build/index.html`. To publish, run `just check`, commit, and push. An older copy is the claude.ai artifact `https://claude.ai/artifact/NxvWHwcmzyxE99T6Fa26uf`; it updates only when a Claude session with artifact access republishes it.

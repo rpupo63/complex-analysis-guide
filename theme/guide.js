@@ -45,7 +45,13 @@
     el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
   }
   function go(el){
-    el.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block: 'center'});
+    // Off-screen sections are not laid out (content-visibility), so a long smooth scroll aims at a
+    // position that moves while it runs. Jump far targets instantly, then re-aim once laid out.
+    var near = Math.abs(el.getBoundingClientRect().top) < 2 * innerHeight;
+    el.scrollIntoView({behavior: reduce || !near ? 'auto' : 'smooth', block: 'center'});
+    if (!near) requestAnimationFrame(function(){ requestAnimationFrame(function(){
+      el.scrollIntoView({block: 'center'});
+    }); });
     flash(el);
   }
   function update(){

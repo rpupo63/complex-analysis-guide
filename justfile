@@ -4,6 +4,7 @@ check: build
 
 build:
     python3 build.py
+    node tools/prerender.mjs
 
 # Compare the build with the frozen v17 reference (the migration gate).
 roundtrip: build

@@ -6,6 +6,7 @@ The source for *Holomorphic Functions*, a one-page HTML textbook built from the 
 
 ```
 python3 build.py        # -> build/guide.html, build/items.json
+node tools/prerender.mjs  # -> build/index.html, the published page with all math typeset (npm install first)
 ```
 
 You need Python 3 and PyYAML. The build fails with a list of errors if a label, an appendix id, a figure or a notation key is unknown.
@@ -30,7 +31,7 @@ just roundtrip          # compare with reference/guide.v17.html
 
 ## Publish
 
-The page is on GitHub Pages: https://rpupo63.github.io/complex-analysis-guide/. Every push to `master` rebuilds and redeploys it (`.github/workflows/pages.yml`).
+The page is on GitHub Pages: https://rpupo63.github.io/complex-analysis-guide/. Every push to `master` rebuilds and redeploys it (`.github/workflows/pages.yml`). The published page is `build/index.html`: `tools/prerender.mjs` typesets all formulas at build time, so the browser runs no MathJax.
 
 ## Migration report (v17 → source tree)
 

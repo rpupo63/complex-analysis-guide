@@ -1,4 +1,4 @@
-# Build the guide and publish it on GitHub Pages on every push to master.
+# Build the guide, typeset its math (tools/prerender.mjs), and publish it on GitHub Pages on every push to master.
 name: Publish guide
 
 on:
@@ -23,11 +23,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
       - run: pip install pyyaml
+      - run: npm ci
       - run: python build.py
+      - run: node tools/prerender.mjs
       - run: |
           mkdir _site
-          cp build/guide.html _site/index.html
+          cp build/index.html _site/index.html
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
