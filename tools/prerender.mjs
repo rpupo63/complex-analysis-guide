@@ -42,7 +42,8 @@ const doc = mathjax.document(html, {
 doc.render();
 const n = Array.from(doc.math).length;
 // Drop attributes only MathJax's own (now absent) scripts read; keep the node types the SVG CSS styles.
-html = (adaptor.doctype(doc.document) + adaptor.outerHTML(adaptor.root(doc.document)))
+// The lite adaptor drops the doctype; put it back so the page renders in standards mode.
+html = ('<!doctype html>\n' + adaptor.outerHTML(adaptor.root(doc.document)))
   .replace(/ data-c="[^"]*"/g, '')
   .replace(/ data-mml-node="(?!maction"|merror"|mtable")[^"]*"/g, '');
 fs.writeFileSync(out, html);

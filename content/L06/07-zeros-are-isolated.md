@@ -4,6 +4,10 @@ slide: Slide 8
 title: Zeros are isolated
 ---
 
+::: motivation
+<p>Holomorphic functions are power series by @thm:power-series on a disk. If the function is not identically zero, its zeros should not pile up. A pile of zeros would leave no room to count them one by one.</p>
+:::
+
 ::: theorem {#thm:isolated-zeros name="isolated zeros"}
 Let $f\not\equiv0$ be holomorphic on a [connected](apx:C4) open set $\Omega$, and $f(z_0)=0$. Then there is $\delta\gt0$ such that $f(w)\ne0$ for $0\lt|w-z_0|\lt\delta$.
 :::
@@ -23,6 +27,10 @@ so
 \[ |f(w)|\ge|w-z_0|^m\Big(|a_m|-\frac{2M}{r^{m+1}}|w-z_0|\Big)\gt0\qquad\text{if }0\lt|w-z_0|\lt\min\Big(\frac r2,\frac{|a_m|\,r^{m+1}}{2M}\Big). \]</li>
 </ol>
 <span class="qed">∎</span>
+:::
+
+::: plain
+<p>On a connected open set, the zeros of a holomorphic function that is not identically zero are isolated. Each zero has a small disk around it that contains no other zero. The only exception is a function that vanishes at every point.</p>
 :::
 <p>This proves @cor:isolated-zeros, stated in Lecture 1 without proof: if distinct zeros $z_n$ converge to $z\in\Omega$, then $f(z)=0$ by continuity, and $z$ is a zero that is not isolated, so $f\equiv0$. The stronger identity theorem is @thm:identity-theorem-l10.</p>
 ::: definition {#def:order-of-a-zero name="order of a zero"}

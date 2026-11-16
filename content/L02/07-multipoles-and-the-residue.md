@@ -29,9 +29,17 @@ A singularity of $f$ at $z_0$ can be a whole combination of multipoles,
 plus a part holomorphic near $z_0$. The coefficient $\class{ntn-a1}{a_1}$ is the <em>residue</em> of $f$ at $z_0$. (That every isolated singularity has such an expansion is the theory of [Laurent series](apx:E5).)
 :::
 
+::: motivation
+<p>A singularity may combine many multipoles, as in @def:the-residue. @cor:cauchys-theorem removes the holomorphic part from the integral. Higher multipoles carry no net charge. Only the residue coefficient should survive.</p>
+:::
+
 ::: proposition {#prop:the-contour-integral-sees-only-the name="the contour integral sees only the residue"}
 For $\gamma$ a small circle around $z_0$ (enclosing no other singularity), $\oint_\gamma f\,dz=2\pi i\,\class{ntn-a1}{a_1}$. If $\class{ntn-a1}{a_1}=\alpha+i\beta$, the net charge (flux) is $2\pi\alpha$ and the circulation is $-2\pi\beta$. For purely electric point charges $\class{ntn-a1}{a_1}$ is real, and the enclosed charge is $2\pi \class{ntn-a1}{a_1}$.
 :::
 ::: proof
 Integrate term by term (allowed when the series converges uniformly on the circle, [A.17](apx:A17)). The holomorphic part contributes $0$ (@cor:cauchys-theorem); the term $\class{ntn-a1}{a_1}/(z-z_0)$ contributes $2\pi i\,\class{ntn-a1}{a_1}$ (@cor:the-residue-theorem-point-charge-form); every term with $m\ge2$ contributes $0$ (@prop:1-z-2-has-zero-charge). So $\oint f\,dz=2\pi i(\alpha+i\beta)=-2\pi\beta+i\cdot2\pi\alpha$. Comparing with @prop:contour-integral-circulation-i-cdot-flux, $\text{circulation}+i\cdot\text{flux}$, the circulation is $-2\pi\beta$ and the flux $2\pi\alpha$. A point charge $q$ has $\class{ntn-a1}{a_1}=q/2\pi$ (@rem:consequence-the-singularity-is-the-charge), which is real, and then flux $=2\pi \class{ntn-a1}{a_1}=q$.
+:::
+
+::: plain
+<p>A small circle around the singularity sees only the residue. The real part of the residue determines the enclosed charge. The imaginary part determines the circulation. Every other multipole contributes nothing to the integral.</p>
 :::

@@ -8,6 +8,10 @@ title: Poincaré's inequality
 The <em>width</em> $\class{ntn-L}{L}$ of $\Omega$ is a number such that, after a horizontal translation, $\Omega$ lies in the strip $\{(x,y):0\lt x\lt \class{ntn-L}{L}\}$. Such an $\class{ntn-L}{L}$ exists because $\Omega$ is bounded.
 :::
 
+::: motivation
+<p>Energy controls gradients, as in @lem:among-all-is-the-unique. Passing to a limit also requires control of the functions themselves. A function that vanishes on the boundary should be bounded by its gradient. The bound should depend only on the width of the region.</p>
+:::
+
 ::: theorem {#thm:poincares-inequality name="Poincaré's inequality"}
 If $v$ is continuous on $\overline\Omega$, piecewise continuously differentiable, and $v=0$ on $\class{ntn-dOm}{\partial\Omega}$, then
 \[ \class{ntn-L2}{\norm{v}_{L^2}}\le \class{ntn-L}{L}\,\class{ntn-L2}{\norm{\nabla v}_{L^2}}. \]
@@ -28,6 +32,10 @@ The middle steps use $\int_0^x1^2=x$ and enlarge the interval of a nonnegative i
 Take square roots. <span class="qed">∎</span></li>
 </ol>
 The constant $\class{ntn-L}{L}$ is not the best possible; see [a sharper constant](apx:E11). Any constant independent of $n$ and $k$ is enough for what follows.
+:::
+
+::: plain
+<p>A function that vanishes on the boundary is controlled by its gradient. The control compares square integrals of the function and of the gradient. The constant is the width of a strip that contains the region. A tall function on a narrow region must have a steep slope.</p>
 :::
 
 ::: corollary {#cor:it-applies-to-u-n-u name="it applies to $\class{ntn-Un}{U_n}-\class{ntn-Un}{U_k}$"}

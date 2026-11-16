@@ -4,6 +4,10 @@ slide: Slide 6
 title: A counting proposition
 ---
 
+::: motivation
+<p>The map built for @thm:riemann-mapping-theorem has one zero, and its modulus tends to $1$ at the boundary. @thm:argument-principle counts solutions of $f(z)=w$. The same count for every value in the disk is what makes the map bijective.</p>
+:::
+
 ::: proposition {#prop:counting name=counting}
 Let $\Omega$ be a bounded connected open set, $f$ holomorphic and not constant on $\Omega$, with $|f(z)|\to1$ as $z\to\partial\Omega$. Then $f(\Omega)\subseteq D(0,1)$, and $f$ takes every $w\in D(0,1)$ exactly $d\ge1$ times, where $d$ is the number of zeros of $f$ (with multiplicity).
 :::
@@ -21,4 +25,9 @@ using $\frac1{f-w}-\frac1{f-w'}=\frac{w-w'}{(f-w)(f-w')}$. $N$ is continuous and
 <li><em>All values, and $d\ge1$.</em> Every $w\in D(0,1)$ lies in some $D(0,\rho)$, so it is taken exactly $d$ times. And $d\ge1$: $f(\Omega)$ is a nonempty subset of $D(0,1)$, so some $w$ is taken at least once. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>If $|f|$ tends to $1$ at the boundary, then $f$ maps the region into the disk. Every value in the disk is taken the same number of times. That number is the number of zeros of $f$, counted with multiplicity. There is at least one zero.</p>
+:::
+
 <p>The idea in one line: the number of solutions of $f=w$ cannot change as $w$ moves, because no solution can escape through the boundary, where $|f|$ is close to $1$.</p>

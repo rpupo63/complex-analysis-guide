@@ -22,6 +22,10 @@ Expand using linearity in both slots:
 Nonnegativity is @prop:properties-of-a.
 :::
 
+::: motivation
+<p>@thm:uniqueness gives at most one continuous solution. The grid problem is a linear system for the interior values. A unique solution follows if the interior matrix is positive definite. The energy of an interior grid function should give that positivity.</p>
+:::
+
 ::: theorem {#thm:a-ii-is-positive-definite name="$\class{ntn-AII}{A_{II}}$ is positive definite"}
 For every nonzero $\class{ntn-cI}{c_I}\in\R^n$, $\class{ntn-cI}{c_I}^{\mathsf T}\class{ntn-AII}{A_{II}}\class{ntn-cI}{c_I}\gt0$. So $\class{ntn-AII}{A_{II}}$ is [positive definite](apx:B4), hence invertible, and the system has exactly one solution $\class{ntn-cI}{c_I}$.
 :::
@@ -35,6 +39,10 @@ Extend $\class{ntn-cI}{c_I}$ by zeros at the boundary nodes to get $c$ ("$c$ sup
 <li>So $U\equiv0$, and by @cor:the-coefficients-are-the-nodal-values every $c_{kl}=0$.</li>
 </ol>
 This proves positive definiteness. [Positive definite matrices are invertible](apx:B4), so $\class{ntn-AII}{A_{II}}\class{ntn-cI}{c_I}=-\class{ntn-AIB}{A_{IB}}\class{ntn-gB}{g_B}$ has exactly one solution.
+:::
+
+::: plain
+<p>Every nonzero interior vector has positive energy. The interior matrix is positive definite. It is therefore invertible. The discrete system has exactly one solution.</p>
 :::
 
 ::: definition {#def:the-discrete-solution name="the discrete solution"}

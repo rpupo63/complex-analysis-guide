@@ -5,6 +5,10 @@ title: Harmonic functions are determined by their boundary values
 toc: Uniqueness by energy
 ---
 
+::: motivation
+<p>@prop:if-satisfy-the-cauchy-riemann produces functions whose Laplacian vanishes. Such a function is a steady temperature on a plate. The temperature on the edge might fix the temperature inside. This theorem says that the interior is unique.</p>
+:::
+
 ::: theorem {#thm:uniqueness name=uniqueness}
 Let $\Omega$ be a bounded open set with [piecewise $C^1$ boundary](apx:C3), and let $h_1,h_2\in C^2(\overline\Omega)$ be harmonic on $\Omega$. If $h_1=h_2$ on $\class{ntn-dOm}{\partial\Omega}$, then $h_1=h_2$ on all of $\Omega$.
 :::
@@ -21,6 +25,10 @@ the boundary integral vanishing because $w=0$ at every point of $\class{ntn-dOm}
 \[ 0=\iint_\Omega|\nabla w|^2\,dA+\iint_\Omega w\,\class{ntn-Delta}{\Delta} w\,dA=\iint_\Omega|\nabla w|^2\,dA,\qquad\text{since }\class{ntn-Delta}{\Delta} w=0. \]</li>
 <li><em>Conclude.</em> The integrand $|\nabla w|^2$ is continuous and $\ge0$ with integral $0$, so $\nabla w\equiv0$ on $\Omega$ ([zero integral forces zero](apx:A11)). Hence $w$ is constant on each [connected component](apx:C4) $\Omega'$ of $\Omega$: two points of $\Omega'$ can be joined by a path, and the derivative of $w$ along the path is $\nabla w\cdot(\text{velocity})=0$. Each constant is $0$: $\Omega'$ is bounded and nonempty, so it has a boundary point $p$, and $p\in\class{ntn-dOm}{\partial\Omega}$ (the argument of @cor:maximum-principle, step 5). By continuity $w(p)$ equals the constant, and $w(p)=0$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>Two harmonic functions that agree on the boundary agree inside. The edge temperature determines the equilibrium temperature. The domain is bounded, with a piecewise smooth boundary. Both functions are twice differentiable up to that boundary.</p>
 :::
 
 ::: remark {#rem:energy name=energy}

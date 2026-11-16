@@ -10,6 +10,10 @@ title: Cauchy's theorem
 :::
 <p>The $C^1$ requirement is what Green's theorem needs. It is weaker than Standing @asm:from-now-on-holomorphic-functions ($C^2$ parts), and @cor:holomorphic-functions-are-smooth shows that it already makes $f$ infinitely differentiable. For why the requirement can be dropped altogether, see [Goursat's theorem](apx:E2). "Near $K$" lets us work on a closed set $K$, such as a closed disk, without worrying about what happens exactly on its edge.</p>
 
+::: motivation
+<p>The charge-free vanishing of @cor:cauchys-theorem was proved in a different language. The integral formulas need the same fact for regions bounded by circles. The Cauchy–Riemann equations in @thm:cauchy-riemann are what force the integral to vanish.</p>
+:::
+
 ::: theorem {#thm:cauchys-theorem name="Cauchy's theorem"}
 Let $D$ be a closed region bounded by finitely many circles, and let $f$ be holomorphic near $D$. Then
 \[ \oint_{\partial D}f\,dz=0, \]
@@ -27,5 +31,9 @@ Write $f=u+iv$ and $dz=dx+i\,dy$ (the contour integral of @def:contour-integral)
 By the Cauchy–Riemann equations (@thm:cauchy-riemann), $u_x=v_y$ and $u_y=-v_x$, so both integrands vanish identically:
 \[ \oint_{\partial D}f\,dz=\iint_D(-v_x-u_y)\,dA+i\iint_D(u_x-v_y)\,dA=0+i\cdot0=0. \]
 <span class="qed">∎</span>
+:::
+
+::: plain
+<p>The integral of a holomorphic function around the edge of a circular region is zero. The outer boundary runs anticlockwise, and each hole runs clockwise. Disks, annuli, and disks with round holes are all included.</p>
 :::
 <p>Compare Lecture 2: there $f=u-iv$ was attached to a field $(u,v)$ ([sign conventions](apx:E1)), and the two integrals were the circulation and the flux. Here the same two integrals are killed directly by Cauchy–Riemann.</p>

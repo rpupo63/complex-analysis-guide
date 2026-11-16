@@ -10,7 +10,7 @@ In @set:a-symmetric-open-set, let $f$ be holomorphic on $\Omega^+$, continuous o
 the mirror image of $F(z)$ in $L$.
 :::
 ::: proof
-$e^{-i\theta}(f-a)$ is real on $I$. Extend it by @thm:schwarz-reflection to $E$ with $E(\bar z)=\overline{E(z)}$, and put $F:=a+e^{i\theta}E$. Then $F(\bar z)=a+e^{i\theta}\,\overline{e^{-i\theta}(F(z)-a)}=a+e^{2i\theta}\,\overline{F(z)-a}$.
+$e^{-i\theta}(f-a)$ is real on $I$. Extend it by @thm:schwarz-reflection to $E$ with $E(\bar z)=\overline{E(z)}$, and put $F:=a+e^{i\theta}E$. Then \[ F(\bar z)=a+e^{i\theta}\,\overline{e^{-i\theta}(F(z)-a)}=a+e^{2i\theta}\,\overline{F(z)-a}. \]
 :::
 
 ::: corollary {#cor:reflection-in-a-circle name="reflection in a circle"}

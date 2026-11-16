@@ -13,7 +13,7 @@ As $R\to\infty$, both sides of Jensen's formula equal $2R-\log(2\pi R)+O(1/R)$.
 <ol>
 <li><em>The zeros.</em>
 \[ \sum_{0\lt|n|\lt R}\log\frac R{|n|}=2(K\log R-\log K!). \]
-[Stirling's formula](apx:A23) gives $\log K!=K\log K-K+\frac12\log(2\pi K)+O(\frac1K)$, and
+[Stirling's formula](apx:A23) gives \[ \log K!=K\log K-K+\frac12\log(2\pi K)+O(\frac1K), \] and
 \[ K\log R-K\log K=K\log(1+\frac1{2K})=\frac12+O(\frac1K). \]
 So
 \[ 2(K\log R-\log K!)=2K+1-\log(2\pi K)+O(\tfrac1K)=2R-\log(2\pi R)+O(\tfrac1R), \]

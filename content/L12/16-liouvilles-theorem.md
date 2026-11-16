@@ -5,11 +5,19 @@ title: Liouville's theorem
 ---
 <p>Not every open set $U$ has a conformal map onto $D(0,1)$.</p>
 
+::: motivation
+<p>@thm:power-series writes every entire function as one power series on the plane. A function bounded on the whole plane might still seem free to vary. @cor:cauchys-estimate is what rules that variation out.</p>
+:::
+
 ::: theorem {#thm:liouville name=Liouville}
 A bounded entire function is constant.
 :::
 ::: proof
 Let $|f|\le M$ and $f(z)=\sum_na_nz^n$ (an entire function is one power series, @thm:power-series). Cauchy's estimate (@cor:cauchys-estimate) on $|z|=R$ gives $|a_n|\le MR^{-n}$ for every $R\gt0$. Letting $R\to\infty$, $a_n=0$ for $n\ge1$.
+:::
+
+::: plain
+<p>An entire function that stays within a fixed bound is constant. It takes the same value at every point of the plane.</p>
 :::
 
 ::: corollary {#cor:fundamental-theorem-of-algebra name="fundamental theorem of algebra"}

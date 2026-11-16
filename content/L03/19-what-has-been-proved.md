@@ -4,6 +4,10 @@ slide: Slide 21
 title: What has been proved
 ---
 
+::: motivation
+<p>@thm:uniqueness says there is at most one classical solution. It does not produce a solution. The grid solutions from @thm:a-ii-is-positive-definite can be refined. Their limit should solve the Dirichlet problem in the weak sense.</p>
+:::
+
 ::: theorem {#thm:existence-of-a-weak-solution name="existence of a weak solution"}
 Assume @hyp:for-now. Let $\class{ntn-Un}{U_0}\in \class{ntn-Vg}{V^g_{\eps_0}}$ be the coarsest discrete solution and $\class{ntn-Un}{U_n}$ the solution at level $n$; each equals $g$ on all of $\class{ntn-dOm}{\partial\Omega}$. Then:
 <ol>
@@ -15,6 +19,10 @@ Thus $u$ satisfies the weak form (@def:weak-form-of-the-dirichlet-problem) of th
 :::
 ::: proof
 Item 1 is [Props. #](@prop:three-limits) and [#](@prop:and-weakly-write). Item 2 is @thm:smooth-test-functions. For item 3: $\class{ntn-Un}{U_0}\in \class{ntn-Vg}{V^g_{\eps_0}}\subset \class{ntn-Vg}{V^g_{\eps_n}}$ by [Lemma #(b)](@lem:nesting), so $\class{ntn-Un}{U_0}$ and $\class{ntn-Un}{U_n}$ both equal $g$ on $\class{ntn-dOm}{\partial\Omega}$ and their difference vanishes there. The convergence follows from item 1 by subtracting the fixed function $\class{ntn-Un}{U_0}$.
+:::
+
+::: plain
+<p>The refined grid solutions converge to a square-integrable function. Their gradients converge in the same square-integral sense. The limit has zero energy against every smooth function that vanishes on the boundary. Boundary values are kept by comparison with the coarsest grid solution.</p>
 :::
 
 ::: remark {#rem:why-item-3-is-the-boundary name="why item 3 is the boundary condition"}

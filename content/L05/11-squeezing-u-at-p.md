@@ -26,6 +26,10 @@ $\class{ntn-vpm}{v_\pm}$ is a constant plus a constant multiple of $\class{ntn-w
 So $\class{ntn-vpm}{v_+}\ge g$ on $\class{ntn-dOm}{\partial\Omega}$. The same two cases, with all signs reversed, give $\class{ntn-vpm}{v_-}\le g$.
 :::
 
+::: motivation
+<p>@lem:comparison traps the candidate between harmonic functions. Those functions can be drawn tight near one boundary point. The boundary data vary only a little on a small arc. The candidate should meet the data at that point.</p>
+:::
+
 ::: theorem {#thm:step-4-boundary-values name="step 4: boundary values"}
 For every $p\in\class{ntn-dOm}{\partial\Omega}$, $u(z)\to g(p)$ as $z\to p$ with $z\in\Omega$.
 :::
@@ -40,4 +44,9 @@ For every $p\in\class{ntn-dOm}{\partial\Omega}$, $u(z)\to g(p)$ as $z\to p$ with
 <li>So $\limsup_{z\to p}|u(z)-g(p)|=0$, which means $u(z)\to g(p)$. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>At every boundary point, interior values approach the prescribed value. The approach uses points that stay inside the domain. The prescribed value is the continuous boundary function. No boundary point is left out.</p>
+:::
+
 <p>The two parameters do different jobs. $\class{ntn-rho}{\rho}$ controls how much $g$ itself varies near $p$; $\class{ntn-dd}{d}$ controls how sharply the barrier rises away from $p$, and sending $d\to0$ makes the barrier's cost at $p$ (the term $\class{ntn-kk}{k}\log2$) negligible.</p>

@@ -24,7 +24,7 @@ Show $\displaystyle\int_0^\infty\frac{dx}{1+x^3}=\frac{2\pi}{3\sqrt3}$, using th
 <details class="sol"><summary>Solution</summary>
 <p>Let $\omega:=e^{2\pi i/3}$, so $\omega^3=1$. The sector of radius $R$ has three sides: $[0,R]$; the arc; and the ray from $R\omega$ back to $0$. On the ray $z=r\omega$, $z^3=r^3$ and $dz=\omega\,dr$, so that side contributes $-\omega\int_0^R\frac{dr}{1+r^3}$. The arc has length $\frac{2\pi R}3$ and $|1+z^3|\ge R^3-1$, so it vanishes as $R\to\infty$. The only pole inside is $\alpha:=e^{i\pi/3}$ (a root of $z^3=-1$), with residue $\frac1{3\alpha^2}=\frac{\alpha}{3\alpha^3}=-\frac\alpha3$ (@prop:simple-poles-of-a-quotient). Writing $I$ for the integral, as $R\to\infty$:
 \[ (1-\omega)I=2\pi i\Big(-\frac\alpha3\Big). \]
-Now $1-\omega=\alpha(\bar\alpha-\alpha)=\alpha\cdot(-2i\sin\frac\pi3)=-i\sqrt3\,\alpha$, using $\alpha^2=\omega$. So $I=\frac{-2\pi i\alpha/3}{-i\sqrt3\,\alpha}=\frac{2\pi}{3\sqrt3}$.</p></details>
+Now \[ 1-\omega=\alpha(\bar\alpha-\alpha)=\alpha\cdot(-2i\sin\frac\pi3)=-i\sqrt3\,\alpha, \] using $\alpha^2=\omega$. So $I=\frac{-2\pi i\alpha/3}{-i\sqrt3\,\alpha}=\frac{2\pi}{3\sqrt3}$.</p></details>
 :::
 
 ::: exercise {#ex:show-that-has-solution-for}
@@ -32,7 +32,7 @@ Show that $f(x)=(1+x^2)^{-2}$ has $\class{ntn-hat}{\hat f}(\xi)=\frac\pi2\big(1+
 <details class="sol"><summary>Solution</summary>
 <p>For $\xi\ge0$ close in the lower half-plane, clockwise, as in @prop:for: $\class{ntn-hat}{\hat f}(\xi)=-2\pi i\class{ntn-res}{\operatorname{Res}}_{-i}$. Write the integrand as $\frac{k(z)}{(z+i)^2}$ with $k(z)=\frac{e^{-2\pi iz\xi}}{(z-i)^2}$; the residue is $k'(-i)$. Now
 \[ k'(z)=e^{-2\pi iz\xi}\Big(\frac{-2\pi i\xi}{(z-i)^2}-\frac{2}{(z-i)^3}\Big), \]
-and at $z=-i$: $e^{-2\pi iz\xi}=e^{-2\pi\xi}$, $(z-i)^2=-4$, $(z-i)^3=8i$. So $k'(-i)=e^{-2\pi\xi}\big(\frac{\pi i\xi}2+\frac{i}4\big)=ie^{-2\pi\xi}\big(\frac{\pi\xi}2+\frac14\big)$, and $\class{ntn-hat}{\hat f}(\xi)=-2\pi i\cdot ie^{-2\pi\xi}\big(\frac{\pi\xi}2+\frac14\big)=\frac\pi2(1+2\pi\xi)e^{-2\pi\xi}$. By symmetry ($f$ is even, so $\class{ntn-hat}{\hat f}$ is even) the formula holds with $|\xi|$. Check: $\class{ntn-hat}{\hat f}(0)=\frac\pi2=\int f$, matching @ex:a-double-pole.</p></details>
+and at $z=-i$: $e^{-2\pi iz\xi}=e^{-2\pi\xi}$, $(z-i)^2=-4$, $(z-i)^3=8i$. So $k'(-i)=e^{-2\pi\xi}\big(\frac{\pi i\xi}2+\frac{i}4\big)=ie^{-2\pi\xi}\big(\frac{\pi\xi}2+\frac14\big)$, and \[ \class{ntn-hat}{\hat f}(\xi)=-2\pi i\cdot ie^{-2\pi\xi}\big(\frac{\pi\xi}2+\frac14\big)=\frac\pi2(1+2\pi\xi)e^{-2\pi\xi}. \] By symmetry ($f$ is even, so $\class{ntn-hat}{\hat f}$ is even) the formula holds with $|\xi|$. Check: $\class{ntn-hat}{\hat f}(0)=\frac\pi2=\int f$, matching @ex:a-double-pole.</p></details>
 :::
 
 ::: exercise {#ex:find-for-the-triangle-is}

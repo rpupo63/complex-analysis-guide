@@ -28,12 +28,20 @@ At $z=1$: $\class{ntn-Qa}{Q_a}'(1)=0+1+\dots+(a-1)=\frac{a(a-1)}2$, so $\frac{\c
 <span class="qed">∎</span>
 :::
 
+::: motivation
+<p>Stamp combinations were written as residues in @prop:counting-by-residues, before any explicit sum. Both @lem:the-simple-poles and @lem:the-double-pole-at-1 supply the residues at the roots of unity. Adding those residues should produce an explicit formula.</p>
+:::
+
 ::: theorem {#thm:the-stamp-formula name="the stamp formula"}
 For every $n\ge0$,
 \[ \class{ntn-cn}{c}(n)=\frac n{ab}+\frac1{2a}+\frac1{2b}+\frac1a\sum_{\zeta^a=1\ne\zeta}\frac{\zeta^{-n}}{1-\zeta^b}+\frac1b\sum_{\zeta^b=1\ne\zeta}\frac{\zeta^{-n}}{1-\zeta^a}. \]
 :::
 ::: proof
 @prop:counting-by-residues with [Lemmas #](@lem:the-simple-poles) and [#](@lem:the-double-pole-at-1), using $\frac1{ab}\big(1+\frac{a-1}2+\frac{b-1}2\big)=\frac{a+b}{2ab}=\frac1{2a}+\frac1{2b}$.
+:::
+
+::: plain
+<p>The number of ways to make an amount is a straight line in the amount, plus two repeating corrections. The slope depends only on the two stamp values. The corrections repeat because they come from roots of unity.</p>
 :::
 <p>So $\class{ntn-cn}{c}(n)$ is a linear function $\frac n{ab}+\frac1{2a}+\frac1{2b}$ plus two periodic corrections: $\zeta^{-n}$ depends only on $n$ modulo $a$ (or $b$). The double pole gives the growth, the simple poles the wobble.</p>
 

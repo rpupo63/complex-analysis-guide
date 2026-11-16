@@ -15,6 +15,10 @@ Fix $w$ and choose a real $\alpha$ with $e^{-i\alpha}f(w)=|f(w)|$. The function 
 :::
 <p>The slide's "(maximum principle)" refers to this lemma.</p>
 
+::: motivation
+<p>Jensen's formula in @thm:jensens-formula prices each zero by its distance from the centre. A bound on $|f|$ caps that circle average. The number of zeros in a smaller disk should then be capped as well.</p>
+:::
+
 ::: corollary {#cor:counting-zeros name="counting zeros"}
 Let $f$ be holomorphic near $|z|\le R$, $f(0)\ne0$, and $0\lt r\lt R$. Then
 \[ \class{ntn-nr}{n}(r)\le\frac{\log \class{ntn-Mr}{M}(R)-\log|f(0)|}{\log(R/r)}. \]
@@ -27,5 +31,9 @@ Let $f$ be holomorphic near $|z|\le R$, $f(0)\ne0$, and $0\lt r\lt R$. Then
 \[ \class{ntn-nr}{n}(r)\le\frac{\log \class{ntn-Mr}{M}(R')-\log|f(0)|}{\log(R'/r)}\le\frac{\log \class{ntn-Mr}{M}(R)-\log|f(0)|}{\log(R'/r)}. \]
 Let $R'\uparrow R$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>The number of zeros in a smaller disk is bounded by a ratio of logarithms. The top compares the maximum on a larger circle with the value at the centre. The bottom grows as the two radii move apart. A function of moderate size cannot have too many zeros.</p>
 :::
 <p>So <b>a function that is not too big cannot have too many zeros</b>. A polynomial of degree $d$ is the model: $\log \class{ntn-Mr}{M}(R)\approx d\log R$, and taking $R$ huge recovers $\class{ntn-nr}{n}(r)\le d$.</p>

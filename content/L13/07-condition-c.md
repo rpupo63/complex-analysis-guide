@@ -12,6 +12,10 @@ Let $u$ be harmonic on $\Omega$. Then $u\circ f^{-1}$ is harmonic on the disk (@
 On the annulus, $\log|z|$ is harmonic but not a real part: as in @rem:the-disk-matters, it would force $F'=\frac1z$, and then $\oint_{|z|=3/2}\frac{dz}z=\oint F'\,dz=0$, not $2\pi i$.
 :::
 
+::: motivation
+<p>@thm:riemann-mapping-theorem assumes that every harmonic function is a real part. @lem:harmonic-conjugate-on-a-disk gives that property on a disk. A region in which one centre sees every point along a segment should work the same way.</p>
+:::
+
 ::: lemma {#lem:star-shaped-sets-satisfy-c name="star-shaped sets satisfy (C)"}
 If $\Omega$ is star-shaped about $c$ (the segment $[c,z]\subseteq\Omega$ for all $z\in\Omega$), then every harmonic $u$ on $\Omega$ is the real part of a holomorphic function.
 :::
@@ -26,4 +30,9 @@ the last integral being at most $|k|\max_{[z,z+k]}|g-g(z)|$ (ML estimate), which
 <li><em>Compare gradients.</em> So $F$ is holomorphic with $F'=g=u_x-iu_y$. For any holomorphic $F=U+iV$, $F'=U_x+iV_x=U_x-iU_y$ (Cauchy–Riemann). So $U_x=u_x$ and $U_y=u_y$: $\nabla\operatorname{Re}F=\nabla u$. Then $\operatorname{Re}F-u$ has zero gradient on the connected set $\Omega$, so it is constant; at $c$ it is $\operatorname{Re}F(c)-u(c)=0$. So $u=\operatorname{Re}F$. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>On a star-shaped region, every harmonic function is the real part of a holomorphic function. One centre sees each point along a segment that stays in the region. This is the property the Riemann map uses to build its formula.</p>
+:::
+
 <p>This is @lem:harmonic-conjugate-on-a-disk with segments from $c$ in place of horizontal-then-vertical paths. The proof works whenever the integral of $g$ does not depend on the path, which is the real content of "simply connected": no holes for the integral to wind around.</p>

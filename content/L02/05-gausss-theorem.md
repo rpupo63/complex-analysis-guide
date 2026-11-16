@@ -7,6 +7,10 @@ title: Gauss's theorem
 \[ \class{ntn-Ef}{E}=H+\sum_{j=1}^kq_j\,\class{ntn-E0}{E_0}(\cdot-z_j), \]
 where $H$ is a $C^1$ field with $\class{ntn-divc}{\operatorname{div}}H=\class{ntn-divc}{\operatorname{curl}}H=0$ on a region containing $\overline D$ (the field of the charges outside), and $\class{ntn-E0}{E_0}(\cdot-z_j)$ is the unit-charge field moved to $z_j$.</p>
 
+::: motivation
+<p>A charge-free field has zero flux, by @prop:incompressible-and-irrotational. Point charges are sources that a closed curve may enclose. The flux should equal the total charge inside. The circulation should remain zero.</p>
+:::
+
 ::: theorem {#thm:gausss-theorem name="Gauss's theorem"}
 Let $\gamma$ be a [positively oriented simple closed curve](apx:C3) bounding a region $D$, not passing through any $z_j$. Then
 \[ \oint_\gamma \class{ntn-Ef}{E}\cdot n\,ds=\sum_{z_j\in D}q_j\qquad\text{and}\qquad\oint_\gamma \class{ntn-Ef}{E}\cdot t\,ds=0. \]
@@ -21,4 +25,9 @@ The middle steps integrate a delta, so here is the same computation term by term
 </ul>
 Adding up gives $\sum_{z_j\in D}q_j$ and $0$.
 :::
+
+::: plain
+<p>The flux out of a closed curve equals the charge inside it. Charges outside the curve add nothing. The circulation around the curve is zero. The shape of the curve does not matter.</p>
+:::
+
 <p>The shape of $\gamma$ does not matter, only which charges it encloses.</p>

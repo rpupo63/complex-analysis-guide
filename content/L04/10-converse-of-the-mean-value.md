@@ -5,6 +5,10 @@ title: The converse of the mean value property
 toc: Converse of the mean value property
 ---
 
+::: motivation
+<p>@thm:mean-value-property gives circle averages to smooth harmonic functions. @def:the-mean-value-property makes sense for a function that is only continuous. Such a function need not look differentiable. The converse should still yield smoothness and Laplace's equation.</p>
+:::
+
 ::: theorem {#thm:converse-of-the-mean-value-property name="converse of the mean value property"}
 A continuous function $v$ on $\Omega$ with the mean value property is smooth and harmonic.
 :::
@@ -18,4 +22,9 @@ The mean value property says $\class{ntn-Mt}{M}(t)=v(z_0)$ for every such $t$, s
 \[ 0=\frac1{\pi t^2}\iint_{\class{ntn-Dt}{D_t}}\class{ntn-Delta}{\Delta} v\,dA,\qquad \Big|\frac1{\pi t^2}\iint_{\class{ntn-Dt}{D_t}}\class{ntn-Delta}{\Delta} v\,dA-\class{ntn-Delta}{\Delta} v(z_0)\Big|\le\max_{\class{ntn-Dt}{\overline{D_t}}}|\class{ntn-Delta}{\Delta} v-\class{ntn-Delta}{\Delta} v(z_0)|. \]
 $\class{ntn-Delta}{\Delta} v$ is continuous, so the right side tends to $0$ as $t\to0$, and the disk averages (all zero) tend to $\class{ntn-Delta}{\Delta} v(z_0)$. So $\class{ntn-Delta}{\Delta} v(z_0)=0$.
 :::
+
+::: plain
+<p>A continuous function that equals its circle averages is smooth. It is also harmonic. No derivative is assumed in the hypothesis. Derivatives appear only in the conclusion.</p>
+:::
+
 <p>Together with @thm:mean-value-property: <b>a continuous function is harmonic if and only if it has the mean value property.</b> The right side of this equivalence mentions no derivatives.</p>

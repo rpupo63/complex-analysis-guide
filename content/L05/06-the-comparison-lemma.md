@@ -4,9 +4,18 @@ slide: Slide 7
 title: The comparison lemma
 ---
 
+::: motivation
+<p>@cor:maximum-principle compares two harmonic functions by the values they take on the boundary. @cor:the-lecture-3-limit-is-a makes the grid limit harmonic inside. That limit has no proved pointwise boundary values. Harmonic functions that bound the data should still bound the limit.</p>
+:::
+
 ::: lemma {#lem:comparison name=comparison}
 Let $u$ be the function of Lecture 3: harmonic in $\Omega$, the $L^2$ limit of the $\class{ntn-Un}{U_n}$, with $\nabla \class{ntn-Un}{U_n}\to\nabla u$ in $L^2$ and $\class{ntn-Un}{U_n}=g$ on $\class{ntn-dOm}{\partial\Omega}$. Let $\class{ntn-vc}{v}$ be continuous on $\overline\Omega$ and harmonic in $\Omega$. If $\class{ntn-vc}{v}\ge g$ on $\class{ntn-dOm}{\partial\Omega}$, then $\class{ntn-vc}{v}\ge u$ in $\Omega$. If $\class{ntn-vc}{v}\le g$ on $\class{ntn-dOm}{\partial\Omega}$, then $\class{ntn-vc}{v}\le u$ in $\Omega$.
 :::
+
+::: plain
+<p>A harmonic function that lies above the boundary data lies above the limit. A harmonic function that lies below the data lies below the limit. The comparison is with the data, not with unknown boundary values of the limit. The inequality holds at every interior point.</p>
+:::
+
 <p>Compare the maximum principle, @cor:maximum-principle: it would give $\class{ntn-vc}{v}\ge u$ from $\class{ntn-vc}{v}\ge u$ on $\class{ntn-dOm}{\partial\Omega}$. Here the boundary comparison is made with $g$ instead, because $u$ has no known boundary values yet. The proof runs through @sec:v7–@sec:v10; the complete argument is collected at the end of @sec:v10.</p>
 
 ::: definition {#def:the-functions-z-n-and-z name="the functions $\class{ntn-zn}{z_n}$ and $\class{ntn-zf}{z}$"}

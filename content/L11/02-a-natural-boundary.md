@@ -9,6 +9,10 @@ title: A natural boundary
 Let $f$ be holomorphic on $\class{ntn-Dar}{D}(0,1)$, where $\class{ntn-Dar}{D}(a,r):=\{z:|z-a|\lt r\}$. The unit circle is a <em>natural boundary</em> of $f$ if $f$ continues to $\class{ntn-Dar}{D}(0,1)\cup \class{ntn-Dar}{D}(w_0,\delta)$ for no $|w_0|=1$ and no $\delta\gt0$.
 :::
 
+::: motivation
+<p>A series from @thm:power-series need not extend across any boundary point. @def:continuation asks for a holomorphic extension past the first domain. The exponents $2^n$ give a standard example of that failure.</p>
+:::
+
 ::: proposition {#prop:the-unit-circle-is-a}
 The unit circle is a natural boundary of $f(z):=\sum_{n\ge0}z^{2^n}$ $(|z|\lt1)$.
 :::
@@ -25,4 +29,9 @@ The first $k$ terms have modulus $\lt1$ each; the others are positive reals. Kee
 </ol>
 As $M$ is arbitrary, $|F(w)|=\infty$, a contradiction.
 :::
+
+::: plain
+<p>This series is holomorphic inside the unit disk. It cannot be extended across any point of the unit circle. The circle blocks every attempt to continue the function.</p>
+:::
+
 <p>The gaps in the exponents $2^n$ ("lacunary series") make $f$ behave the same way near a dense set of boundary points. Compare $\sum z^n=\frac1{1-z}$, which is singular only at $z=1$ and continues to $\mathbb C\setminus\{1\}$.</p>

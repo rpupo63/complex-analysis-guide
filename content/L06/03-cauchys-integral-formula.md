@@ -4,6 +4,10 @@ slide: Slide 4
 title: Cauchy's integral formula
 ---
 
+::: motivation
+<p>One interior value is what @thm:cauchys-theorem does not recover. Values on the circle should determine the function inside the disk. This formula is that determination.</p>
+:::
+
 ::: theorem {#thm:cauchys-integral-formula name="Cauchy's integral formula"}
 Let $f$ be holomorphic near $|z-z_0|\le r$. Then for every $w$ with $|w-z_0|\lt r$,
 \[ f(w)=\frac1{2\pi i}\oint_{|z-z_0|=r}\frac{f(z)}{z-w}\,dz. \]
@@ -20,5 +24,9 @@ Let $f$ be holomorphic near $|z-z_0|\le r$. Then for every $w$ with $|w-z_0|\lt 
 which tends to $0$ because $f$ is continuous at $w$.</li>
 <li><em>Conclude.</em> The left side of step 1 does not depend on $\delta$, and the right side tends to $2\pi i\,f(w)$. So the left side equals $2\pi i\,f(w)$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>Inside a disk, a holomorphic function is an average of its values on the circle. The weight depends on the interior point and on the point of the circle. The boundary values determine the function everywhere inside.</p>
 :::
 <p>A holomorphic function on a disk is therefore determined by its values on the boundary circle. With $w=z_0$ and $z=z_0+re^{i\theta}$, the formula reads $f(z_0)=\frac1{2\pi}\int_0^{2\pi}f(z_0+re^{i\theta})\,d\theta$: the mean value property, @thm:mean-value-property, for the real and imaginary parts at once.</p>

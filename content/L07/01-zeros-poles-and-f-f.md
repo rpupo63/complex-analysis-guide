@@ -14,8 +14,16 @@ $f$ has a <em>pole of order $m\ge1$</em> at $a$ if, for some $\rho\gt0$, $f=g/(z
 :::
 <p>In both cases $f(z)$ behaves like a constant times $(z-a)^{\pm m}$ near $a$: a zero is a "pole of negative order". The lemma below makes this precise through the <em>logarithmic derivative</em> $f'/f$, so called because it is $(\log f)'$ wherever a branch of $\log f$ exists.</p>
 
+::: motivation
+<p>The residue theorem in @thm:residue-theorem sums one local term at each pole. A zero or a pole should show up when one integrates $f'/f$ over a small circle. That contribution should be the order, with opposite signs for zeros and poles.</p>
+:::
+
 ::: lemma {#lem:logarithmic-derivative name="logarithmic derivative"}
 Let $f$ be holomorphic and $\ne0$ on $0\lt|z-a|\lt r$, with a zero or a pole of order $m$ at $a$. Then for every $\epsilon\in(0,r)$,
 \[ \frac1{2\pi i}\oint_{|z-a|=\epsilon}\frac{f'(z)}{f(z)}\,dz=\begin{cases}\ \ m&\text{at a zero},\\-m&\text{at a pole}.\end{cases} \]
+:::
+
+::: plain
+<p>A small circle about a zero of order $m$ has integral of $f'/f$ equal to that order. A small circle about a pole of the same order has integral equal to the negative of that order. Anything milder than the leading power does not change the integral.</p>
 :::
 <p>Test case: $f(z)=(z-a)^m$ has $\frac{f'}{f}=\frac{m}{z-a}$, whose integral is $m$ (@cor:the-residue-theorem-point-charge-form); $f=(z-a)^{-m}$ gives $-m$. The lemma says that only this leading behaviour matters.</p>

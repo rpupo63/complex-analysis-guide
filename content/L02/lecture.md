@@ -1,6 +1,7 @@
 ---
 title: Electrostatics, Gauss's theorem, and harmonic functions
 toc: Electrostatics and harmonic functions
+motivation: 'Lecture 1 read a holomorphic function as a flow with no source and no spin (@prop:cauchy-riemann-in-the-language-of). A charge-free electric field obeys the same two laws. This lecture makes that reading precise and proves there is at most one solution of the boundary-value problem.'
 goal: Read holomorphic functions as charge-free electric fields; prove Gauss's theorem and its complex form; show $u$ and $v$ are harmonic; prove the Dirichlet problem has at most one solution.
 main_results: '@thm:gausss-theorem (Gauss) · @cor:cauchys-theorem (Cauchy) · @prop:the-contour-integral-sees-only-the (residue) · @prop:if-satisfy-the-cauchy-riemann (harmonic parts) · @thm:uniqueness (uniqueness)'
 uses: Lecture 1; the divergence theorem ([A.6](apx:A6)).

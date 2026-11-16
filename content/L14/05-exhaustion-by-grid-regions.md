@@ -4,6 +4,10 @@ slide: Reconstructed
 title: Exhaustion by grid regions
 ---
 
+::: motivation
+<p>@thm:riemann-mapping-theorem applies to unions of grid squares, not to every region. @def:simply-connected forbids holes, which keeps a filled grid inside the region. The region has to be written as an increasing union of such grid regions.</p>
+:::
+
 ::: lemma {#lem:exhaustion-by-grid-regions name="exhaustion by grid regions"}
 Let $\Omega$ be simply connected and $z_0\in\Omega$. There are open sets $V_1\subseteq V_2\subseteq\dots$ such that
 <ol type="a">
@@ -21,4 +25,9 @@ Let $\Omega$ be simply connected and $z_0\in\Omega$. There are open sets $V_1\su
 <li><em>Compact sets are eventually inside.</em> Let $K\subseteq\Omega$ be compact. Cover $K$ by finitely many closed disks in $\Omega$, and join each centre to $z_0$ by a path in $\Omega$ ([C.4](apx:C4)). The union $K'$ of these disks and paths is compact, connected, and contains $K$ and $z_0$. It has a positive distance $\delta$ from $\mathbb C\setminus\Omega$ ([C.5](apx:C5)). Take $n$ with $\sqrt2\,2^{-n}\lt\delta$ and $K'\subseteq D(z_0,n-1)$. Every closed grid square of side $2^{-n}$ that meets $K'$ has diameter less than $\delta$, so it lies in $\Omega\cap D(z_0,n)$, that is, in $S_n$. Each point of $K'$ is interior to the union of the (up to four) squares that contain it, all of which meet $K'$. So $K'$ lies in the interior of $S_n$, and, being connected and containing $z_0$, in $U_n\subseteq V_n$. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>A simply connected region can be filled by grid regions that grow and stay inside it. Each piece is a bounded simply connected union of grid squares. Every compact subset sits inside some piece of the filling.</p>
+:::
+
 <p>Step 3 is where simple connectivity enters. Without it the filled region could swallow a hole of $\Omega$: for the annulus $\{1\lt|z|\lt2\}$, $U_n$ is a ring of squares and $V_n$ contains the unit disk.</p>

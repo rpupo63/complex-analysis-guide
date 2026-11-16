@@ -10,6 +10,10 @@ $\Omega$ is open and symmetric about $\mathbb R$: $z\in\Omega\iff\bar z\in\Omega
 :::
 <figure>{{fig:q3-1}}<figcaption>A symmetric open set: $\Omega^+$ above, $\Omega^-$ below, and $I=\Omega\cap\mathbb R$.</figcaption></figure>
 
+::: motivation
+<p>A potential that vanishes on a flat conductor should extend oddly across that line. @cor:maximum-principle and @thm:the-dirichlet-problem-on-a-union control harmonic functions up to a boundary. The odd extension is the method of images, and it must stay harmonic across the line.</p>
+:::
+
 ::: theorem {#thm:harmonic-reflection name="reflection principle, harmonic form: the method of images"}
 Let $v$ be harmonic on $\Omega^+$, continuous on $\Omega^+\cup I$, and $0$ on $I$. Define $V:=v$ on $\Omega^+\cup I$ and $V(z):=-v(\bar z)$ on $\Omega^-$. Then $V$ is harmonic on $\Omega$.
 :::
@@ -23,4 +27,9 @@ Let $v$ be harmonic on $\Omega^+$, continuous on $\Omega^+\cup I$, and $0$ on $I
 <li><em>Conclusion.</em> On the lower half, $w(z)=-w(\bar z)=-v(\bar z)=V(z)$. So $V=w$ inside $Q$, and $V$ is harmonic near $x$. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>A harmonic function that is zero on a real interval extends by a change of sign. The extension is harmonic across the interval, not only off it. Below the line, each value is the negative of the value at the mirror point.</p>
+:::
+
 <p>The slide writes "$w$ harmonic on $Q$"; this means on the interior of $Q$.</p>

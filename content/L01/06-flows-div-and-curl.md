@@ -15,6 +15,10 @@ In two dimensions the curl is a scalar: it is the $z$-component of the three-dim
 \[ \nabla\times(u,v,0)=\big(\partial_y0-\partial_zv,\ \partial_zu-\partial_x0,\ \partial_xv-\partial_yu\big)=(0,0,v_x-u_y), \]
 because $u,v$ do not depend on the third coordinate.</p>
 
+::: motivation
+<p>@thm:cauchy-riemann is a condition on partial derivatives. A flow is described by its sources and its spin. Sources are the divergence, and spin is the curl. This proposition rewrites the condition as those two laws.</p>
+:::
+
 ::: proposition {#prop:cauchy-riemann-in-the-language-of name="Cauchy–Riemann in the language of flows"}
 The pair $(u,-v)$ satisfies the Cauchy–Riemann equations if and only if
 \[ \class{ntn-divc}{\operatorname{div}}(u,v)=0\qquad\text{and}\qquad\class{ntn-divc}{\operatorname{curl}}(u,v)=0. \]
@@ -23,6 +27,11 @@ Equivalently: for $u,v$ of class $C^1$, $f=u-iv$ is holomorphic if and only if $
 ::: proof
 @thm:cauchy-riemann's equations for real part $u$ and imaginary part $-v$ read $u_x=(-v)_y$ and $u_y=-(-v)_x$, that is $u_x+v_y=0$ and $v_x-u_y=0$: $\class{ntn-divc}{\operatorname{div}}(u,v)=0$ and $\class{ntn-divc}{\operatorname{curl}}(u,v)=0$. For the second sentence, $C^1$ functions are differentiable ([A.1](apx:A1)), so @thm:cauchy-riemann applies at every point.
 :::
+
+::: plain
+<p>The velocity has no source and no swirl. That is the Cauchy–Riemann condition, up to one sign. The holomorphic function is the velocity with its vertical part reversed. A source or a swirl does not come from a holomorphic function.</p>
+:::
+
 <p><b>The minus sign is forced.</b> Cauchy–Riemann for $(u,v)$ itself would say $u_x=v_y$ and $u_y=-v_x$, which is neither $\class{ntn-divc}{\operatorname{div}}=0$ nor $\class{ntn-divc}{\operatorname{curl}}=0$; flipping the sign of $v$ turns them into exactly those two. (See [sign conventions](apx:E1).)</p>
 
 ::: proposition {#prop:incompressible-and-irrotational name="incompressible and irrotational"}

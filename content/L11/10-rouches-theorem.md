@@ -5,6 +5,10 @@ title: Rouché's theorem
 ---
 <p>The final slide returns to the argument principle (Lecture 7) and draws its most useful consequence: zeros are stable under small perturbations.</p>
 
+::: motivation
+<p>@thm:argument-principle counts zeros inside a circle. A small change of the function might change that count. The count should stay fixed when the change is smaller than the function on the circle.</p>
+:::
+
 ::: theorem {#thm:rouche name=Rouché}
 Let $f$, $g$ be holomorphic on an open set containing $\overline{\class{ntn-Dar}{D}(a,r)}$, and $C:=\partial \class{ntn-Dar}{D}(a,r)$. If $|f-g|\lt|f|$ on $C$, then $f$ and $g$ have equally many zeros in $\class{ntn-Dar}{D}(a,r)$, counted with multiplicity.
 :::
@@ -21,6 +25,11 @@ is the number of zeros of $\class{ntn-ft}{f_t}$ in $\class{ntn-Dar}{D}(a,r)$: an
 <li><em>Integer-valued and continuous means constant.</em> If $\class{ntn-Nt}{N}(0)\ne \class{ntn-Nt}{N}(1)$, the [intermediate value theorem](apx:A24) would give a $t$ with $\class{ntn-Nt}{N}(t)$ equal to a non-integer between them. So $\class{ntn-Nt}{N}(0)=\class{ntn-Nt}{N}(1)$. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>If two holomorphic functions are close on a circle, they have the same number of zeros inside. Close means the difference is smaller than the first function at every point of the circle. Zeros are counted with multiplicity.</p>
+:::
+
 ::: example {#eg:a-typical-use name="a typical use"}
 How many zeros does $g(z)=z^5+3z+1$ have in $|z|\lt2$? Take $f(z)=z^5$. On $|z|=2$: $|g-f|=|3z+1|\le7\lt32=|f|$. So $g$, like $f$, has $5$ zeros in $|z|\lt2$, without solving anything. (Not from the slides; an illustration.)
 :::

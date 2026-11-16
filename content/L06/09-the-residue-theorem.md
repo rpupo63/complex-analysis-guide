@@ -4,6 +4,10 @@ slide: Slide 10
 title: The residue theorem
 ---
 
+::: motivation
+<p>Cauchy's theorem in @thm:cauchys-theorem needs holomorphy at every interior point. A pole is a point where that demand fails. The integral should still reduce to one local number at each pole.</p>
+:::
+
 ::: theorem {#thm:residue-theorem name="residue theorem"}
 Let $f$ be holomorphic near $\{|z|\le R\}\setminus\{\zeta_1,\dots,\zeta_p\}$, with poles at $\zeta_1,\dots,\zeta_p\in\{|z|\lt R\}$. Then
 \[ \oint_{|z|=R}f(z)\,dz=2\pi i\sum_{j=1}^p\class{ntn-res}{\operatorname{Res}}_{\zeta_j}f. \]
@@ -19,5 +23,9 @@ because $\int_0^{2\pi}e^{il\theta}d\theta=0$ for every integer $l\ne0$ (as in @p
 \[ \oint_{|z-\zeta|=\delta}f\,dz=2\pi i\class{ntn-res}{\operatorname{Res}}_\zeta f+O(\delta). \]</li>
 <li><em>Let $\delta\to0$.</em> Summing over $j$, the constant left side of step 2 equals $2\pi i\sum_j\class{ntn-res}{\operatorname{Res}}_{\zeta_j}f+O(\delta)$ for every small $\delta$, so it equals $2\pi i\sum_j\class{ntn-res}{\operatorname{Res}}_{\zeta_j}f$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>The integral around a large circle equals $2\pi i$ times the sum of the residues inside. Poles of every order are allowed. Only the residue at each pole contributes.</p>
 :::
 <p>Lecture 2 found the same rule physically (@cor:the-residue-theorem-point-charge-form, @prop:the-contour-integral-sees-only-the): a contour integral sees only the $\frac1{z-\zeta}$ terms, the "charges". Here it is proved for poles of any order. @prop:other-contours extends it to contours that are not circles, and [Laurent series](apx:E5) handle singularities that are not poles.</p>

@@ -5,6 +5,10 @@ title: The Paley–Wiener theorem
 ---
 <p>The second half of the pattern of @sec:h4: vanishing outside an interval corresponds to $\class{ntn-hat}{\hat f}$ being entire with controlled growth.</p>
 
+::: motivation
+<p>Decay on the frequency line is what @thm:strips-and-decay takes from a strip. Vanishing outside a bounded interval is stricter than holomorphy on any strip. The transform should then extend to the whole plane, with growth set by the length of that interval.</p>
+:::
+
 ::: theorem {#thm:paley-wiener-a-simple-form name="Paley–Wiener, a simple form"}
 Let $A\gt0$.<br>
 (a) If $f$ is continuous and vanishes outside $[-A,A]$, then $\class{ntn-hat}{\hat f}(\zeta):=\int_{-A}^Af(x)e^{-2\pi ix\zeta}dx$ is an entire function of $\zeta$. If moreover $f$ is $C^2$ (on all of $\R$), then
@@ -22,4 +26,8 @@ Let $A\gt0$.<br>
 As in step 2, the left side is at most $\class{ntn-n1}{\norm{f''}_1}e^{2\pi A|\operatorname{Im}\zeta|}$, so $4\pi^2|\zeta|^2|\class{ntn-hat}{\hat f}(\zeta)|\le\class{ntn-n1}{\norm{f''}_1}e^{2\pi A|\operatorname{Im}\zeta|}$.</li>
 <li><em>Add</em> steps 2 and 3: $(1+4\pi^2|\zeta|^2)|\class{ntn-hat}{\hat f}|\le(\class{ntn-n1}{\norm{f}_1}+\class{ntn-n1}{\norm{f''}_1})e^{2\pi A|\operatorname{Im}\zeta|}$, and $1+|\zeta|^2\le1+4\pi^2|\zeta|^2$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>If a continuous function vanishes outside a bounded interval, its Fourier transform is entire. With two continuous derivatives, that transform grows at most exponentially in the imaginary direction. Conversely, an entire function with that growth is the transform of a continuous function supported on the interval.</p>
 :::

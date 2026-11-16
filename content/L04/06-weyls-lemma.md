@@ -8,9 +8,18 @@ title: Weyl's lemma
 A <em>test function</em> is a smooth function $\eta$ on $\Omega$ that vanishes outside a [compact](apx:C5) subset of $\Omega$, hence on a whole band near $\class{ntn-dOm}{\partial\Omega}$. This is the class of $\psi$ in @def:weak-derivative (weak derivative), now required to be smooth rather than $C^1$.
 :::
 
+::: motivation
+<p>The limit in @thm:existence-of-a-weak-solution is only square-integrable. Its equation is imposed through test functions, after the derivatives have moved off it. A rough representative might still satisfy that integral identity. This result should replace it by a smooth harmonic function.</p>
+:::
+
 ::: theorem {#thm:weyls-lemma name="Weyl's lemma"}
 Let $u\in L^2(\Omega)$ ([square-integrable on $\Omega$](apx:D2)) satisfy $\iint_\Omega u\,\class{ntn-Delta}{\Delta}\eta\,dA=0$ for every test function $\eta$. Then $u$ agrees [almost everywhere](apx:A11) with a smooth harmonic function.
 :::
+
+::: plain
+<p>A square-integrable solution of the weak Laplace equation is smooth. The tests are smooth functions supported away from the boundary. Agreement holds almost everywhere, not necessarily at every point. The smooth function that remains is harmonic.</p>
+:::
+
 <p>The proof occupies @sec:t9–@sec:t10 (@thm:proof-of-weyls-lemma). First, what the hypothesis says.</p>
 
 ::: proposition {#prop:what-the-hypothesis-means name="what the hypothesis means"}

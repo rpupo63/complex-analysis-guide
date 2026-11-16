@@ -6,6 +6,10 @@ title: The identity theorem
 <p>Two tools from Part II's toolbox are proved in full first: the identity theorem (announced in Lecture 1 as @thm:identity-theorem) and the stability of holomorphy under uniform limits.</p>
 <p>Notation: $\class{ntn-Dar}{D}(x,r):=\{z:|z-x|\lt r\}$, the open disk.</p>
 
+::: motivation
+<p>Isolated zeros in @thm:isolated-zeros already stop zeros from piling up, unless the function vanishes everywhere. Here two holomorphic functions agree on a sequence that converges inside the domain. On a connected open set, agreement on that sequence should determine both functions everywhere.</p>
+:::
+
 ::: theorem {#thm:identity-theorem-l10 name="identity theorem"}
 Let $f,g$ be holomorphic on a [connected](apx:C4) open set $U$, and let $x_n\in U\setminus\{x\}$ with $x_n\to x\in U$. If $f(x_n)=g(x_n)$ for every $n$, then $f=g$ on $U$.
 :::
@@ -20,5 +24,9 @@ Let $f,g$ be holomorphic on a [connected](apx:C4) open set $U$, and let $x_n\in 
 \[ \frac{h(z)}{(z-x)^m}=a_m+O(|z-x|)\qquad(z\to x). \]</li>
 <li>Put $z=x_n$ (allowed, as $x_n\ne x$, and $x_n\in \class{ntn-Dar}{D}(x,r)$ for large $n$): $a_m=\lim_n\frac{h(x_n)}{(x_n-x)^m}=\lim_n0=0$, a contradiction. So all $a_k=0$, and $h\equiv0$ on $\class{ntn-Dar}{D}(x,r)$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>Two holomorphic functions on a connected open set that agree on a convergent sequence agree everywhere. The sequence converges to a point of the set, and its terms differ from that point. Sharing those values leaves no second possibility.</p>
 :::
 <p>Compare the proof of @thm:isolated-zeros, which ran the same argument through derivatives; this version is the one the slides use.</p>

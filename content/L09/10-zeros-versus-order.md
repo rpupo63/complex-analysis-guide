@@ -4,6 +4,10 @@ slide: Slide 11
 title: Zeros versus order
 ---
 
+::: motivation
+<p>One disk at a time is all that @cor:counting-zeros controls. Finite order, as in @def:order, limits the growth on every large circle. That growth should limit the zeros out to infinity, and force steep reciprocal powers of the zeros to converge.</p>
+:::
+
 ::: theorem {#thm:zeros-versus-order name="zeros versus order"}
 Let $f$ be entire of finite order $\class{ntn-rhoo}{\rho}$, with $f(0)\ne0$ and zeros $a_1,a_2,\dots$ (repeated by multiplicity). Then:<br>
 (1) for every $\epsilon\gt0$, $\class{ntn-nr}{n}(r)=O(r^{\class{ntn-rhoo}{\rho}+\epsilon})$ as $r\to\infty$;<br>
@@ -19,6 +23,11 @@ Let $f$ be entire of finite order $\class{ntn-rhoo}{\rho}$, with $f(0)\ne0$ and 
 Only finitely many $a_k$ have $|a_k|\le1$ (zeros cannot accumulate). <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>An entire function of finite order has only a power-law number of zeros inside a large circle. The exponent of that power is just above the order. Reciprocal powers of the zeros converge as soon as the exponent exceeds the order.</p>
+:::
+
 ::: remark {#rem:sigma-rho-can-fail name="$\sigma=\class{ntn-rhoo}{\rho}$ can fail"}
 $\frac{\sin\pi z}{\pi z}$ has order $1$ and zeros $\pm1,\pm2,\dots$, and $\sum_{n\ge1}\frac2n=\infty$. So (2) is sharp.
 :::

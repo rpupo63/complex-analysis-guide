@@ -6,6 +6,10 @@ toc: Maximum principle and uniqueness
 ---
 <p>Here $C^2(\Omega)\cap C(\overline\Omega)$ means: twice continuously differentiable inside $\Omega$, and continuous up to and including the boundary ([function classes](apx:D1)).</p>
 
+::: motivation
+<p>@thm:strong-maximum-principle forbids a nonconstant interior peak. Here the domain is bounded and the function extends continuously to the boundary. The highest value on the closure should lie on the boundary. The lowest value should lie there too.</p>
+:::
+
 ::: corollary {#cor:maximum-principle name="maximum principle"}
 Let $\Omega$ be bounded and open, and $h\in C^2(\Omega)\cap C(\overline\Omega)$ harmonic. Then $\max_{\overline\Omega}h=\max_{\class{ntn-dOm}{\partial\Omega}}h$ and $\min_{\overline\Omega}h=\min_{\class{ntn-dOm}{\partial\Omega}}h$.
 :::
@@ -22,6 +26,14 @@ Let $\Omega$ be bounded and open, and $h\in C^2(\Omega)\cap C(\overline\Omega)$ 
 </ol>
 :::
 
+::: plain
+<p>The maximum on the closed region equals the maximum on the boundary. The minimum on the closed region equals the minimum on the boundary. Interior values lie between those boundary extremes. The function is harmonic inside and continuous on the closure.</p>
+:::
+
+::: motivation
+<p>@thm:uniqueness gave uniqueness under stronger smoothness. @cor:maximum-principle needs only continuity up to the boundary. The gap between two harmonic functions should obey the same bound. Close boundary data should produce close solutions.</p>
+:::
+
 ::: corollary {#cor:stability name=stability}
 If $h_1,h_2\in C^2(\Omega)\cap C(\overline\Omega)$ are harmonic on a bounded open $\Omega$, then
 \[ \max_{\overline\Omega}|h_1-h_2|=\max_{\class{ntn-dOm}{\partial\Omega}}|h_1-h_2|. \]
@@ -32,4 +44,9 @@ Put $w:=h_1-h_2$. The Laplacian is linear, so $\class{ntn-Delta}{\Delta} w=\clas
 \[ w(z)\le\max_{\class{ntn-dOm}{\partial\Omega}}w\le\max_{\class{ntn-dOm}{\partial\Omega}}|w|,\qquad -w(z)\le\max_{\overline\Omega}(-w)=\max_{\class{ntn-dOm}{\partial\Omega}}(-w)\le\max_{\class{ntn-dOm}{\partial\Omega}}|w|. \]
 So $|w(z)|\le\max_{\class{ntn-dOm}{\partial\Omega}}|w|$ for every $z$, i.e. $\max_{\overline\Omega}|w|\le\max_{\class{ntn-dOm}{\partial\Omega}}|w|$. The reverse inequality holds because $\class{ntn-dOm}{\partial\Omega}\subset\overline\Omega$. If $h_1=h_2$ on $\class{ntn-dOm}{\partial\Omega}$, the right side is $0$, so $w\equiv0$.
 :::
+
+::: plain
+<p>The largest gap between two harmonic functions equals their largest gap on the boundary. Boundary data that are close produce solutions that are equally close. If the boundary values agree, the two functions agree everywhere. Continuity up to the boundary replaces the older smoothness demand.</p>
+:::
+
 <p>"Stability" means: boundary data that are close (within $\delta$ everywhere on $\class{ntn-dOm}{\partial\Omega}$) give solutions that are close (within $\delta$ everywhere in $\Omega$). The uniqueness half reproves @thm:uniqueness of Lecture 2, which used energy and needed $h_1,h_2\in C^2(\overline\Omega)$; here continuity up to the boundary is enough. @cor:uniqueness-again was its discrete version.</p>

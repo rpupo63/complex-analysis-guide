@@ -5,6 +5,10 @@ title: The strong maximum principle
 toc: Strong maximum principle
 ---
 
+::: motivation
+<p>@thm:mean-value-property ties an interior value to a circle average. A harmonic function might still reach a peak inside the domain. On a connected open set, that peak cannot stay local. The function should be constant once that peak is attained.</p>
+:::
+
 ::: theorem {#thm:strong-maximum-principle name="strong maximum principle"}
 Let $\Omega$ be open and [connected](apx:C4), and let $h$ be $C^2$ and harmonic on $\Omega$. If $h(z_0)=\sup_\Omega h$ at some point $z_0\in\Omega$, then $h$ is constant on $\Omega$.
 :::
@@ -20,6 +24,10 @@ So $\varphi(\theta):=M-h(z_1+te^{i\theta})$ is continuous, nonnegative (because 
 A continuous nonnegative function with zero integral is identically zero ([zero integral forces zero](apx:A11), interval version). This is the slide's argument: if $h\lt M$ at one point of $\class{ntn-Ct}{C_t}$, then $h\lt M$ on a whole arc around it, and the average would be less than $M$. So $h=M$ on the circle of radius $t$ about $z_1$. Every point $z$ with $0\lt|z-z_1|\lt r$ lies on such a circle (take $t=|z-z_1|$), and $z_1\in S$ already. So the open disk of radius $r$ about $z_1$ lies in $S$.</li>
 <li><em>Conclude.</em> In a connected set, the only subsets that are both open and closed are the empty set and the whole set ([C.4](apx:C4)). $S$ is nonempty, open and closed in $\Omega$, so $S=\Omega$: $h\equiv M$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>A nonconstant harmonic function does not attain its supremum inside. If it does attain that supremum, the function is constant. The domain must be open and connected. Approaching the supremum only at the boundary is not enough to force constancy.</p>
 :::
 
 ::: remark {#rem:why-strong name="why \"strong\""}

@@ -1,5 +1,6 @@
 ---
 title: The finite element method
+motivation: 'Lecture 2 proved there is at most one solution (@thm:uniqueness). It did not prove that a solution exists. On a grid, a quadratic energy has one minimum. This lecture takes that minimum and passes to a limit.'
 goal: Construct a candidate solution of the Dirichlet problem as the energy limit of finite element solutions.
 main_results: '@thm:a-ii-is-positive-definite (the discrete problem is solvable) · @thm:discrete-maximum-principle (discrete maximum principle) · @lem:among-all-is-the-unique (energy minimization) · @thm:poincares-inequality (Poincaré) · @thm:existence-of-a-weak-solution (a weak solution exists)'
 uses: Lecture 2's energy; linear algebra (Appendix B); $L^2$ (Appendix D).

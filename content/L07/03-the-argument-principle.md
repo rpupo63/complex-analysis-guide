@@ -4,6 +4,10 @@ slide: Slide 4
 title: The argument principle
 ---
 
+::: motivation
+<p>@lem:logarithmic-derivative counts a single zero or a single pole. A large circle may contain many zeros and many poles at once. The same integral should add those local counts, with multiplicity.</p>
+:::
+
 ::: theorem {#thm:argument-principle name="argument principle"}
 Let $f$ be holomorphic near $\{|z|\le R\}\setminus\{\zeta_1,\dots,\zeta_p\}$, with poles at $\zeta_1,\dots,\zeta_p\in\{|z|\lt R\}$, and $f\ne0$ on $C:=\{|z|=R\}$. Let $\class{ntn-ZP}{Z}$ and $\class{ntn-ZP}{P}$ be the numbers of zeros and of poles of $f$ in $|z|\lt R$, counted with multiplicity (each zero or pole counted as often as its order). Then
 \[ \frac1{2\pi i}\oint_C\frac{f'(z)}{f(z)}\,dz=\class{ntn-ZP}{Z}-\class{ntn-ZP}{P}. \]
@@ -24,4 +28,8 @@ Let $f$ be holomorphic near $\{|z|\le R\}\setminus\{\zeta_1,\dots,\zeta_p\}$, wi
 </ul></li>
 </ol>
 So there are finitely many zeros, each of finite order, and $\class{ntn-ZP}{Z}$ is a finite number.
+:::
+
+::: plain
+<p>The integral of $f'/f$ around the circle equals the number of zeros inside, minus the number of poles inside. Each zero and each pole is counted as often as its order. The function must not vanish on the circle.</p>
 :::

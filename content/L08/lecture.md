@@ -1,5 +1,6 @@
 ---
 title: Integrals, Fourier transforms and sampling
+motivation: 'The residue theorem computes a closed integral (@thm:residue-theorem). A real integral is not closed. Closing the path adds an arc whose integral goes to zero. The same move relates a strip of holomorphy to the decay of a Fourier transform.'
 goal: Evaluate real integrals and Fourier transforms by contour integration; match analyticity of $f$ with decay of $\hat f$; prove the sampling theorem.
 main_results: '@prop:for, @prop:the-gaussian-is-its-own-transform (two transforms) · @thm:strips-and-decay (strips and decay) · @thm:paley-wiener-a-simple-form (Paley–Wiener) · @cor:if-is-continuous-and-time (time- or band-limited) · @thm:whittaker-kotelnikov-shannon (sampling)'
 uses: '[Theorems #](@thm:cauchys-theorem) and [#](@thm:residue-theorem), extended in @prop:other-contours; @thm:isolated-zeros; Fourier inversion ([D.7](apx:D7)); Poisson summation ([E.16](apx:E16)).'

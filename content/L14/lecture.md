@@ -1,5 +1,6 @@
 ---
 title: The Riemann mapping theorem in general
+motivation: 'Lecture 13 maps a union of squares onto the disk (@thm:riemann-mapping-theorem). Lecture 15 needs the same fact for every simply connected region except the plane. Fill the region by grid regions and take a limit of their maps. Montel''s theorem provides a convergent subsequence.'
 goal: Extend the Riemann mapping theorem from regions made of grid squares to every simply connected open set $\Omega\ne\mathbb C$, by filling $\Omega$ with grid regions and taking a limit of their Riemann maps.
 main_results: '@thm:montel (Montel) · @thm:hurwitz (Hurwitz) · @lem:exhaustion-by-grid-regions (exhaustion by grid regions) · @thm:riemann-mapping-theorem-general (the Riemann mapping theorem in general)'
 uses: 'Lecture 13 (@thm:riemann-mapping-theorem); the Schwarz lemma and the automorphisms $\varphi_a$ (Lecture 12); Cauchy''s estimate and formula for derivatives (Lecture 6); uniform limits (Lecture 10); Rouché (Lecture 11). One cited fact: simply connected sets satisfy (C) (@fact:simply-connected-sets-satisfy-c).'

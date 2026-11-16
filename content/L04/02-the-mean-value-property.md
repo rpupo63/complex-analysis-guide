@@ -16,6 +16,10 @@ Fix a centre $z_0$. For $t\gt0$:
 The average is taken with respect to the angle; since arc length on $\class{ntn-Ct}{C_t}$ is $ds=t\,d\theta$ ([polar coordinates](apx:A8)), it equals $\frac{1}{2\pi t}\oint_{\class{ntn-Ct}{C_t}}h\,ds$, total over length.
 :::
 
+::: motivation
+<p>The limit from @thm:existence-of-a-weak-solution has finite energy, not smoothness. Finite energy does not restore pointwise derivatives. A harmonic function should equal the average of its values on a circle. That average is the tool for studying the limit.</p>
+:::
+
 ::: theorem {#thm:mean-value-property name="mean value property"}
 Let $h$ be $C^2$ and harmonic on an open set $\Omega$, and let the closed disk $|z-z_0|\le r$ lie in $\Omega$. Then
 \[ h(z_0)=\frac1{2\pi}\int_0^{2\pi}h(z_0+re^{i\theta})\,d\theta. \]
@@ -39,6 +43,10 @@ because $h$ is harmonic. So $\class{ntn-Mt}{M}'(t)=0$ for $0\lt t\le r$.</li>
 Given any tolerance, continuity of $h$ at $z_0$ makes the right side smaller than it once $t$ is small. So $\class{ntn-Mt}{M}(t)\to h(z_0)$.</li>
 <li>A constant function that tends to $h(z_0)$ equals $h(z_0)$. In particular $M(r)=h(z_0)$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>The value at the center equals the average over the surrounding circle. The closed disk must lie inside the domain. The function is twice differentiable and harmonic there. Every admissible radius gives the same center value.</p>
 :::
 
 ::: definition {#def:the-mean-value-property name="the mean value property"}

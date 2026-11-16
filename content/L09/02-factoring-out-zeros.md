@@ -4,6 +4,10 @@ slide: Slide 3
 title: Factoring out zeros
 ---
 
+::: motivation
+<p>Zeros cannot accumulate, by @thm:isolated-zeros, but one disk can still hold several. A count of zeros needs them written out as an explicit product. The quotient should extend, by @lem:removable-singularities, to a holomorphic function with no zeros in the disk.</p>
+:::
+
 ::: proposition {#prop:factorization-in-a-disk name="factorization in a disk"}
 Let $f$ be holomorphic near $|z|\le R$, with no zeros on $|z|=R$. Then $f$ has finitely many zeros $a_1,\dots,a_N$ in $|z|\lt R$ (repeated by multiplicity), and
 \[ f(z)=(z-a_1)\cdots(z-a_N)\,g(z), \]
@@ -19,4 +23,8 @@ with $g$ holomorphic and zero-free near $|z|\le R$.
 \[ g(z)=\frac{c+O(|z-a|)}{q(z)}\longrightarrow\frac c{q(a)}\ne0\qquad(z\to a). \]
 So $g$ is bounded near $a$, @lem:removable-singularities extends it holomorphically to $a$, and by continuity $g(a)=c/q(a)\ne0$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>A holomorphic function with no zeros on a circle has finitely many zeros inside that circle. It splits as a product of one linear factor for each zero, times a holomorphic function with no zeros. Each zero is repeated once for every unit of its order.</p>
 :::

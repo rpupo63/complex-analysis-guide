@@ -203,6 +203,8 @@ class Guide:
                 if c[0] == 'dir' and c[1] in KINDS:
                     k += 1
                     s['chunks'][n] = ('item', self.make_item(c[1], c[2], c[3], s, k, s['file']))
+                elif c[0] == 'dir' and c[1] in ('motivation', 'plain'):
+                    s['chunks'][n] = ('note', c[1], c[3])
             for e in s['exercises']:
                 k += 1
                 attrs = {'label': e['label'], 'name': '%s; %s' % (e['title'], e['source'])}
@@ -314,6 +316,10 @@ class Guide:
         qed = '' if (attrs.get('noqed') or 'class="qed"' in inner) else ' <span class="qed">∎</span>'
         return '<div class="proof"><span class="hd">%s</span>%s%s%s</div>' % (title, sep, inner, qed)
 
+    def render_note(self, kind, inner):
+        word = 'Motivation' if kind == 'motivation' else 'In plain words'
+        return '<div class="%s"><span class="k">%s</span>%s</div>\n' % (kind, word, inner.strip())
+
     def render_section(self, s):
         out = []
         for c in s['chunks']:
@@ -321,6 +327,8 @@ class Guide:
                 out.append(c[1])
             elif c[0] == 'item':
                 out.append(self.render_item(c[1]))
+            elif c[0] == 'note':
+                out.append(self.render_note(c[1], c[2]))
             else:
                 out.append(self.render_proof(c[2], c[3]))
         body = ''.join(out)
@@ -336,15 +344,18 @@ class Guide:
         return head + self.content(body, s['file']) + '</section>'
 
     def render_unit(self, p):
-        return ('<div class="unit" id="%s">\n  <span class="eyebrow">Part %s</span>\n  <h2>%s</h2>\n  %s\n</div>'
-                % (p['id'], p['numeral'], p['title'], self.content(p['intro'], 'parts.yaml')))
+        mot = self.render_note('motivation', p.get('motivation') or '')
+        return ('<div class="unit" id="%s">\n  <span class="eyebrow">Part %s</span>\n  <h2>%s</h2>\n  %s\n  %s\n</div>'
+                % (p['id'], p['numeral'], p['title'], self.content(mot, 'parts.yaml'),
+                   self.content(p['intro'], 'parts.yaml')))
 
     def render_lecture(self, lec):
         p = lec['part']
-        rows = [('Goal', lec['goal']), ('Main results', lec['main_results']), ('Uses', lec['uses']),
-                ('Used later', lec['used_later'])]
-        ov = '<div class="ov">' + ''.join('<div class="ov-row"><span class="ov-k">%s</span><div>%s</div></div>' % r
-                                          for r in rows) + '</div>'
+        rows = [('Motivation', lec.get('motivation') or ''), ('Goal', lec['goal']),
+                ('Main results', lec['main_results']), ('Uses', lec['uses']), ('Used later', lec['used_later'])]
+        ov = '<div class="ov">' + ''.join(
+            '<div class="ov-row%s"><span class="ov-k">%s</span><div>%s</div></div>'
+            % (' is-mot' if i == 0 else '', k, v) for i, (k, v) in enumerate(rows)) + '</div>'
         where = 'content/L%02d/lecture.md' % lec['number']
         return ('<div class="lecture" id="L%d">\n  <span class="eyebrow">Part %s · %s</span>\n  <h2>Lecture %d · %s</h2>\n  %s%s</div>'
                 % (lec['number'], p['numeral'], p['title'], lec['number'], lec['title'],
@@ -520,10 +531,97 @@ class Guide:
             return m.group(0) + row
         return re.sub(r'<div class="apx" id="(\w+)">\n<div class="apx-hd">.*?</div>\n', usedin, doc, flags=re.S)
 
+    def simple_sentences(self, text):
+        """Sentences of an explanation, with math, labels and tags removed."""
+        t = re.sub(r'\\\[.*?\\\]', ' ', text, flags=re.S)
+        t = re.sub(r'\$[^$]*\$', ' ', t)
+        t = re.sub(r'\[[^\]]*\]\((?:@|=|apx:)[^)]*\)', ' ', t)
+        t = re.sub(r'@[\w:.-]+', ' ', t)
+        t = re.sub(r'<[^>]+>', ' ', t)
+        t = html.unescape(t)
+        t = re.sub(r'\s+', ' ', t).strip()
+        if not t:
+            return []
+        return [s.strip() for s in re.split(r'(?<=[.!?])\s+', t) if s.strip()]
+
+    def check_simple(self, text, where, max_sentences, max_words):
+        """A motivation or plain explanation must stay short. The proof carries the detail."""
+        if re.search(r'\b(clearly|obviously|trivially)\b|\bit is easy\b', text, re.I):
+            self.err('%s: drop "clearly", "obviously", "trivially" and "it is easy"' % where)
+        sentences = self.simple_sentences(text)
+        if not sentences:
+            self.err('%s: empty explanation' % where)
+            return
+        if len(sentences) > max_sentences:
+            self.err('%s: %d sentences; use at most %d' % (where, len(sentences), max_sentences))
+        for s in sentences:
+            n = len(s.split())
+            if n > max_words:
+                self.err('%s: %d words in one sentence (max %d): %s' % (where, n, max_words, s[:90]))
+
+    def check_story(self):
+        """Parts, lectures and main results need a short motivation, and main results a plain restatement."""
+        for i, p in enumerate(self.parts):
+            mot = p.get('motivation') or ''
+            where = 'Part %s motivation' % p['id']
+            if not str(mot).strip():
+                self.err('%s is missing' % where)
+            else:
+                self.check_simple(mot, where, 5, 25)
+                if i and '@' not in mot:
+                    self.err('%s must link an earlier item with @' % where)
+        for lec in self.lectures:
+            mot = lec.get('motivation') or ''
+            where = 'Lecture %d motivation' % lec['number']
+            if not str(mot).strip():
+                self.err('%s is missing' % where)
+            else:
+                self.check_simple(mot, where, 5, 25)
+                if lec['number'] != 1 and '@' not in mot:
+                    self.err('%s must link an earlier item with @' % where)
+        for lec in self.lectures:
+            for label in AT_RE.findall(lec.get('main_results') or ''):
+                self.check_main_result(label, lec['number'])
+
+    def check_main_result(self, label, lecture_number):
+        for s in self.sections:
+            chunks = s['chunks']
+            for i, c in enumerate(chunks):
+                if c[0] != 'item' or c[1]['label'] != label:
+                    continue
+                j = i - 1
+                while j >= 0 and chunks[j][0] == 'text' and not chunks[j][1].strip():
+                    j -= 1
+                if j < 0 or chunks[j][0] != 'note' or chunks[j][1] != 'motivation':
+                    self.err('%s: %s needs ::: motivation directly before it' % (s['file'], label))
+                else:
+                    self.check_simple(chunks[j][2], '%s motivation' % label, 4, 22)
+                    if lecture_number != 1 and '@' not in chunks[j][2]:
+                        self.err('%s motivation must link an earlier item with @' % label)
+                plain_at = None
+                last_proof = None
+                for k in range(i + 1, len(chunks)):
+                    c = chunks[k]
+                    if c[0] == 'item' or (c[0] == 'note' and c[1] == 'motivation'):
+                        break
+                    if c[0] == 'dir' and c[1] == 'proof':
+                        last_proof = k
+                    if c[0] == 'note' and c[1] == 'plain' and plain_at is None:
+                        plain_at = k
+                if plain_at is None:
+                    self.err('%s: %s needs ::: plain after its statement and proof' % (s['file'], label))
+                elif last_proof is not None and plain_at < last_proof:
+                    self.err('%s: plain explanation of %s must follow the proof' % (s['file'], label))
+                else:
+                    self.check_simple(chunks[plain_at][2], '%s plain explanation' % label, 4, 22)
+                return
+        self.err('main result %s is not an item in the guide' % label)
+
     # ---- whole page
     def render(self):
         self.load()
         self.number()
+        self.check_story()
         front = self.front
         front = front.replace('{{roadmap-rows}}', self.roadmap_rows())
         front = front.replace('{{problems-table}}', self.problems_table())

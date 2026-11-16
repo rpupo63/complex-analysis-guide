@@ -10,6 +10,10 @@ toc: Energy minimization
 $\class{ntn-E}{E}(V):=\class{ntn-a}{a}(V,V)=\iint_\Omega|\nabla V|^2\,dA$.
 :::
 
+::: motivation
+<p>The energy @def:energy is the squared size of the gradient. @thm:a-ii-is-positive-definite selects one grid function with the given boundary values. That function should be the one of least energy. Every other admissible function should cost strictly more.</p>
+:::
+
 ::: lemma {#lem:among-all-is-the-unique}
 Among all $V\in \class{ntn-Vg}{V^g_\eps}$, $\class{ntn-Ue}{U_\eps}$ is the unique minimizer of $E$.
 :::
@@ -18,4 +22,9 @@ Let $V\in \class{ntn-Vg}{V^g_\eps}$ and put $w:=V-\class{ntn-Ue}{U_\eps}$, which
 \[ \class{ntn-E}{E}(V)=\class{ntn-a}{a}(\class{ntn-Ue}{U_\eps}+w,\class{ntn-Ue}{U_\eps}+w)=\class{ntn-a}{a}(\class{ntn-Ue}{U_\eps},\class{ntn-Ue}{U_\eps})+\class{ntn-a}{a}(\class{ntn-Ue}{U_\eps},w)+\class{ntn-a}{a}(w,\class{ntn-Ue}{U_\eps})+\class{ntn-a}{a}(w,w)=\class{ntn-E}{E}(\class{ntn-Ue}{U_\eps})+2\class{ntn-a}{a}(\class{ntn-Ue}{U_\eps},w)+\class{ntn-E}{E}(w). \]
 The discrete equations (@def:discrete-problem) give $\class{ntn-a}{a}(\class{ntn-Ue}{U_\eps},w)=0$, since $w\in \class{ntn-Vz}{V^0_\eps}$. So $\class{ntn-E}{E}(V)=\class{ntn-E}{E}(\class{ntn-Ue}{U_\eps})+\class{ntn-E}{E}(w)\ge \class{ntn-E}{E}(\class{ntn-Ue}{U_\eps})$. If equality holds, then $\class{ntn-E}{E}(w)=0$. Writing $w=\sum d_{kl}\class{ntn-phi}{\varphi_{kl}}$ over interior nodes, @lem:the-quadratic-form-is-the-energy gives $d^{\mathsf T}\class{ntn-AII}{A_{II}}d=0$, and positive definiteness (@thm:a-ii-is-positive-definite) forces $d=0$, so $w=0$ and $V=\class{ntn-Ue}{U_\eps}$.
 :::
+
+::: plain
+<p>Among grid functions with the prescribed boundary values, the discrete solution has the least energy. Every other such function has larger energy. The minimizer is unique. Energy here means the integral of the squared gradient.</p>
+:::
+
 <p>The continuous version of this lemma is known as [Dirichlet's principle](apx:E10).</p>

@@ -11,6 +11,10 @@ A map $f:\R^2\to\R^2$, $f(x,y)=\big(u(x,y),v(x,y)\big)$, is identified with the 
 $u$ is the <em>real part</em> and $v$ the <em>imaginary part</em> of $f$. Partial derivatives are written $u_x=\partial u/\partial x$ and so on.
 :::
 
+::: motivation
+<p>@def:complex-functions-as-maps-of-the treats a complex function as a map of the plane. A real derivative of that map need not be a complex derivative. The rates along the two axes must agree. Those two agreements are the Cauchy–Riemann equations.</p>
+:::
+
 ::: theorem {#thm:cauchy-riemann name="Cauchy–Riemann"}
 Let $f=(u,v)$ be [differentiable](apx:A1) at $(x_0,y_0)$ as a map $\R^2\to\R^2$, and $z_0=x_0+iy_0$. Then $f=u+iv$ is complex differentiable at $z_0$ if and only if
 \[ \frac{\partial u}{\partial x}=\frac{\partial v}{\partial y},\qquad\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}\qquad\text{at }(x_0,y_0). \]
@@ -46,4 +50,9 @@ So both coefficients are multiples of the same complex number $u_x+iv_x$:
 as $h\to0$ <em>from any direction</em>, since $|o(|h|)/h|=o(|h|)/|h|\to0$. So $f$ is complex differentiable at $z_0$, with $f'(z_0)=u_x+iv_x$. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>The function has a complex derivative exactly when two derivative identities hold. The horizontal rate of the real part equals the vertical rate of the imaginary part. The other pair of rates differs by a sign. The derivative itself is the horizontal rate of the map.</p>
+:::
+
 <p>Step 3 is where the two directions "fit together": a general real-linear map $(h_1,h_2)\mapsto h_1a+h_2b$ is multiplication by a single complex number exactly when $b=ia$. Geometrically, a complex derivative acts on small displacements as a rotation combined with a scaling.</p>

@@ -4,6 +4,10 @@ slide: Slide 3
 title: Harmonic functions are real parts
 ---
 
+::: motivation
+<p>@prop:if-satisfy-the-cauchy-riemann says the real part of a holomorphic function is harmonic. The converse is needed on a disk. A harmonic function there should be the real part of some holomorphic function.</p>
+:::
+
 ::: lemma {#lem:harmonic-conjugate-on-a-disk name="harmonic conjugate on a disk"}
 Let $u$ be harmonic on a disk $D:=D(z_0,r)$, $z_0=x_0+iy_0$. Then $u=\operatorname{Re}F$ for some $F$ holomorphic on $D$.
 :::
@@ -19,6 +23,11 @@ integrating along the horizontal segment from $(x_0,y_0)$ to $(x,y_0)$ and then 
 <li><em>Conclude.</em> $F:=u+iv$ has $C^1$ real and imaginary parts satisfying $u_x=v_y$, $u_y=-v_x$, so it is holomorphic by @thm:cauchy-riemann. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>On a disk, every harmonic function is the real part of a holomorphic function. The imaginary part is a second harmonic function paired with the first.</p>
+:::
+
 <p>This is Lecture 1's stream function again: there (@prop:velocity-potential-stream-function-primitive, [Poincaré lemma](apx:A7)) a curl-free, divergence-free flow on a disk had both a velocity potential and a stream function. Here the field is $\nabla u$, and $v$ is its stream function, the <em>harmonic conjugate</em> of $u$.</p>
 
 ::: remark {#rem:the-disk-matters name="the disk matters"}

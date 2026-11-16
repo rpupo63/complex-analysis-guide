@@ -9,9 +9,17 @@ If $f$ and $\class{ntn-hat}{\hat f}$ are continuous and integrable on $\R$, then
 :::
 <p>A standard theorem, used without proof; see [D.7](apx:D7). The second form follows from the first applied to $\xi\mapsto F(-\xi)$.</p>
 
+::: motivation
+<p>The rational example @prop:for and the Gaussian @prop:the-gaussian-is-its-own-transform both tie decay of the transform to holomorphy off the real axis. One example lives on a strip, and the other lives on the whole plane. A general statement should match the width of a strip with the decay of the transform, in both directions.</p>
+:::
+
 ::: theorem {#thm:strips-and-decay name="strips and decay"}
 Let $f$ be continuous and integrable on $\R$, and $a\gt0$.<br>
 (a) If $f$ extends holomorphically to the strip $|\operatorname{Im}z|\lt a$, with $|f(x+iy)|\le\dfrac{C}{1+x^2}$ for $|y|\lt a$, then $|\class{ntn-hat}{\hat f}(\xi)|\le\pi C\,e^{-2\pi a|\xi|}$.<br>
 (b) Conversely, if $|\class{ntn-hat}{\hat f}(\xi)|\le C\,e^{-2\pi a|\xi|}$ for all $\xi\in\R$, then $f$ extends holomorphically to $|\operatorname{Im}z|\lt a$.
+:::
+
+::: plain
+<p>Holomorphy in a strip, together with a mild size bound, forces exponential decay of the Fourier transform. A wider strip forces faster decay. Exponential decay of the transform forces a holomorphic extension to a strip.</p>
 :::
 <p>Check (a) on $\frac1{1+x^2}$: it is holomorphic for $|\operatorname{Im}z|\lt1$, and the theorem predicts decay at every rate $a\lt1$, consistent with $\pi e^{-2\pi|\xi|}$. (The bound $\frac{C}{1+x^2}$ holds only on narrower strips $|y|\le a'\lt1$, which is why $a\lt1$.)</p>

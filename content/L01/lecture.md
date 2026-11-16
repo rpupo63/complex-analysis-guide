@@ -1,5 +1,6 @@
 ---
 title: Holomorphic functions as flows
+motivation: 'A real derivative controls motion on a line. A complex derivative should control motion in the plane. This lecture names those functions and reads them as fluid flows.'
 goal: Define holomorphic functions, derive the Cauchy–Riemann equations, and read a holomorphic function as a two-dimensional fluid flow.
 main_results: '@thm:cauchy-riemann (Cauchy–Riemann) · @prop:cauchy-riemann-in-the-language-of (divergence- and curl-free) · @prop:velocity-potential-stream-function-primitive (the two potentials) · @prop:the-flux-across-is-it (flux)'
 uses: Calculus of several variables (Appendix A).

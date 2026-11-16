@@ -4,6 +4,10 @@ slide: Reconstructed
 title: "Normal families: Montel's theorem"
 ---
 
+::: motivation
+<p>@thm:riemann-mapping-theorem gives one map for each grid region inside a larger domain. Each of these maps is bounded by $1$ and there are infinitely many of them. Some convergent subsequence is required before a limit map can be formed.</p>
+:::
+
 ::: theorem {#thm:montel name="Montel"}
 Let $V_1\subseteq V_2\subseteq\dots$ be open sets with union $\Omega$, and let $f_n$ be holomorphic on $V_n$ with $|f_n|\le M$. Then a subsequence $f_{n_k}$ converges uniformly on every [compact](apx:C5) subset of $\Omega$ to a function $f$ holomorphic on $\Omega$, and $f_{n_k}'\to f'$ uniformly on every compact subset of $\Omega$.
 :::
@@ -23,4 +27,9 @@ So $f_{n_k}$ converges [uniformly](apx:A17) on $K$; call the limit $f$.</li>
 the maximum taken over that circle. Finitely many such disks $\overline{D(z,r)}$ cover a compact set. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>From holomorphic functions with a common bound, some subsequence converges. The convergence is uniform on every compact piece of the domain. The limit is holomorphic, and the derivatives converge too. The functions may start out defined only on larger and larger open sets.</p>
+:::
+
 <p>Boundedness is what makes the family "compact": Cauchy's estimate turns a bound on $f_n$ into a bound on $f_n'$, so the $f_n$ cannot oscillate faster and faster. For real functions this fails: $\sin(nx)$ is bounded by $1$ and has no uniformly convergent subsequence.</p>

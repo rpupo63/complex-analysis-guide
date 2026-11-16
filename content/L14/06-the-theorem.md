@@ -4,6 +4,10 @@ slide: Reconstructed
 title: The theorem
 ---
 
+::: motivation
+<p>@lem:exhaustion-by-grid-regions fills a simply connected region by grid regions. @thm:riemann-mapping-theorem maps each of those regions onto the disk. The whole plane must be left out, because @thm:liouville forbids a bounded entire bijection.</p>
+:::
+
 ::: theorem {#thm:riemann-mapping-theorem-general name="Riemann mapping theorem, general form"}
 Let $\Omega\ne\mathbb C$ be a nonempty simply connected open set, and $z_0\in\Omega$. There is exactly one conformal map $f$ of $\Omega$ onto $D(0,1)$ with $f(z_0)=0$ and $f'(z_0)\gt0$.
 :::
@@ -23,6 +27,10 @@ $Q$ maps $D(0,1)$ into itself with $Q(0)=\varphi_w(s^2)=0$, and it is not inject
 \[ |F'(z_0)|=\frac L{|Q'(0)|}\gt L. \]
 But $F\circ f_n^{-1}$ maps $D(0,1)$ into itself and $0$ to $0$, so by the Schwarz lemma $|F'(z_0)|\le f_n'(z_0)$ for every $n$, and in the limit $|F'(z_0)|\le L$. This contradiction shows $f(\Omega)=D(0,1)$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>Every simply connected open set other than the whole plane has a conformal map onto the disk. The map may send any chosen point to $0$ and have positive derivative there. No other map meets both conditions.</p>
 :::
 
 ::: remark {#rem:the-whole-sequence-converges name="the whole sequence converges"}

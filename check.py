@@ -48,6 +48,8 @@ def structural(g):
     used = set(re.findall(r'\\class\{ntn-([\w-]+)\}', g))
     check('every \\class{ntn-KEY} has a NOTE entry', used <= keys, str(sorted(used - keys)[:10]))
     check('no $$ display math (not enabled)', '$$' not in html_part)
+    check('page has a doctype and a mobile viewport meta',
+          g.lstrip().lower().startswith('<!doctype html>') and 'name="viewport" content="width=device-width' in g)
 
 
 def render(g):
@@ -63,9 +65,8 @@ def render(g):
         return
     with tempfile.TemporaryDirectory() as tmp:
         page_file = Path(tmp) / 'w.html'
-        page_file.write_text('<!doctype html><html><head><meta charset=utf-8>'
-                             '<meta name="viewport" content="width=device-width, initial-scale=1"></head><body>'
-                             + g + '</body></html>')
+        # Load the page as published: its own doctype and viewport meta, so a missing one shows.
+        page_file.write_text(g)
         with sync_playwright() as p:
             b = p.chromium.launch(executable_path=os.environ.get('CHROMIUM', '/usr/bin/chromium'))
             pg = b.new_page()
@@ -93,18 +94,18 @@ def render(g):
                 '(x.closest("section,div.apx,div.lecture") || {id: ""}).id)')
             check('0 MathJax errors', not errs, '; '.join(errs[:10]))
             check('no console errors', not console, '; '.join(console[:5]))
-            pg.set_viewport_size({'width': 400, 'height': 800})
+            pg.set_viewport_size({'width': 360, 'height': 800})
             # content-visibility clips each section, which would hide an overflow; turn it off to measure.
             pg.add_style_tag(content='section,.apx{content-visibility:visible !important}')
             pg.wait_for_timeout(1500)
             sw = pg.evaluate('document.documentElement.scrollWidth')
             wide = []
-            if sw != 400:
+            if sw != 360:
                 wide = pg.evaluate('''() => { const o = []; document.querySelectorAll('.wrap *').forEach(e => {
-                    const r = e.getBoundingClientRect(); if (r.right > 401 && !e.closest('mjx-container[display], .tbl'))
+                    const r = e.getBoundingClientRect(); if (r.right > 361 && !e.closest('mjx-container[display], .tbl'))
                     o.push(Math.round(r.right) + ' ' + (e.closest('section') || {id: ''}).id + ' ' + e.tagName); });
                     return o.slice(0, 8); }''')
-            check('scrollWidth is 400 at a 400 px viewport (got %d)' % sw, sw == 400, '; '.join(wide))
+            check('scrollWidth is 360 at a 360 px phone viewport (got %d)' % sw, sw == 360, '; '.join(wide))
             b.close()
 
 
@@ -115,7 +116,9 @@ def main():
     structural(g)
     if '--no-render' not in sys.argv:
         explicit = any(not a.startswith('--') for a in sys.argv[1:])
-        render(g if explicit or not RENDERED.exists() else RENDERED.read_text())
+        r = g if explicit or not RENDERED.exists() else RENDERED.read_text()
+        check('published page starts with <!doctype html> (standards mode)', r.lstrip().lower().startswith('<!doctype html>'))
+        render(r)
     print('\ncheck: %s' % ('PASS' if not fails else 'FAIL (%d)' % len(fails)))
     sys.exit(1 if fails else 0)
 

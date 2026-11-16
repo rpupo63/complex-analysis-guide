@@ -4,6 +4,10 @@ slide: Slides 16–17
 title: $u$ and $v$ are harmonic
 ---
 
+::: motivation
+<p>The equations in @prop:cauchy-riemann-in-the-language-of constrain only first derivatives. Each part could still fail a condition on second derivatives. The natural condition is Laplace's equation. Both parts should satisfy it.</p>
+:::
+
 ::: proposition {#prop:if-satisfy-the-cauchy-riemann}
 If $u,v\in C^2$ satisfy the Cauchy–Riemann equations $u_x+v_y=0$, $v_x-u_y=0$, then $u_{xx}+u_{yy}=0$ and $v_{xx}+v_{yy}=0$.
 :::
@@ -13,6 +17,10 @@ Apply $\partial_x$ to the first equation and $\partial_y$ to the second, then <b
 Apply $\partial_y$ to the first and $\partial_x$ to the second, then <b>add</b>:
 \[ (u_{xy}+v_{yy})+(v_{xx}-u_{yx})=v_{xx}+v_{yy}=0. \]
 In both, the mixed partials cancel because $v_{yx}=v_{xy}$ and $u_{xy}=u_{yx}$ for $C^2$ functions ([equality of mixed partials](apx:A2)). This is where $C^2$ is needed.
+:::
+
+::: plain
+<p>The pure second derivatives of the real part sum to zero. The same sum vanishes for the imaginary part. Neither part is a source for its own gradient. Both parts satisfy Laplace's equation.</p>
 :::
 
 ::: definition {#def:harmonic name=harmonic}

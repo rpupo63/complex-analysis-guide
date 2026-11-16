@@ -4,6 +4,10 @@ slide: Slides 9–11
 title: The Schwarz–Christoffel formula
 ---
 
+::: motivation
+<p>@thm:riemann-mapping-theorem-general gives a map of the half-plane onto a polygon, but not a formula. @thm:schwarz-reflection extends that map across each straight side. The turning angle at each corner should determine the derivative.</p>
+:::
+
 ::: theorem {#thm:schwarz-christoffel name="Christoffel 1867, Schwarz 1869"}
 Let $P$ be a polygon (@def:polygon), $F$ a conformal map of $\mathbb H$ onto its interior, and $x_1\lt\dots\lt x_n$ its real prevertices (@sec:q6). There are $A\ne0$ and $B$ such that for $z\in\mathbb H$
 \[ F(z)=A\int_0^z\prod_{k=1}^n(\zeta-x_k)^{\alpha_k-1}\,d\zeta+B, \]
@@ -24,4 +28,9 @@ the logarithmic derivative of $\prod_k(z-x_k)^{\alpha_k-1}$. Then $F'/\prod_k(z-
 <li><em>The end.</em> By steps 1 and 2, $g(z)-\sum_k\frac{\alpha_k-1}{z-x_k}$ is holomorphic on $\mathbb C$ minus the $x_k$ and bounded near each $x_k$, so it is entire (@lem:removable-singularities). By step 3 it tends to $0$ as $z\to\infty$, so it is bounded, hence constant (@thm:liouville), hence $0$. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>The derivative of the map is a product of one power for each finite prevertex. The exponent at each vertex is one less than the interior angle in units of a half-turn. An integration constant and a factor then give the map.</p>
+:::
+
 <p><b>A check.</b> Comparing the coefficients of $1/z$ at $\infty$ gives $\sum_k(\alpha_k-1)=-2$: the proof recovers the angle sum of @sec:q6.</p>

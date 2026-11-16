@@ -5,6 +5,10 @@ title: Uniform limits of harmonic functions
 toc: Uniform limits
 ---
 
+::: motivation
+<p>@thm:mean-value-property gives each harmonic function its circle averages. @thm:converse-of-the-mean-value-property rebuilds harmonicity from those averages. A limit that is uniform on compact sets stays continuous. The limit of harmonic functions should remain harmonic.</p>
+:::
+
 ::: corollary {#cor:uniform-limits name="uniform limits"}
 Let $h_n$ be harmonic on $\Omega$ and let $h_n\to v$ [uniformly on every compact subset](apx:A17) of $\Omega$. Then $v$ is smooth and harmonic.
 :::
@@ -19,4 +23,8 @@ As $n\to\infty$ the left side tends to $v(z_0)$. On the right, $D$ is compact, s
 So both sides converge, and $v(z_0)$ equals the average of $v$ over the circle.</li>
 <li><em>Conclude</em> by @thm:converse-of-the-mean-value-property. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>A uniform limit of harmonic functions is harmonic. The convergence must be uniform on every compact subset of the domain. The limit is smooth.</p>
 :::

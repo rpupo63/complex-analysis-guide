@@ -4,7 +4,7 @@ slide: Slide 3
 title: 'The identity theorem: proof'
 ---
 ::: proof {title="Proof, Step 2: $h\equiv0$ on $U$."}
-Let $S:=\{z\in U:h\equiv0\text{ on some disk }\class{ntn-Dar}{D}(z,r)\subset U\}$.
+Let \[ S:=\{z\in U:h\equiv0\text{ on some disk }\class{ntn-Dar}{D}(z,r)\subset U\}. \]
 <ul>
 <li>$x\in S$, by Step 1 ($U$ is open, so some disk $\class{ntn-Dar}{D}(x,r)$ lies in $U$).</li>
 <li>$S$ is open: if $h\equiv0$ on $\class{ntn-Dar}{D}(z,r)$, every $w\in \class{ntn-Dar}{D}(z,r)$ has the disk $\class{ntn-Dar}{D}(w,r-|w-z|)\subset \class{ntn-Dar}{D}(z,r)$ on which $h\equiv0$, so $\class{ntn-Dar}{D}(z,r)\subset S$.</li>

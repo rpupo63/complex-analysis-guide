@@ -4,6 +4,10 @@ slide: Slide 5
 title: The Cayley map
 ---
 
+::: motivation
+<p>@prop:the-same-problem-on-the-half solves the boundary problem on the half-plane. The plate in @eg:the-plate sits on the disk. @thm:harmonic-composed-with-holomorphic moves the solution once a holomorphic bijection is known.</p>
+:::
+
 ::: proposition {#prop:cayley-map name="Cayley map"}
 $C(z):=\dfrac{z-i}{z+i}$ is a bijection of $\mathbb H$ onto $D(0,1)$, with inverse $C^{-1}(w)=i\,\dfrac{1+w}{1-w}$. Both are holomorphic.
 :::
@@ -19,4 +23,9 @@ so this holds exactly when $y\gt0$.</li>
 <li><em>Holomorphic.</em> Both are rational functions; their only poles, $z=-i$ and $w=1$, lie outside $\mathbb H$ and outside $D(0,1)$. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>The formula $(z-i)/(z+i)$ matches the upper half-plane with the unit disk. Every point of either region comes from exactly one point of the other. Both the map and its inverse are holomorphic.</p>
+:::
+
 <p>The real line goes to the unit circle: for real $x$, $|x-i|=|x+i|$. And $C(i)=0$, $C(0)=-1$, $C(\infty)=1$.</p>

@@ -4,6 +4,10 @@ slide: Slide 2
 title: Removable singularities
 ---
 
+::: motivation
+<p>Cauchy's formula in @thm:cauchys-integral-formula needs holomorphy on a full disk. A function may fail at one point and still stay bounded nearby. Boundedness should be enough to fill that point in.</p>
+:::
+
 ::: lemma {#lem:removable-singularities name="removable singularities"}
 If $g$ is holomorphic on $0\lt|z-a|\lt r$ and bounded near $a$, then $g$ extends holomorphically to $|z-a|\lt r$.
 :::
@@ -21,5 +25,9 @@ Fix $w$ and $r'$ with $0\lt|w-a|\lt r'\lt r$. Let $B$ bound $|g|$ on some punctu
 <li><em>$G$ is holomorphic on the whole disk $|w-a|\lt r'$,</em> including at $w=a$: this is the case $n=0\to1$ of the proof of @thm:cauchys-formula-for-derivatives, which only used that $g$ is continuous on the circle $|z-a|=r'$.</li>
 </ol>
 So setting $g(a):=G(a)$ makes $g=G$ on $|z-a|\lt r'$, holomorphic there. As $r'\lt r$ was arbitrary, $g$ is holomorphic on $|z-a|\lt r$.
+:::
+
+::: plain
+<p>A function holomorphic on a punctured disk, and bounded near the puncture, extends holomorphically across it. The missing point is not a genuine singularity. Boundedness is the condition that removes it.</p>
 :::
 <p>The point $a$ is then called a <em>removable singularity</em>. With @def:pole-of-order-m this sorts the isolated singularities of a holomorphic function near $a$: bounded (removable), $|g|\to\infty$ like a power (a pole), or neither (an <em>essential singularity</em>, such as $e^{1/z}$ at $0$; see [Laurent series](apx:E5)).</p>

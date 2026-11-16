@@ -7,6 +7,10 @@ toc: Flux across a curve
 <p>Pick a holomorphic $f=\class{ntn-vphi}{\varphi}+i\class{ntn-spsi}{\psi}$, with its flow $\class{ntn-Vfl}{V}=\nabla\class{ntn-vphi}{\varphi}$ (the flow described by $f'$), and a curve $C$ from $A$ to $B$. How much fluid passes through $C$ per unit time? This is the <b>flux</b> of $\class{ntn-Vfl}{V}$ across $C$. With $(dx,dy)$ the tangent displacement and $n\,ds:=(dy,-dx)$ the normal (pointing to the right of the direction of travel; [flux](apx:A5)),
 \[ \text{flux}=\int_CV\cdot n\,ds=\int_C\class{ntn-vphi}{\varphi}_x\,dy-\class{ntn-vphi}{\varphi}_y\,dx. \]
 
+::: motivation
+<p>@prop:velocity-potential-stream-function-primitive supplies a stream function for the flow. The flux across a curve is still written as a path integral. That integral might depend on the whole path. The stream function should reduce it to the two endpoints.</p>
+:::
+
 ::: proposition {#prop:the-flux-across-is-it}
 The flux across $C$ is $\operatorname{Im}f(B)-\operatorname{Im}f(A)$: it depends only on the endpoints.
 :::
@@ -15,4 +19,9 @@ By Cauchy–Riemann, $\class{ntn-vphi}{\varphi}_x=\class{ntn-spsi}{\psi}_y$ and 
 \[ \int_C\class{ntn-spsi}{\psi}_x\,dx+\class{ntn-spsi}{\psi}_y\,dy=\int_a^b\nabla\class{ntn-spsi}{\psi}(\gamma(s))\cdot\gamma'(s)\,ds=\int_a^b\frac{d}{ds}\class{ntn-spsi}{\psi}(\gamma(s))\,ds=\class{ntn-spsi}{\psi}(B)-\class{ntn-spsi}{\psi}(A) \]
 by the chain rule and the [fundamental theorem of calculus](apx:A9).
 :::
+
+::: plain
+<p>The fluid crossing the curve equals a difference of two numbers. Those numbers are the imaginary part of the function at the endpoints. Any other curve with the same ends carries the same flux.</p>
+:::
+
 <p><b>Consequence.</b> Between two streamlines $\{\class{ntn-spsi}{\psi}=c_1\}$ and $\{\class{ntn-spsi}{\psi}=c_2\}$ the flow rate is $c_2-c_1$, wherever you cut across. So where streamlines come closer together, the fluid moves faster.</p>

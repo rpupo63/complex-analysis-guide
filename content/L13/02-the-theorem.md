@@ -4,12 +4,21 @@ slide: Slide 3
 title: The theorem
 ---
 
+::: motivation
+<p>@prop:what-a-riemann-map-must-look names the boundary problem a Riemann map must solve. @thm:the-dirichlet-problem-on-a-union solves that problem on a union of grid squares. The missing piece is a bijection from that solution onto the disk.</p>
+:::
+
 ::: theorem {#thm:riemann-mapping-theorem name="Riemann mapping theorem"}
 Let $\Omega$ be a bounded connected open set such that<br>
 <b>(D)</b> for every continuous $g$ on $\partial\Omega$ there is $u$ harmonic on $\Omega$ and continuous on $\overline\Omega$, with $u=g$ on $\partial\Omega$;<br>
 <b>(C)</b> every harmonic function on $\Omega$ is the real part of a holomorphic function on $\Omega$.<br>
 Then for every $z_0\in\Omega$ there is exactly one conformal map $f$ of $\Omega$ onto $D(0,1)$ with $f(z_0)=0$ and $f'(z_0)\gt0$: the <em>Riemann map</em> of $\Omega$ at $z_0$.
 :::
+
+::: plain
+<p>On a bounded region where boundary values can be matched and every harmonic function is a real part, a Riemann map exists. It is the unique conformal map onto the disk sending the chosen point to $0$ with positive derivative.</p>
+:::
+
 <p>Uniqueness is [Prop. #(b)](@prop:what-a-riemann-map-must-look); existence is proved in @sec:o4. When do the conditions hold?</p>
 <ul>
 <li><b>(D)</b> holds when $\Omega$ is the interior of a finite union of closed grid squares: that is the existence theorem for the Dirichlet problem, @thm:the-dirichlet-problem-on-a-union, the main result of Part I.</li>

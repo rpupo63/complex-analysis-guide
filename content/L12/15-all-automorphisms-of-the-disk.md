@@ -4,6 +4,10 @@ slide: Slide 16
 title: All automorphisms of the disk
 ---
 
+::: motivation
+<p>@thm:schwarz-lemma controls self-maps of the disk that fix the origin. @lem:is-an-automorphism-of-with moves any interior point to the origin. Together they should list every holomorphic bijection of the disk onto itself.</p>
+:::
+
 ::: theorem {#thm:automorphisms-of-the-disk name="automorphisms of the disk"}
 The automorphisms of $D(0,1)$ are exactly the maps $z\mapsto e^{i\theta}\varphi_a(z)$, with $\theta\in\R$ and $|a|\lt1$.
 :::
@@ -17,4 +21,8 @@ The automorphisms of $D(0,1)$ are exactly the maps $z\mapsto e^{i\theta}\varphi_
 So $|\psi(z)|=|z|$ for every $z$, and by the equality case $\psi(z)=e^{i\theta}z$.</li>
 <li><em>Undo the move.</em> As $\varphi_a\circ\varphi_a=\mathrm{id}$, $\varphi=\psi\circ\varphi_a=e^{i\theta}\varphi_a$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>Every holomorphic bijection of the disk onto itself equals $e^{i\theta}\varphi_a$ for an angle and a point $a$ in the disk. The point $a$ is the one that the bijection sends to the origin. There are no further holomorphic bijections.</p>
 :::

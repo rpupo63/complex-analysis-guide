@@ -1,5 +1,6 @@
 ---
 title: Conformal maps
+motivation: 'The Cauchy–Riemann equations say the real and imaginary parts are harmonic (@prop:if-satisfy-the-cauchy-riemann). A holomorphic bijection should carry harmonic functions from one region to another. This lecture proves that, and lists every holomorphic bijection of the disk to itself.'
 goal: Transport harmonic functions between regions by holomorphic bijections; build the local theory of holomorphic maps (local behaviour, open mapping, inverse theorem); classify the automorphisms of the disk with the Schwarz lemma.
 main_results: '@lem:harmonic-conjugate-on-a-disk (harmonic conjugates) · @thm:harmonic-composed-with-holomorphic (harmonic under holomorphic maps) · @prop:cayley-map (Cayley map) · @thm:local-behaviour (local behaviour) · @thm:open-mapping (open mapping) · @thm:inverse (inverse) · @thm:schwarz-lemma (Schwarz lemma) · @thm:automorphisms-of-the-disk (automorphisms of the disk) · @thm:liouville (Liouville)'
 uses: Rouché's theorem (@thm:rouche); the identity theorem (@thm:identity-theorem-l10); removable singularities and maximum modulus (@lem:removable-singularities, @lem:maximum-modulus); Cauchy's estimate (@cor:cauchys-estimate).

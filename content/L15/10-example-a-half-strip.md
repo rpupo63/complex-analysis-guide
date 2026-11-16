@@ -4,11 +4,19 @@ slide: Slide 13
 title: 'Example: a half-strip'
 ---
 
+::: motivation
+<p>@thm:schwarz-christoffel turns angles and prevertices into an explicit map. A half-strip has two right angles and an opening at infinity. The integral for that choice should be the arcsine.</p>
+:::
+
 ::: example {#eg:the-half-strip name="the half-strip; $\arcsin$"}
 Let $P=\{|\operatorname{Re}w|\lt\frac\pi2,\ \operatorname{Im}w\gt0\}$. Its vertices are $\pm\frac\pi2$ (right angles, $\alpha=\frac12$) and $\infty$ (a channel, $\alpha=0$); the turns add up to $\frac12+\frac12+1=2$. With prevertices $-1,1,\infty$, @thm:schwarz-christoffel and @rem:vertices-at-infinity give
 \[ F'(z)=A(z+1)^{-1/2}(z-1)^{-1/2}. \]
 On $(-1,1)$, $(x+1)^{-1/2}(x-1)^{-1/2}=\dfrac{-i}{\sqrt{1-x^2}}$ (@conv:powers-of-x-minus-xk). With $A=i$ and $B=0$, so that $F(\pm1)=\pm\frac\pi2$,
 \[ F(z)=\int_0^z\frac{d\zeta}{\sqrt{1-\zeta^2}}=\arcsin z. \]
+:::
+
+::: plain
+<p>The half-strip of width $\pi$ above the interval from $-\pi/2$ to $\pi/2$ is a conformal image of the upper half-plane. With the constants chosen here, the map is the arcsine. Each right angle contributes a square-root factor in the derivative.</p>
 :::
 
 ::: proposition {#prop:sin-maps-the-half-strip name="a direct check"}

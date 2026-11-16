@@ -19,7 +19,9 @@
 <li><b>Numbered results.</b> Mentions of numbered items, such as @prop:v-g-eps-is-affine-not or @sec:s12, are links. Hovering shows the statement; clicking takes you there.</li>
 <li><b>Background.</b> A dotted link with a small box, such as [Cauchy–Schwarz](apx:A12), goes to the appendix.</li>
 </ul>
-<p>Each lecture opens with an overview box: its goal, its main results, what it uses from earlier lectures and where it is used later. Exercises, where the slides have them, come with worked solutions that stay folded until you open them.</p>
+<p>Each lecture opens with an overview box. The first row is the motivation: the question this lecture answers, with a link to what came before. Then come its goal, its main results, what it uses, and where it is used later.</p>
+<p>Each main result is read in three steps. A motivation note says why it is needed. The statement and the proof say what it is and how it is proved. A note labelled "In plain words" says what it means, in a few short sentences. The proof stays complete. The plain note does not replace it.</p>
+<p>Exercises, where the slides have them, come with worked solutions that stay folded until you open them.</p>
 <p>After any jump, the <b>Back</b> button in the corner returns you to where you clicked, one step at a time. Each appendix entry lists every place that cites it, and the outside references (Wikipedia and similar) are kept there.</p>
 
 <h3 id="roadmap">How the course fits together</h3>

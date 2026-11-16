@@ -6,6 +6,10 @@ title: 'Electrostatics: corners'
 
 <p>The potential $u$ is harmonic outside the conductors and constant on each one, and the field is $E=-\nabla u$. Locally $u=\operatorname{Im}\Phi$ with $\Phi$ holomorphic (@lem:harmonic-conjugate-on-a-disk), and $|E|=|\Phi'|$, by the Cauchy–Riemann equations.</p>
 
+::: motivation
+<p>@thm:schwarz-christoffel describes each corner by the exponent in the derivative. The electric field is the gradient of a potential that stays constant on the two sides. The size of the angle should decide whether the field dies or blows up.</p>
+:::
+
 ::: proposition {#prop:the-field-near-a-corner name="the field near a corner"}
 Let $F$ map $\mathbb H$ conformally onto the interior of $P$, and let $u$ be harmonic inside $P$, continuous up to $\partial P$, and constant on the two sides of $P$ at a vertex $w_k$ with angle $\alpha_k\pi$. Then for $w$ in $P$ near $w_k$,
 \[ |E(w)|\approx c_1\,|w-w_k|^{1/\alpha_k-1}, \]
@@ -15,6 +19,11 @@ where $c_1\gt0$ unless the derivative $\Psi'(x_k)$ below vanishes.
 $v:=u\circ F$ is harmonic on $\mathbb H$ (@thm:harmonic-composed-with-holomorphic) and equal to a constant $c$ on $\mathbb R$ near $x_k$. By @thm:harmonic-reflection and @lem:harmonic-conjugate-on-a-disk, $v-c=\operatorname{Im}\Psi$ near $x_k$, with $\Psi$ holomorphic and real on $\mathbb R$. In general $\Psi'(x_k)\ne0$. By step 2 of the proof of @thm:schwarz-christoffel, $F^{-1}(w)=h^{-1}\big((w-w_k)^{1/\alpha_k}\big)$ with $h'(x_k)\ne0$, so $|(F^{-1})'(w)|\approx c\,|w-w_k|^{1/\alpha_k-1}$. As $u-c=\operatorname{Im}(\Psi\circ F^{-1})$,
 \[ |E(w)|=|\Psi'(F^{-1}(w))|\,|(F^{-1})'(w)|\approx c_1|w-w_k|^{1/\alpha_k-1}. \]
 :::
+
+::: plain
+<p>Near a corner the field strength follows a power of the distance to the vertex. The interior angle fixes the exponent. At a convex corner the field tends to zero, and at a re-entrant corner it tends to infinity.</p>
+:::
+
 <ul>
 <li><b>Convex corner</b> ($\alpha_k\lt1$): $E\to0$. At a right angle, $|E|\approx c_1r$, with $r=|w-w_k|$.</li>
 <li><b>Re-entrant corner</b> ($\alpha_k\gt1$): $E\to\infty$. At the edge of a thin plate ($\alpha_k=2$), $|E|\approx c_1r^{-1/2}$. Field and charge concentrate at sharp edges, and electric discharges start there.</li>

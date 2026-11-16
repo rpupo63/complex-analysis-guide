@@ -4,6 +4,10 @@ slide: Slide 7
 title: Derivatives of all orders
 ---
 
+::: motivation
+<p>The coefficients in @thm:power-series are written as integrals. They should equal the derivatives at the centre, up to factorials. Every derivative at every interior point should have a similar integral.</p>
+:::
+
 ::: theorem {#thm:cauchys-formula-for-derivatives name="Cauchy's formula for derivatives"}
 Let $f$ be holomorphic near $|z-z_0|\le r$, and $|w-z_0|\lt r$. Then $f$ has complex derivatives of all orders at $w$, and
 \[ f^{(n)}(w)=\frac{n!}{2\pi i}\oint_{|z-z_0|=r}\frac{f(z)}{(z-w)^{n+1}}\,dz\qquad(n\ge0). \]
@@ -24,6 +28,10 @@ whose modulus is at most $n!\,r\,M\cdot\frac{|h|}{2}k(k+1)(\delta/2)^{-k-2}\to0$
 <li>So $f^{(n+1)}(w)$ exists and equals $\frac{n!\,k}{2\pi i}\oint\frac{f(z)}{(z-w)^{k+1}}dz=\frac{(n+1)!}{2\pi i}\oint\frac{f(z)}{(z-w)^{n+2}}dz$.</li>
 </ol>
 For the last claim, compare with @thm:power-series at $w=z_0$: $\frac{f^{(n)}(z_0)}{n!}=\frac1{2\pi i}\oint f(z)(z-z_0)^{-n-1}dz=a_n$.
+:::
+
+::: plain
+<p>A single complex derivative produces derivatives of every order. Each of them, at an interior point, equals an integral over the circle. The series coefficients are those derivatives divided by factorials.</p>
 :::
 
 ::: corollary {#cor:holomorphic-functions-are-smooth name="holomorphic functions are smooth"}

@@ -4,6 +4,10 @@ slide: Slide 7
 title: $1/\Gamma$ is entire
 ---
 
+::: motivation
+<p>The continued gamma function from @prop:the-continuation-of-gamma has poles and no product formula. @thm:weierstrass builds entire functions with prescribed zeros. The zeros needed here are the poles of $\Gamma$.</p>
+:::
+
 ::: theorem {#thm:weierstrass-product-for-1-gamma name="Weierstrass product for $1/\Gamma$"}
 Let $\class{ntn-gam}{\gamma}:=\lim_{N\to\infty}\class{ntn-aN}{a_N}$, where $\class{ntn-aN}{a_N}:=\sum_{n\le N}\frac1n-\log N$ (Euler's constant, $\class{ntn-gam}{\gamma}\approx0.5772$). Then
 \[ \class{ntn-Rg}{R}(z):=z\,e^{\class{ntn-gam}{\gamma} z}\prod_{n\ge1}\Big(1+\frac zn\Big)e^{-z/n} \]
@@ -19,4 +23,8 @@ From $x-\frac{x^2}2\le\log(1+x)\le x$ for $x\ge0$, the terms lie in $[0,\frac1{2
 On each disk $|z|\le\rho$, for $n\ge2\rho$ we have $|z/n|\le\frac12$, and $(1+\frac zn)e^{-z/n}=\class{ntn-Ep}{E_1}(-\frac zn)$ (@def:weierstrass-factors), so by @lem:convergence-factors
 \[ \Big|\Big(1+\frac zn\Big)e^{-z/n}-1\Big|=\Big|1-\class{ntn-Ep}{E_1}\Big(-\frac zn\Big)\Big|\le4\frac{\rho^2}{n^2}, \]
 which is summable. By the product lemma (@lem:products), $R$ is entire, and its zeros are those of its factors: $z=0$, and $z=-n$ from $1+\frac zn$; each simple.
+:::
+
+::: plain
+<p>An infinite product $R$ is an entire function. Its zeros are simple and lie at the non-positive integers. Where $\Gamma$ is already defined, this product is the reciprocal of $\Gamma$. So $\Gamma$ has no zeros, and the reciprocal extends to an entire function.</p>
 :::

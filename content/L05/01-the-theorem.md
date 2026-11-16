@@ -4,9 +4,18 @@ slide: Slide 2
 title: The theorem
 ---
 
+::: motivation
+<p>@cor:the-lecture-3-limit-is-a produces a smooth harmonic function inside. @cor:stability says the boundary values determine that function. The pointwise boundary match is still open. This theorem is existence and uniqueness once the match is included.</p>
+:::
+
 ::: theorem {#thm:the-dirichlet-problem-on-a-union name="the Dirichlet problem on a union of squares"}
 Let $\Omega$ be a finite union of grid squares and $g$ continuous on $\class{ntn-dOm}{\partial\Omega}$. There is exactly one $u\in C^2(\Omega)\cap C(\overline\Omega)$ with $\class{ntn-Delta}{\Delta} u=0$ in $\Omega$ and $u=g$ on $\class{ntn-dOm}{\partial\Omega}$.
 :::
+
+::: plain
+<p>The Dirichlet problem on a finite union of grid squares has one classical solution. The boundary datum may be any continuous function. The solution is harmonic at every interior point. It is continuous on the closure and equals the datum on the boundary.</p>
+:::
+
 <p>"Finite union of grid squares" is [Hypothesis #](@hyp:for-now). Note what is <em>not</em> assumed: $g$ need not be linear on boundary edges. $C^2(\Omega)\cap C(\overline\Omega)$ is the class of [twice differentiable inside, continuous up to the boundary](apx:D1); this is the classical Dirichlet problem of @def:dirichlet-problem. The proof has four steps.</p>
 <div class="tbl"><table>
 <thead><tr><th>Step</th><th>Statement</th><th>Where</th></tr></thead>

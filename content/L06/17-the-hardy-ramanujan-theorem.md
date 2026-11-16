@@ -4,9 +4,17 @@ slide: Slide 18
 title: The Hardy–Ramanujan theorem
 ---
 
+::: motivation
+<p>The partition function has an upper bound in @thm:upper-bound, short of a true asymptotic. @prop:p-n-as-an-integral writes the same number as a circle integral. That integral should be sharp enough to give the true growth.</p>
+:::
+
 ::: theorem {#thm:hardy-and-ramanujan-1918 name="Hardy and Ramanujan, 1918"}
 
 \[ \class{ntn-pn}{p}(n)\sim\frac1{4\sqrt3\,n}\,e^{\pi\sqrt{2n/3}}\qquad(n\to\infty). \]
+:::
+
+::: plain
+<p>The number of partitions of a large integer is asymptotic to a constant over that integer, times an exponential. The exponent is proportional to the square root of the integer being partitioned. The ratio of the true count to this expression tends to one.</p>
 :::
 <p>Here $a_n\sim b_n$ means $a_n/b_n\to1$ ([A.20](apx:A20)). The proof occupies @sec:f17–@sec:f19 and is assembled at the end of @sec:f19. Numerically the ratio of the two sides is $1.145$ at $n=10$, $1.046$ at $n=100$ and $1.014$ at $n=1000$.</p>
 

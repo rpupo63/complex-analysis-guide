@@ -9,6 +9,10 @@ title: Where a conformal map onto the disk comes from
 $\Omega$ is a bounded connected open set and $z_0\in\Omega$. In this section, $f$ is a conformal map of $\Omega$ onto $D(0,1)$ with $f(z_0)=0$ and $f'(z_0)\gt0$.
 :::
 
+::: motivation
+<p>@thm:inverse describes a conformal map onto the disk once the map exists. @thm:the-dirichlet-problem-on-a-union builds a harmonic function from boundary values. The map, if it exists, must be that function in another form.</p>
+:::
+
 ::: proposition {#prop:what-a-riemann-map-must-look name="what a Riemann map must look like"}
 In @set:is-a-bounded-connected-open:<br>
 (a) $|f(z)|=|z-z_0|\,e^{-h(z)}$, where $h$ is the harmonic function on $\Omega$, continuous on $\overline\Omega$, with $h(z)=\log|z-z_0|$ on $\partial\Omega$.<br>
@@ -25,4 +29,9 @@ In @set:is-a-bounded-connected-open:<br>
 <li><em>(c): the formula.</em> $\frac{f(z)}{(z-z_0)e^{-H(z)}}$ is holomorphic (removable at $z_0$ as in step 1) with modulus $\frac{|f|}{|z-z_0|e^{-h}}=1$, hence a constant $c$ with $|c|=1$, as in step 4. Then $f'(z_0)=c\,e^{-H(z_0)}=c\,e^{-i\operatorname{Im}H(z_0)}e^{-h(z_0)}$, and this is $>0$ only for $c=e^{i\operatorname{Im}H(z_0)}$. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>One harmonic function with boundary values $\log|z-z_0|$ determines the modulus of the map. That modulus is $|z-z_0|$ divided by the exponential of that harmonic function. Only one such map sends $z_0$ to $0$ with positive derivative. If the harmonic function is a real part, a formula gives the map itself.</p>
+:::
+
 <p>So a Riemann map is determined by one Dirichlet problem: the one with boundary values $\log|z-z_0|$. Existence is the converse: solve that problem, find $H$, and define $f$ by the formula of (c).</p>

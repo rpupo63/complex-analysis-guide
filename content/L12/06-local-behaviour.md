@@ -4,6 +4,10 @@ slide: Slide 7
 title: Local behaviour
 ---
 
+::: motivation
+<p>A holomorphic function may take one value several times near a point. The order of the zero of $f-w_0$ should be the number of nearby solutions. @thm:rouche keeps a zero count stable under a small change.</p>
+:::
+
 ::: theorem {#thm:local-behaviour name="local behaviour"}
 Let $f$ be holomorphic near $z_0$, $w_0:=f(z_0)$, and let $f-w_0$ have a zero of order $m\ge1$ at $z_0$. Then for every small enough $r\gt0$ there is $\delta\gt0$ such that for each $w\in D(w_0,\delta)$, $f-w$ has exactly $m$ zeros in $D(z_0,r)$, counted with multiplicity.
 :::
@@ -20,4 +24,8 @@ Let $f$ be holomorphic near $z_0$, $w_0:=f(z_0)$, and let $f-w_0$ have a zero of
 using $Cr\lt\frac{|a_m|}2$ in the third step.</li>
 <li><em>Rouché.</em> By @thm:rouche, with the bracket in the role of $f$ and $f-w$ in the role of $g$ (their difference is $E$), $f-w$ has as many zeros in $D(z_0,r)$ as the bracket: $m$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>Near a point, a holomorphic map repeats nearby values according to the order of its zero there. A zero of order $m$ means each nearby value is taken $m$ times, counting multiplicity.</p>
 :::

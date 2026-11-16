@@ -5,6 +5,10 @@ title: Entire functions without zeros
 ---
 <p>A product with the right zeros determines $f$ only up to a factor without zeros. This lemma pins such factors down by their growth.</p>
 
+::: motivation
+<p>A product with the right zeros still leaves a zero-free entire factor. Power series in @thm:power-series let a zero-free entire function be written as an exponential. A restriction on the growth should then force the exponent to be a polynomial.</p>
+:::
+
 ::: lemma {#lem:no-zeros name="no zeros"}
 Let $F$ be entire with no zeros, and $\class{ntn-Ar}{A}(r):=\max_{|z|=r}\log|F(z)|$. Then $F=e^G$ with $G(z)=\sum_nc_nz^n$ entire, and
 \[ |c_n|\,r^n\le2\class{ntn-Ar}{A}(r)-2\log|F(0)|\qquad\text{for all }r\gt0,\ n\ge1. \]
@@ -25,5 +29,9 @@ where $\varphi\ge0$ was used to drop the absolute value. Finally $\operatorname{
 \[ |c_n|\le2r_j^{-n}\big(\varepsilon_jr_j^{k+1}-\log|F(0)|\big)\le2\varepsilon_j+2r_j^{-n}\big|\log|F(0)|\big|\longrightarrow0. \]
 So $c_n=0$ for all $n\gt k$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>An entire function with no zeros is the exponential of an entire function. The size of the exponent's coefficients is controlled by the maximum of the log of the modulus. Slow growth of that maximum along some large radii forces the exponent to be a polynomial.</p>
 :::
 <p>The key idea is step 4: a bound on $\operatorname{Re}G$ from <em>above only</em> controls all of $G$, because $\varphi\ge0$ turns the absolute value of an integral into an integral. With $k=0$ it says a zero-free entire function with $\log|F|=o(r)$ along a sequence of circles is constant.</p>

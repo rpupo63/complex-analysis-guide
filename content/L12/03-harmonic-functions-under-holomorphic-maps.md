@@ -4,11 +4,19 @@ slide: Slide 4
 title: Harmonic functions under holomorphic maps
 ---
 
+::: motivation
+<p>@lem:harmonic-conjugate-on-a-disk writes a harmonic function as a real part on each disk. A holomorphic change of variable should preserve the Laplace equation. Otherwise a solution on one region cannot be moved to another.</p>
+:::
+
 ::: theorem {#thm:harmonic-composed-with-holomorphic name="harmonic composed with holomorphic"}
 Let $U,V$ be open, $f:U\to V$ holomorphic, and $u$ harmonic on $V$. Then $u\circ f$ is harmonic on $U$.
 :::
 ::: proof
 Harmonicity is a local property, so it suffices to check it near each $z_0\in U$. Let $D\subseteq V$ be a disk about $f(z_0)$. By @lem:harmonic-conjugate-on-a-disk, $u=\operatorname{Re}F$ on $D$ with $F$ holomorphic. The set $f^{-1}(D)$ is open (as $f$ is continuous) and contains $z_0$, and on it $u\circ f=\operatorname{Re}(F\circ f)$. The composition $F\circ f$ is holomorphic (chain rule), so its real part is harmonic (@cor:holomorphic-functions-are-smooth).
+:::
+
+::: plain
+<p>Composing a harmonic function with a holomorphic function gives a harmonic function. A solution of the Laplace equation can be moved to a new region along such a map.</p>
 :::
 
 ::: corollary {#cor:transporting-harmonic-functions name="transporting harmonic functions"}

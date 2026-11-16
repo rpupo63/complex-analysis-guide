@@ -4,6 +4,10 @@ slide: Slide 16
 title: The two potentials
 ---
 
+::: motivation
+<p>@prop:cauchy-riemann-in-the-language-of gives a flow with no source and no spin. On a disk, a spin-free flow should come from a scalar potential. A source-free flow should come from a stream function. The two scalars should combine into one holomorphic antiderivative.</p>
+:::
+
 ::: proposition {#prop:velocity-potential-stream-function-primitive name="velocity potential, stream function, primitive"}
 Let $f=u-iv$ be holomorphic on a disk $D$, with $u,v\in C^1$, so that the associated flow $V=(u,v)$ is curl-free and divergence-free. Then there are $C^2$ functions $\class{ntn-vphi}{\varphi},\class{ntn-spsi}{\psi}$ on $D$ with
 \[ \nabla\class{ntn-vphi}{\varphi}=(u,v)\quad(\class{ntn-vphi}{\varphi}_x=u,\ \class{ntn-vphi}{\varphi}_y=v),\qquad\nabla\class{ntn-spsi}{\psi}=(-v,u)\quad(\class{ntn-spsi}{\psi}_x=-v,\ \class{ntn-spsi}{\psi}_y=u), \]
@@ -21,4 +25,9 @@ So the Poincaré lemma gives $\class{ntn-spsi}{\psi}$ with $\nabla\class{ntn-sps
 <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>The velocity is the gradient of one scalar. A second scalar has a gradient perpendicular to the velocity. The two scalars form a holomorphic function. Its derivative recovers the original flow.</p>
+:::
+
 <p>So every holomorphic function on a disk has a holomorphic <em>primitive</em> (antiderivative). The disk is essential, through the Poincaré lemma; see @sec:x14.</p>

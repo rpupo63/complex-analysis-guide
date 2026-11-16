@@ -4,6 +4,10 @@ slide: Slide 8
 title: Euler's sine product
 ---
 
+::: motivation
+<p>The sine function vanishes at every integer, and nowhere else. The product in @lem:products can be built with exactly those zeros. The two entire functions should then coincide, not merely share a zero set.</p>
+:::
+
 ::: theorem {#thm:euler name=Euler}
 For every $z\in\mathbb C$,
 \[ \sin\pi z=\class{ntn-Ps}{P}(z):=\pi z\prod_{n\ge1}\Big(1-\frac{z^2}{n^2}\Big). \]
@@ -17,4 +21,8 @@ For every $z\in\mathbb C$,
 <li><em>The quotient.</em> Off $\mathbb Z$, $f$ is holomorphic and nonzero. At $m\in\mathbb Z$, both are $(z-m)$ times a function holomorphic and nonzero at $m$, so $f$ is a quotient of two such functions: bounded near $m$, hence holomorphic there by @lem:removable-singularities, and nonzero at $m$. So $f$ is entire with no zeros, and $f=e^G$ by @lem:no-zeros.</li>
 <li><em>$f$ is even, and $f(0)=1$.</em> $\sin\pi z$ and $\class{ntn-Ps}{P}$ are both odd, so their quotient is even. As $z\to0$, $\frac{\sin\pi z}{\pi z}\to1$ and $\frac{\class{ntn-Ps}{P}(z)}{\pi z}=\prod_n(1-\frac{z^2}{n^2})\to1$ (the product is continuous, with value $1$ at $0$). So $f(0)=1$. <span class="qed">∎</span></li>
 </ol>
+:::
+
+::: plain
+<p>The sine of $\pi z$ equals $\pi z$ times a product over the positive integers. Each factor accounts for one positive integer and its negative. The identity holds for every complex number.</p>
 :::

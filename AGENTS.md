@@ -17,8 +17,8 @@ This repo (`Complex Analysis/guide/`) is the source for a one-page HTML textbook
 | Path | What it holds |
 |---|---|
 | `content/front.md` | Header, "How to read this guide", roadmap text, threads, techniques, problem-table intro. `{{roadmap-rows}}`, `{{problems-table}}` and `{{toc}}` are generated. |
-| `content/parts.yaml` | Parts P1–P5: numeral, title, lecture list, intro, roadmap question and answer. |
-| `content/LNN/lecture.md` | Lecture title (`toc:` if the contents line differs), overview box (`goal`, `main_results`, `uses`, `used_later`), body text. |
+| `content/parts.yaml` | Parts P1–P5: numeral, title, lecture list, `motivation`, intro, roadmap question and answer. |
+| `content/LNN/lecture.md` | Lecture title (`toc:` if the contents line differs), overview box (`motivation`, `goal`, `main_results`, `uses`, `used_later`), body text. |
 | `content/LNN/KK-slug.md` | One file per section, in order. Front matter has `id` (historical, e.g. `x16`, `s20`; never change it), `slide`, `title` and an optional `toc`. The file order sets the section number. |
 | `content/index.yaml` | Index of the main text: groups of `[status, description, [labels]]`. |
 | `exercises/*.md` | Homework and practice-midterm problems (see "Adding things"). |
@@ -84,6 +84,7 @@ Let $f,g$ be holomorphic on a [connected](apx:C4) open set $U$ ...
   - Rare overrides: `kind="Standing setting"` (heading word), `short=` (tooltip word), `class=` (CSS class), and `tight` (no space after the heading).
 - Numbering is lecture.section.k, counted in order within the section. The id is `it-L-s-k`, so **inserting an item renumbers the later items in that section and changes their ids.**
 - `::: proof {title="Proof, Step 1."}`: the default title is "Proof.". The build adds the ∎ unless the body already contains a `class="qed"` span or the directive has `noqed`.
+- `::: motivation` and `::: plain` are not numbered items. Put `::: motivation` on the lines directly before a main result, and `::: plain` after that result's proof (or after the statement, if it has no proof) and before the next numbered item. The body is HTML, usually one `<p>`.
 
 **References.** The build resolves every label. An unknown label stops the build.
 
@@ -104,7 +105,9 @@ Let $f,g$ be holomorphic on a [connected](apx:C4) open set $U$ ...
 
 - **Status tags.** Every numbered theorem, definition and assumption has exactly one tag: Defined, Derived, Assumed, Cited, Context or Preview. Remarks and exercises have none.
 - **Citations.** Every non-trivial step in a proof or solution cites the item it uses (`@label`) or an appendix entry (`apx:`). A forward reference to a later lecture is allowed only if it is marked "(Lecture N)".
-- **Style.** Write plain, precise sentences.
+- **Motivation.** Every part (`motivation:` in `parts.yaml`) and every lecture (`motivation:` in `lecture.md`) says why its question arises now. Except Part I and Lecture 1, the text must contain an `@` link to an earlier item. Each label in a lecture's `main_results` needs a `::: motivation` block directly before the item (only blank lines between them). Two to four sentences. Name the question or the failed simpler approach. Do not outline the proof.
+- **Plain explanations.** After each main result's statement and its proof, before the next numbered item, put a `::: plain` block. At most four sentences, and at most 22 words in each sentence once math and `@` labels are removed. One idea per sentence. Say what the result does in ordinary words. Do not put a proof step in this block. Do not write "clearly", "obviously", "trivially", or "it is easy". The build rejects a motivation or a plain note that breaks these limits.
+- **Style.** Write plain, precise sentences. The proof may be long. The motivation and the plain note may not.
 - **Figure colours.** Use `currentColor` and the CSS variables, never hard-coded hex. A third series uses the `--asm-ink` brown, because blue and purple are hard to tell apart.
 
 ## Adding things
@@ -125,7 +128,7 @@ Let $f,g$ be holomorphic on a [connected](apx:C4) open set $U$ ...
 ```
 python build.py                  # build/guide.html + build/items.json; non-zero exit on any error
 node tools/prerender.mjs         # build/index.html: the same page with all math typeset (needs npm install)
-.venv/bin/python check.py        # structure (guide.html); MathJax errors, 400 px overflow, console errors (index.html)
+.venv/bin/python check.py        # structure (guide.html); MathJax errors, 360 px overflow, console errors (index.html)
 python tools/roundtrip.py        # compare with reference/guide.v17.html (expected to drift once content changes)
 just check                       # build + prerender + check.py (roundtrip is separate: just roundtrip)
 ```

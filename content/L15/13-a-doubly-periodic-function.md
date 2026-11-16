@@ -8,6 +8,10 @@ title: A doubly periodic function
 $\operatorname{sn}:=F^{-1}$, with $F$ and $R$ as in @eg:rectangles. It maps $R$ conformally onto $\mathbb H$ (@thm:inverse), continuously up to $\partial R$; it is real on $\partial R$ except for a pole at $iK'=F(\infty)$.
 :::
 
+::: motivation
+<p>@eg:rectangles maps the half-plane onto a rectangle, so the inverse maps the rectangle back. @thm:schwarz-reflection reflects a real boundary value across a side. Repeating that across opposite sides should create two periods.</p>
+:::
+
 ::: proposition {#prop:sn-is-doubly-periodic name="$\operatorname{sn}$ is doubly periodic"}
 $\operatorname{sn}$ extends to $\mathbb C$, holomorphic except for poles, with
 \[ \operatorname{sn}(w+4K)=\operatorname{sn}(w)=\operatorname{sn}(w+2iK'). \]
@@ -20,6 +24,11 @@ $\operatorname{sn}$ extends to $\mathbb C$, holomorphic except for poles, with
 <li><em>Periods.</em> Two reflections in parallel lines make a translation: in $\operatorname{Re}w=-K$ ($w\mapsto-2K-\bar w$) then in $\operatorname{Re}w=K$ ($w\mapsto2K-\bar w$) give $w\mapsto w+4K$; in $\operatorname{Im}w=0$ then in $\operatorname{Im}w=K'$ give $w\mapsto w+2iK'$. Each reflection conjugates the value, so two of them leave it unchanged. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>The inverse of the rectangle map extends from the rectangle to the whole plane. The extension is holomorphic except for poles. It is unchanged by the shifts $4K$ and $2iK'$ along the two axes.</p>
+:::
+
 <figure>{{fig:q13-1}}<figcaption>The rectangle $R$ and its reflections. $\operatorname{sn}$ takes values in $\mathbb H$ on $R$ and on the corner rectangles, and in $-\mathbb H$ on the rectangles that share a side with $R$.</figcaption></figure>
 <p><b>Poles are unavoidable.</b> A doubly periodic entire function is bounded, since it takes all its values on one closed period rectangle, which is [compact](apx:C5). So by @thm:liouville it is constant.</p>
 

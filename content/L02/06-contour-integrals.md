@@ -22,11 +22,19 @@ Multiply out, using $i^2=-1$:
 On a curve, the tangent displacement is $t\,ds=(dx,dy)$, so $\class{ntn-Ef}{E}\cdot t\,ds=u\,dx+v\,dy$. For a positively oriented curve (region on the left), the outward normal is the tangent turned clockwise by $90°$: $n\,ds=(dy,-dx)$, so $\class{ntn-Ef}{E}\cdot n\,ds=u\,dy-v\,dx$ ([curves and orientation](apx:C3)). Integrate around $\gamma$ and apply @thm:gausss-theorem.
 :::
 
+::: motivation
+<p>@prop:contour-integral-circulation-i-cdot-flux writes a closed integral as circulation plus a multiple of flux. With no charge inside, @thm:gausss-theorem sets both contributions to zero. A holomorphic function is this charge-free case. Its integral around the curve should vanish.</p>
+:::
+
 ::: corollary {#cor:cauchys-theorem name="Cauchy's theorem"}
 No charge inside $\gamma$, i.e. $f$ holomorphic on $D$: $\oint_\gamma f(z)\,dz=0$.
 :::
 ::: proof
 No $z_j$ lies in $D$, so the sum is empty.
+:::
+
+::: plain
+<p>The integral of a holomorphic function around a closed curve is zero. No charge lies inside the curve. There is no flux and no circulation to record. Another curve around the same empty region gives zero as well.</p>
 :::
 
 ::: corollary {#cor:the-residue-theorem-point-charge-form name="the residue theorem, point-charge form"}

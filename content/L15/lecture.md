@@ -1,5 +1,6 @@
 ---
 title: Reflection and polygons
+motivation: 'The general mapping theorem gives a conformal map onto a polygon, but not a formula (@thm:riemann-mapping-theorem-general). Reflection across a straight edge extends the map. The turn at each corner fixes the derivative. That derivative is the Schwarz–Christoffel formula.'
 goal: Extend harmonic and holomorphic functions across a segment by reflection, and use reflection to find the conformal map of the half-plane onto a polygon explicitly.
 main_results: '@thm:harmonic-reflection (method of images) · @thm:schwarz-reflection (Schwarz reflection principle) · @thm:schwarz-christoffel (Schwarz–Christoffel formula) · examples: @eg:the-half-strip, @eg:triangles, @eg:rectangles, @prop:sn-is-doubly-periodic · @prop:the-field-near-a-corner (field near a corner)'
 uses: 'The general Riemann mapping theorem (Lecture 14); Lecture 12 (harmonic conjugates, open mapping, inverse theorem, the Cayley map, Liouville); the Dirichlet problem on a square (@thm:the-dirichlet-problem-on-a-union) and the maximum principle (@cor:maximum-principle); removable singularities (@lem:removable-singularities).'

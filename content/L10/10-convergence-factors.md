@@ -17,7 +17,7 @@ For $p\ge0$ and $|w|\le\frac12$, $\ |1-\class{ntn-Ep}{E_p}(w)|\le4|w|^{p+1}$.
 ::: proof
 
 <ol>
-<li><em>$1-w$ as an exponential.</em> For $|w|\lt1$ let $L(w):=-\sum_{k\ge1}w^k/k$. Then $L'(w)=-\sum_{k\ge1}w^{k-1}=-\frac1{1-w}$, so $\big((1-w)e^{-L}\big)'=e^{-L}\big(-1+(1-w)\frac{1}{1-w}\big)=0$; the function is constant on the disk, equal to $1$ at $w=0$. So $1-w=e^{L(w)}$.</li>
+<li><em>$1-w$ as an exponential.</em> For $|w|\lt1$ let $L(w):=-\sum_{k\ge1}w^k/k$. Then $L'(w)=-\sum_{k\ge1}w^{k-1}=-\frac1{1-w}$, so \[ \big((1-w)e^{-L}\big)'=e^{-L}\big(-1+(1-w)\frac{1}{1-w}\big)=0; \] the function is constant on the disk, equal to $1$ at $w=0$. So $1-w=e^{L(w)}$.</li>
 <li><em>$\class{ntn-Ep}{E_p}$ as an exponential.</em> Hence $\class{ntn-Ep}{E_p}(w)=e^{L(w)+w+\dots+w^p/p}=e^u$ with $u:=-\sum_{k\gt p}w^k/k$: the factor $\exp(w+\dots+w^p/p)$ cancels the first $p$ terms of $L$.</li>
 <li><em>Estimate $u$.</em> For $|w|\le\frac12$: $|u|\le\sum_{k\gt p}|w|^k=\frac{|w|^{p+1}}{1-|w|}\le2|w|^{p+1}\le1$.</li>
 <li><em>Estimate $e^u-1$.</em> For $|u|\le1$:

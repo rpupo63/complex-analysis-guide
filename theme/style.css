@@ -1,4 +1,4 @@
-/* Layout: one textbook column (~42rem). Main text follows the slides; background lives in a lettered appendix, joined by jump links and a floating back button. */
+/* Layout: one textbook column (~60rem). Main text follows the slides; background lives in a lettered appendix, joined by jump links and a floating back button. */
 :root{
   --paper:#f6f7f9; --ink:#1a2030; --muted:#5b6578; --rule:#d3d9e2; --accent:#1d5a8e;
   --def-bg:#e7eff8; --def-ink:#1d5a8e;
@@ -28,8 +28,8 @@
   --flash:#4a3d12; --nt:#7fc4dc; --shadow:rgba(0,0,0,0.5);
   --card:#181c25; color-scheme:dark;
 }
-body{background:var(--paper);color:var(--ink);font-family:var(--f-text);font-size:1.075rem;line-height:1.62}
-.wrap{overflow-wrap:anywhere;max-width:42rem;margin:0 auto;padding-inline:1.25rem;padding-block:2.5rem 6rem}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-text);font-size:1.075rem;line-height:1.62}
+.wrap{overflow-wrap:anywhere;max-width:60rem;margin:0 auto;padding-inline:1.25rem;padding-block:2.5rem 6rem}
 a{color:var(--accent);text-underline-offset:2px}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 h1,h2,h3{text-wrap:balance;line-height:1.2;font-weight:600}
@@ -79,7 +79,8 @@ figcaption{font-size:0.9rem;color:var(--muted);margin-top:0.3rem}
 .stencil .c{font-weight:700;background:var(--res-bg)}
 .tbl{overflow-x:auto;margin:1rem 0}
 table{border-collapse:collapse;width:100%;font-size:0.95rem}
-th,td{text-align:left;vertical-align:top;padding:0.45rem 0.6rem;border-bottom:1px solid var(--rule)}
+/* break-word, not .wrap's anywhere: anywhere lets a column shrink below one word on a phone */
+th,td{text-align:left;vertical-align:top;padding:0.45rem 0.6rem;border-bottom:1px solid var(--rule);overflow-wrap:break-word}
 th{font-family:var(--f-label);font-weight:600;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
 /* cross-references into the appendix */
 a.x{text-decoration-style:dotted;text-decoration-thickness:1px}
@@ -138,7 +139,13 @@ td.idx-part{font-family:var(--f-label);font-weight:600;font-size:0.8rem;letter-s
 .ov{margin:0.9rem 0 0.4rem;border:1px solid var(--rule);background:var(--card);font-size:0.97rem}
 .ov-row{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:0.8rem;padding:0.5rem 0.8rem;border-top:1px solid var(--rule)}
 .ov-row:first-child{border-top:0}
+.ov-row.is-mot{background:color-mix(in srgb, var(--accent) 8%, var(--card))}
 .ov-k{font-family:var(--f-label);font-size:0.74rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding-top:0.2rem}
+.mot,.plain{margin:0.85rem 0;padding:0.65rem 0.9rem 0.15rem 0.95rem;background:var(--card);border-left:3px solid var(--accent)}
+.plain{border-left-color:var(--cite-ink)}
+.mot .k,.plain .k{display:block;font-family:var(--f-label);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.15rem}
+.plain .k{color:var(--cite-ink)}
+.mot p,.plain p{margin:0.35rem 0 0.6rem}
 @media (max-width:30rem){ .ov-row{grid-template-columns:1fr;gap:0.1rem} }
 .env.ex{background:var(--card);border:1px solid var(--rule)}
 .env.ex > .hd{font-weight:700}
@@ -150,4 +157,15 @@ details.sol[open] > summary{margin-bottom:0.3rem}
 mjx-assistive-mml{max-width:100% !important}
 #backbtn[hidden]{display:none}
 .ntn-tbl td:first-child{white-space:nowrap;font-weight:600}
-@media (max-width:30rem){ h1{font-size:1.8rem} body{font-size:1rem} }
+@media (max-width:30rem){ h1{font-size:1.8rem} body{font-size:1rem}
+  /* phones: give wide inline formulas the width that box padding would take */
+  .wrap{padding-inline:0.75rem}
+  .env{padding:0.6rem 0.5rem}
+  .proof{padding-left:0.5rem}
+  .proof ol,.env ol,.env ul,.proof ul,.apx ol,.apx ul{padding-left:1.1rem}
+  .unit{padding-inline:0.6rem}
+  .ov-row{padding-inline:0.5rem}
+  th,td{padding:0.4rem 0.3rem}
+  th:first-child,td:first-child{padding-left:0}
+  .roadmap td:first-child,.ntn-tbl td:first-child{white-space:normal}
+}

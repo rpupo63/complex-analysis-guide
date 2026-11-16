@@ -4,6 +4,10 @@ slide: Slide 10
 title: The inverse theorem; conformal maps
 ---
 
+::: motivation
+<p>@thm:open-mapping gives an open image, but not a holomorphic inverse. A real inverse can fail to be differentiable. An injective holomorphic map should have a holomorphic inverse.</p>
+:::
+
 ::: theorem {#thm:inverse name=inverse}
 Let $f$ be holomorphic and injective on an open set $U$. Then $f'\ne0$ on $U$, $V:=f(U)$ is open, and $g:=f^{-1}$ is holomorphic on $V$, with $g'(f(z))=1/f'(z)$.
 :::
@@ -17,6 +21,11 @@ Let $f$ be holomorphic and injective on an open set $U$. Then $f'\ne0$ on $U$, $
 which exists since $f'(z_1)\ne0$. So $g$ is complex differentiable, and $g'=1/(f'\circ g)$ is continuous: $g$ is holomorphic with $C^1$ parts. <span class="qed">∎</span></li>
 </ol>
 :::
+
+::: plain
+<p>An injective holomorphic function has non-zero derivative. Its image is open, and the inverse function is holomorphic there. The derivative of the inverse is the reciprocal of the original derivative.</p>
+:::
+
 <p>In real analysis the first claim fails: $x^3$ is injective with derivative $0$ at $0$, and its inverse $\sqrt[3]x$ is not differentiable there.</p>
 
 ::: definition {#def:conformal-map name="conformal map"}
