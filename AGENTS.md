@@ -35,7 +35,7 @@ This repo lives at `Complex Analysis/guide/`. Next to it, `Complex Analysis/Comp
 | Material | Path (from this repo) | Covered in the guide by |
 |---|---|---|
 | Lecture N slides | `../Complex/lectureNN.pdf` (PDF page = slide number) | `content/LNN/`; each section's `slide:` front matter names its slides |
-| Homework 1 / Homework 2 | `../Complex/hw.pdf`, `../Complex/hw2.pdf` | `exercises/hw1-*.md`, `exercises/hw2-*.md` |
+| Homework 1 / Homework 2 / Homework 3 | `../Complex/hw.pdf`, `../Complex/hw2.pdf`, `../Complex/hw3.pdf` | `exercises/hw1-*.md`, `exercises/hw2-*.md`, `exercises/hw3-*.md` |
 | Practice midterms 1–3 | `../Complex/practice-midterm-K.pdf` | `exercises/pmK-*.md` |
 | FreeFEM (teacher's files) | `../Complex/FreeFEM/` | `exercises/hw1-optional-freefem-bonus.md` |
 | Coin-change handout (not in the teacher's repo) | `../handouts/coin_counting.pdf` | §6.20, `content/L06/20-worked-example-making-change.md` |
@@ -114,7 +114,7 @@ Let $f,g$ be holomorphic on a [connected](apx:C4) open set $U$ ...
 
 - **An item:** add a directive to the right section file. The number is assigned automatically.
 - **A section:** add a file `content/LNN/KK-slug.md` with a new unique `id`. Later section files must be renamed so the file order stays correct. Adding a section renumbers the later sections of that lecture, and the TOC updates itself.
-- **An exercise:** add a file `exercises/<hw1|hw2|pm1|pm2|pm3>-<problem>.md` with front matter `label`, `source` (for example "Homework 2, Problem 1(b)"; separate several sources with "; "), `title`, `placement` and `order`.
+- **An exercise:** add a file `exercises/<hw1|hw2|hw3|pm1|pm2|pm3>-<problem>.md` with front matter `label`, `source` (for example "Homework 2, Problem 1(b)"; separate several sources with "; "), `title`, `placement` and `order`. A solution that is not written yet says `TBD` and names the items it will use.
   - `placement` is the id of the section that supplies the last tool the exercise needs.
   - `order` sets the position among the exercises placed in the same section.
   - The body is the statement, followed by `<details class="sol"><summary>Hint</summary>…</details>` and `<details class="sol"><summary>Solution</summary>…</details>`.

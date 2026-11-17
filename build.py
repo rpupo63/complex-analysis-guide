@@ -39,7 +39,7 @@ STATUS = {'defined': ('d', 'Defined'), 'derived': ('r', 'Derived'), 'assumed': (
 LETTER_STATUS = {'d': 'defined', 'r': 'derived', 'a': 'assumed', 'c': 'cited'}
 DEFAULT_STATUS = {'thm': 'derived', 'def': 'defined', 'asm': 'assumed', 'rem': None, 'ex': None}
 ROMAN = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
-PROBLEM_GROUPS = ['Homework 1', 'Homework 2', 'Practice midterm 1', 'Practice midterm 2', 'Practice midterm 3']
+PROBLEM_GROUPS = ['Homework 1', 'Homework 2', 'Homework 3', 'Practice midterm 1', 'Practice midterm 2', 'Practice midterm 3']
 EXERCISE_HEADING = ('\n<h3>Exercises</h3>\n<p class="ext">From the homework and the practice midterms. '
                     'Each has a hint and a full solution; open them only after trying.</p>\n')
 
