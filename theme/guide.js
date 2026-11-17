@@ -65,9 +65,13 @@
     stack.push({el: anchorEl(fromEl), label: label});
     go(target); update();
   }
-  btn.addEventListener('click', function(){
+  btn.querySelector('.back').addEventListener('click', function(){
     var s = stack.pop();
     if (s){ go(s.el); try { s.el.focus({preventScroll:true}); } catch(_){} }
+    update();
+  });
+  btn.querySelector('.dismiss').addEventListener('click', function(){
+    stack.length = 0;
     update();
   });
 
