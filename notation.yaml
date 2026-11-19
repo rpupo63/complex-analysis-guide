@@ -270,6 +270,10 @@ entries:
     h: Res<sub>ζ</sub> f
     d: 'The residue of f at the pole ζ: the coefficient of 1/(z − ζ) in the principal part. It equals (1/2πi)∮ f dz over a small circle around ζ.'
     target: def:residue
+  Mr:
+    h: M, M(r)
+    d: 'max |f| on the circle of radius r (centre z<sub>0</sub> or 0): the size of f on that circle.'
+    target: thm:power-series
   cn:
     h: c(n)
     d: The number of ways to pay n cents with a-cent and b-cent stamps (a, b coprime).
@@ -362,10 +366,6 @@ entries:
     h: n(r)
     d: The number of zeros of f in |z| ≤ r, counted with multiplicity.
     target: cor:counting-zeros
-  Mr:
-    h: M(r)
-    d: 'max<sub>|z|=r</sub> |f(z)|: the size of f on the circle of radius r.'
-    target: def:order
   rhoo:
     h: ρ
     d: 'The order of the entire function: the infimum of the λ with M(r) ≤ e<sup>r<sup>λ</sup></sup> for all large r.'

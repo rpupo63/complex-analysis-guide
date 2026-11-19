@@ -21,10 +21,10 @@ Let $f\not\equiv0$ be holomorphic on a [connected](apx:C4) open set $\Omega$, an
 <li>$S\ne\Omega$, since $f\not\equiv0$. As $\Omega$ is connected, the only subsets both open and closed are $\emptyset$ and $\Omega$, so $S=\emptyset$.</li>
 </ul>
 In particular $z_0\notin S$: the Taylor coefficients $a_n=f^{(n)}(z_0)/n!$ at $z_0$ are not all $0$.</li>
-<li><em>The first nonzero term dominates.</em> Let $a_m$ be the first nonzero coefficient; $m\ge1$ because $a_0=f(z_0)=0$. Take $r$ with $|z-z_0|\le r$ inside $\Omega$ and $M:=\max_{|z-z_0|=r}|f|$. By @cor:taylor-remainder with $N=m+1$, and since $a_n=0$ for $n\lt m$, for $|w-z_0|\le r/2$:
-\[ |f(w)-a_m(w-z_0)^m|\le2M\Big(\frac{|w-z_0|}r\Big)^{m+1}, \]
+<li><em>The first nonzero term dominates.</em> Let $a_m$ be the first nonzero coefficient; $m\ge1$ because $a_0=f(z_0)=0$. Take $r$ with $|z-z_0|\le r$ inside $\Omega$ and $\class{ntn-Mr}{M}:=\max_{|z-z_0|=r}|f|$. By @cor:taylor-remainder with $N=m+1$, and since $a_n=0$ for $n\lt m$, for $|w-z_0|\le r/2$:
+\[ |f(w)-a_m(w-z_0)^m|\le2\class{ntn-Mr}{M}\Big(\frac{|w-z_0|}r\Big)^{m+1}, \]
 so
-\[ |f(w)|\ge|w-z_0|^m\Big(|a_m|-\frac{2M}{r^{m+1}}|w-z_0|\Big)\gt0\qquad\text{if }0\lt|w-z_0|\lt\min\Big(\frac r2,\frac{|a_m|\,r^{m+1}}{2M}\Big). \]</li>
+\[ |f(w)|\ge|w-z_0|^m\Big(|a_m|-\frac{2\class{ntn-Mr}{M}}{r^{m+1}}|w-z_0|\Big)\gt0\qquad\text{if }0\lt|w-z_0|\lt\min\Big(\frac r2,\frac{|a_m|\,r^{m+1}}{2\class{ntn-Mr}{M}}\Big). \]</li>
 </ol>
 <span class="qed">∎</span>
 :::

@@ -22,8 +22,8 @@ Fix $w$ and put $\rho:=|w-z_0|\lt r$.
 \[ \frac1{z-w}=\frac1{z-z_0}\cdot\frac1{1-q}=\sum_{n\lt N}\frac{(w-z_0)^n}{(z-z_0)^{n+1}}+\frac{q^N}{(z-z_0)(1-q)}=\sum_{n\lt N}\frac{(w-z_0)^n}{(z-z_0)^{n+1}}+\frac{q^N}{z-w}. \]</li>
 <li><em>Integrate.</em> Multiply by $\frac{f(z)}{2\pi i}$ and integrate over $|z-z_0|=r$. By @thm:cauchys-integral-formula the left side gives $f(w)$, and each term of the sum gives $a_n(w-z_0)^n$:
 \[ f(w)=\sum_{n\lt N}a_n(w-z_0)^n+R_N,\qquad R_N:=\frac1{2\pi i}\oint_{|z-z_0|=r}\frac{f(z)\,q^N}{z-w}\,dz. \]</li>
-<li><em>The remainder tends to $0$.</em> Let $M:=\max_{|z-z_0|=r}|f|$, which exists because $|f|$ is continuous on the compact circle ([extreme value theorem](apx:C5)). On the circle, $|q|^N=(\rho/r)^N$ and $|z-w|\ge|z-z_0|-|w-z_0|=r-\rho$. The circle has length $2\pi r$, so by the [ML estimate](apx:A25)
-\[ |R_N|=\Big|\frac1{2\pi i}\oint\frac{f(z)\,q^N}{z-w}\,dz\Big|\le\frac{1}{2\pi}\cdot2\pi r\cdot\frac{M(\rho/r)^N}{r-\rho}=\frac{rM}{r-\rho}\Big(\frac\rho r\Big)^N\longrightarrow0\qquad(N\to\infty). \]</li>
+<li><em>The remainder tends to $0$.</em> Let $\class{ntn-Mr}{M}:=\max_{|z-z_0|=r}|f|$, which exists because $|f|$ is continuous on the compact circle ([extreme value theorem](apx:C5)). On the circle, $|q|^N=(\rho/r)^N$ and $|z-w|\ge|z-z_0|-|w-z_0|=r-\rho$. The circle has length $2\pi r$, so by the [ML estimate](apx:A25)
+\[ |R_N|=\Big|\frac1{2\pi i}\oint\frac{f(z)\,q^N}{z-w}\,dz\Big|\le\frac{1}{2\pi}\cdot2\pi r\cdot\frac{\class{ntn-Mr}{M}\,(\rho/r)^N}{r-\rho}=\frac{r\class{ntn-Mr}{M}}{r-\rho}\Big(\frac\rho r\Big)^N\longrightarrow0\qquad(N\to\infty). \]</li>
 </ol>
 So the partial sums converge to $f(w)$.
 :::

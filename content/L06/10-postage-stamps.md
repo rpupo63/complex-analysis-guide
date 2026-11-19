@@ -29,7 +29,7 @@ For $n\ge0$,
 <li><em>Two circles.</em> Fix $0\lt r\lt1\lt R$. The residue theorem on $|z|=R$ counts all poles; on $|z|=r$ it counts only the pole at $0$. Subtracting, the residue at $0$ cancels:
 \[ \frac1{2\pi i}\oint_{|z|=R}\class{ntn-Gst}{G}\,dz-\frac1{2\pi i}\oint_{|z|=r}\class{ntn-Gst}{G}\,dz=\sum_{\zeta^a=1\text{ or }\zeta^b=1}\class{ntn-res}{\operatorname{Res}}_\zeta \class{ntn-Gst}{G}. \]</li>
 <li><em>The small circle gives $\class{ntn-cn}{c}(n)$.</em> On $|z|=r$, $\class{ntn-Gst}{G}=\sum_kc(k)z^{k-n-1}$ by @lem:the-generating-function. Since $|\class{ntn-cn}{c}(k)z^{k-n-1}|\le(k+1)r^{k-n-1}$ and $\sum_k(k+1)r^k\lt\infty$, the series converges uniformly on the circle (Weierstrass [M-test](apx:A21)) and may be integrated term by term. As $\frac1{2\pi i}\oint_{|z|=r}z^{k-n-1}dz$ is $1$ for $k=n$ and $0$ otherwise (step 3 of @thm:residue-theorem), the second integral is $\class{ntn-cn}{c}(n)$.</li>
-<li><em>The big circle gives $0$.</em> On $|z|=R$: $|1-z^a|\ge R^a-1$, $|1-z^b|\ge R^b-1$, $|z^{-n-1}|=R^{-n-1}$. By the ML estimate,
+<li><em>The big circle gives $0$.</em> On $|z|=R$: $|1-z^a|\ge R^a-1$, $|1-z^b|\ge R^b-1$, $|z^{-n-1}|=R^{-n-1}$. By the [ML estimate](apx:A25),
 \[ \Big|\frac1{2\pi i}\oint_{|z|=R}\class{ntn-Gst}{G}\,dz\Big|\le\frac{2\pi R}{2\pi}\cdot\frac{R^{-n-1}}{(R^a-1)(R^b-1)}=\frac{R^{-n}}{(R^a-1)(R^b-1)}\longrightarrow0\quad(R\to\infty). \]
 The right side of step 2 does not depend on $R$, so letting $R\to\infty$ gives $0-\class{ntn-cn}{c}(n)=\sum\class{ntn-res}{\operatorname{Res}}_\zeta \class{ntn-Gst}{G}$. <span class="qed">∎</span></li>
 </ol>

@@ -24,7 +24,7 @@ so
 The bound does not depend on $z$: the difference quotients converge [uniformly](apx:A17) on the circle.</li>
 <li><em>Pass it through the integral.</em> By the induction hypothesis,
 \[ \frac{f^{(n)}(w+h)-f^{(n)}(w)}{h}-\frac{n!}{2\pi i}\oint\frac{k\,f(z)}{(z-w)^{k+1}}\,dz=\frac{n!}{2\pi i}\oint f(z)\Big[\frac{(z-w-h)^{-k}-(z-w)^{-k}}{h}-k(z-w)^{-k-1}\Big]dz, \]
-whose modulus is at most $n!\,r\,M\cdot\frac{|h|}{2}k(k+1)(\delta/2)^{-k-2}\to0$ as $h\to0$ (ML estimate, $M=\max|f|$ on the circle).</li>
+whose modulus is at most $n!\,r\,\class{ntn-Mr}{M}\cdot\frac{|h|}{2}k(k+1)(\delta/2)^{-k-2}\to0$ as $h\to0$ ([ML estimate](apx:A25), $\class{ntn-Mr}{M}=\max|f|$ on the circle).</li>
 <li>So $f^{(n+1)}(w)$ exists and equals $\frac{n!\,k}{2\pi i}\oint\frac{f(z)}{(z-w)^{k+1}}dz=\frac{(n+1)!}{2\pi i}\oint\frac{f(z)}{(z-w)^{n+2}}dz$.</li>
 </ol>
 For the last claim, compare with @thm:power-series at $w=z_0$: $\frac{f^{(n)}(z_0)}{n!}=\frac1{2\pi i}\oint f(z)(z-z_0)^{-n-1}dz=a_n$.
