@@ -17,6 +17,8 @@ import {liteAdaptor} from '@mathjax/src/js/adaptors/liteAdaptor.js';
 import {RegisterHTMLHandler} from '@mathjax/src/js/handlers/html.js';
 import {STATE} from '@mathjax/src/js/core/MathItem.js';
 import {handleRetriesFor} from '@mathjax/src/js/util/Retries.js';
+import {length2em} from '@mathjax/src/js/util/lengths.js';
+import {MmlMo} from '@mathjax/src/js/core/MmlTree/MmlNodes/mo.js';
 import '@mathjax/src/js/util/asyncLoad/esm.js';
 import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
 import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
@@ -46,6 +48,28 @@ import '@mathjax/src/js/input/tex/verb/VerbConfiguration.js';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const src = process.argv[2] || path.join(root, 'build/guide.html');
 const out = process.argv[3] || path.join(root, 'build/index.html');
+
+// Keep an equals sign at the end of the line. The operator default is to jump to the next line.
+MmlMo.defaults.linebreakstyle = 'after';
+
+// \, \: \; are spaces inside one term (an integrand, a product). \quad and \qquad separate clauses.
+const origMarkBreaks = SVG.prototype.markInlineBreaks;
+SVG.prototype.markInlineBreaks = function(node) {
+  tightenBreaks(node);
+  return origMarkBreaks.call(this, node);
+};
+function tightenBreaks(node) {
+  if (!node || !node.childNodes) return;
+  for (const child of node.childNodes) {
+    if (child.isKind && child.isKind('mspace')) {
+      const lb = child.attributes.get('linebreak');
+      if ((lb === 'auto' || lb == null) && length2em(String(child.attributes.get('width'))) < 0.9) {
+        child.attributes.set('linebreak', 'nobreak');
+      }
+    }
+    tightenBreaks(child);
+  }
+}
 
 // v4.1.3 reads math.display once, to decide whether to insert soft breaks, and that read is
 // the only one that should see "inline". Later reads choose display style and must stay true.
