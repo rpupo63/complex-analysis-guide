@@ -71,7 +71,8 @@ section > header{display:flex;flex-direction:column;gap:0.25rem;margin-bottom:0.
 li{margin:0.3em 0}
 .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:0.7rem;margin:1rem 0}
 .legend > div{min-width:0;font-size:0.95rem}
-mjx-container[display="true"]{overflow-x:auto;overflow-y:hidden;max-width:100%;padding:0.2rem 0}
+/* Wide formulas wrap at operators (see tools/prerender.mjs); they are not a sideways scroller. */
+mjx-container[display="true"]{max-width:100%;padding:0.2rem 0}
 figure{margin:1.2rem 0;text-align:center}
 figcaption{font-size:0.9rem;color:var(--muted);margin-top:0.3rem}
 .stencil{display:inline-grid;grid-template-columns:repeat(3,3.2rem);border:1px solid var(--ink)}
